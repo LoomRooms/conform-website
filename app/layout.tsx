@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: "CON/FORM 1.0 - March 20-21, 2026",
   description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "CON/FORM 1.0 - March 20-21, 2026",
