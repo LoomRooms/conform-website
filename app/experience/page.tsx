@@ -177,12 +177,12 @@ export default function Experience() {
 
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
-                            <h3 className="font-bold text-xl mb-4 text-primary">Day 1: Smart &amp; Sharp</h3>
+                            <h3 className="font-bold text-xl mb-4 text-blue-400">Day 1: Smart &amp; Sharp</h3>
                             <p className="text-gray-300 mb-4">It&apos;s a conference, but make it fashion. Think &ldquo;Creative Professional.&rdquo;</p>
                             <ul className="text-sm text-gray-400 space-y-2">
-                                <li className="flex items-center"><span className="w-2 h-2 bg-primary rounded-full mr-2"></span>Business Casual / Smart Casual</li>
-                                <li className="flex items-center"><span className="w-2 h-2 bg-primary rounded-full mr-2"></span>Comfortable shoes (lots of walking)</li>
-                                <li className="flex items-center"><span className="w-2 h-2 bg-primary rounded-full mr-2"></span>Notebook / Tablet for gems</li>
+                                <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>Business Casual / Smart Casual</li>
+                                <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>Comfortable shoes (lots of walking)</li>
+                                <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>Notebook / Tablet for gems</li>
                             </ul>
                         </div>
 
