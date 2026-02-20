@@ -23,23 +23,33 @@ export default function Experience() {
             <section className="py-20 px-4 border-b border-gray-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-12">
-                        <div className="md:w-1/3 sticky top-24 h-fit">
-                            <span className="text-primary font-bold tracking-widest uppercase block mb-2">March 20, 2026</span>
-                            <h2 className="font-heading font-bold text-5xl md:text-6xl text-black mb-4">CON</h2>
-                            <p className="text-2xl font-light text-gray-500 mb-6">Conference</p>
+                        <div className="md:w-1/3 sticky top-[72px] md:top-32 h-fit relative z-30 md:z-10 -mx-4 px-4 md:mx-0 md:px-0 py-4 md:py-0">
+                            {/* Premium Blur Overlay for Mobile */}
+                            <div className="md:hidden absolute inset-0 bg-white/90 backdrop-blur-xl z-0"
+                                style={{
+                                    maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+                                    WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)'
+                                }}
+                            />
 
-                            <div className="flex items-center text-gray-700 mb-3">
-                                <MapPin className="mr-2 text-primary shrink-0" size={18} />
-                                <span>UNILAG, Afe Babalola Hall</span>
-                            </div>
-                            <div className="flex items-center text-gray-500 mb-8">
-                                <Clock className="mr-2 text-primary shrink-0" size={18} />
-                                <span className="text-sm">11:00 AM – 6:00 PM</span>
-                            </div>
+                            <div className="relative z-10 pt-2 pb-6">
+                                <span className="text-primary font-bold tracking-widest uppercase block mb-2 text-xs md:text-base">March 20, 2026</span>
+                                <h2 className="font-heading font-bold text-5xl md:text-7xl text-black mb-4 leading-none">CON</h2>
+                                <p className="text-xl md:text-2xl font-light text-gray-500 mb-6 font-heading tracking-widest">Conference</p>
 
-                            <Link href="/tickets" className="hidden md:inline-block bg-black text-white px-6 py-3 font-bold uppercase hover:bg-primary transition-colors">
-                                Get Day 1 Ticket
-                            </Link>
+                                <div className="flex items-center text-gray-700 mb-2 md:mb-3">
+                                    <MapPin className="mr-2 text-primary shrink-0" size={16} />
+                                    <span className="text-sm md:text-base">UNILAG, Afe Babalola Hall</span>
+                                </div>
+                                <div className="flex items-center text-gray-500 mb-4 md:mb-8">
+                                    <Clock className="mr-2 text-primary shrink-0" size={16} />
+                                    <span className="text-xs md:text-sm tracking-tighter">11:00 AM – 6:00 PM</span>
+                                </div>
+
+                                <Link href="/tickets" className="hidden md:inline-block bg-black text-white px-8 py-4 font-heading text-lg tracking-widest hover:bg-primary transition-all hover:scale-105">
+                                    Get Day 1 Ticket
+                                </Link>
+                            </div>
                         </div>
 
                         <div className="md:w-2/3 space-y-6">
@@ -81,19 +91,29 @@ export default function Experience() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row-reverse gap-12">
-                        <div className="md:w-1/3 sticky top-24 h-fit text-right">
-                            <span className="text-gray-500 font-bold tracking-widest uppercase block mb-2">March 21, 2026</span>
-                            <h2 className="font-heading font-bold text-5xl md:text-6xl text-black mb-4">FORM</h2>
-                            <p className="text-2xl font-light text-gray-500 mb-6">Expression</p>
+                        <div className="md:w-1/3 sticky top-[72px] md:top-32 h-fit text-right relative z-30 md:z-10 -mx-4 px-4 md:mx-0 md:px-0 py-4 md:py-0">
+                            {/* Premium Blur Overlay for Mobile */}
+                            <div className="md:hidden absolute inset-0 bg-[#F9FAFB]/90 backdrop-blur-xl z-0"
+                                style={{
+                                    maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+                                    WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)'
+                                }}
+                            />
 
-                            <div className="flex items-center justify-end text-gray-700 mb-8">
-                                <span>Egbeda (Loom Rooms Home)</span>
-                                <MapPin className="ml-2 text-primary shrink-0" size={18} />
+                            <div className="relative z-10 pt-2 pb-6">
+                                <span className="text-gray-500 font-bold tracking-widest uppercase block mb-2 text-xs md:text-base">March 21, 2026</span>
+                                <h2 className="font-heading font-bold text-5xl md:text-7xl text-black mb-4 leading-none">FORM</h2>
+                                <p className="text-xl md:text-2xl font-light text-gray-500 mb-6 font-heading tracking-widest">Expression</p>
+
+                                <div className="flex items-center justify-end text-gray-700 mb-4 md:mb-8">
+                                    <span className="text-sm md:text-base">Egbeda (Loom Rooms Home)</span>
+                                    <MapPin className="ml-2 text-primary shrink-0" size={16} />
+                                </div>
+
+                                <Link href="/tickets" className="hidden md:inline-block bg-primary text-white px-8 py-4 font-heading text-lg tracking-widest hover:bg-black transition-all hover:scale-105">
+                                    Get Day 2 Ticket
+                                </Link>
                             </div>
-
-                            <Link href="/tickets" className="hidden md:inline-block bg-primary text-white px-6 py-3 font-bold uppercase hover:bg-black transition-colors">
-                                Get Day 2 Ticket
-                            </Link>
                         </div>
 
                         <div className="md:w-2/3 space-y-12">
