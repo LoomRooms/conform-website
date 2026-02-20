@@ -59,6 +59,18 @@
     color: transparent;
   }
 
+  .outline-text-white {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+  }
+
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
   .bg-african-pattern {
     background-image: url('/african-pattern.png');
     background-size: 500px;

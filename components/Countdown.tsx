@@ -33,15 +33,15 @@ const TimeUnit = ({ value, label }: { value: number; label: string }) => {
 
     return (
         <div className="flex flex-col items-center">
-            <div className="w-20 h-20 md:w-28 md:h-28 glass rounded-xl flex items-center justify-center shadow-2xl relative overflow-hidden group">
-                <div className="flex text-4xl md:text-6xl font-heading text-white relative z-10">
+            <div className="w-14 h-14 md:w-18 md:h-18 glass rounded-xl flex items-center justify-center shadow-xl relative overflow-hidden group">
+                <div className="flex text-2xl md:text-3xl font-heading text-white relative z-10">
                     {digits.map((d, i) => (
                         <Digit key={i} val={d} />
                     ))}
                 </div>
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
-            <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-secondary mt-4 font-bold">{label}</span>
+            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-secondary mt-3 font-bold">{label}</span>
         </div>
     );
 };

@@ -72,14 +72,11 @@ export default function Footer() {
                     <div>
                         <h3 className="font-heading font-normal text-xl mb-6 tracking-widest text-white">Follow Us</h3>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#05087c] transition-all">
+                            <a href="https://www.instagram.com/loomrooms" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#05087c] transition-all">
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#05087c] transition-all">
+                            <a href="https://x.com/loomrooms" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#05087c] transition-all">
                                 <Twitter size={20} />
-                            </a>
-                            <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#05087c] transition-all">
-                                <Facebook size={20} />
                             </a>
                         </div>
                     </div>
