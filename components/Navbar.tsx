@@ -117,45 +117,93 @@ export default function Navbar() {
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-2xl overflow-hidden"
-                    >
-                        <div className="px-6 pt-4 pb-12 space-y-2">
-                            {navLinks.map((link, idx) => (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[-1]"
+                            onClick={() => setIsOpen(false)}
+                        />
+
+                        {/* Menu Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -10, scale: 0.97 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.97 }}
+                            transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+                            className="md:hidden absolute top-full left-3 right-3 mt-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(5,8,124,0.25),0_0_0_1px_rgba(255,255,255,0.1)]"
+                        >
+                            {/* African Pattern Background Layer */}
+                            <div className="absolute inset-0 bg-african-pattern opacity-[0.10] z-0" />
+                            {/* Gradient overlay for depth */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-blue-50/80 z-[1]" />
+
+                            <div className="relative z-10 px-5 py-5">
+                                {/* Navigation Links */}
+                                <div className="space-y-0.5">
+                                    {navLinks.map((link, idx) => (
+                                        <motion.div
+                                            key={link.name}
+                                            initial={{ opacity: 0, x: -16 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.06 + idx * 0.04, duration: 0.3, ease: "easeOut" }}
+                                        >
+                                            <Link
+                                                href={link.href}
+                                                onClick={() => setIsOpen(false)}
+                                                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-heading text-lg tracking-[0.15em] uppercase transition-all duration-200 group ${pathname === link.href
+                                                    ? "bg-primary/10 text-primary"
+                                                    : "text-gray-800 hover:bg-gray-50 hover:text-primary"
+                                                    }`}
+                                            >
+                                                <span className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${pathname === link.href
+                                                    ? "bg-primary scale-100"
+                                                    : "bg-gray-300 group-hover:bg-primary group-hover:scale-100 scale-75"
+                                                    }`} />
+                                                {link.name}
+                                            </Link>
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                {/* Divider */}
                                 <motion.div
-                                    key={link.name}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: idx * 0.05 }}
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ delay: 0.35, duration: 0.4 }}
+                                    className="my-4 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent origin-left"
+                                />
+
+                                {/* CTA Button */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4, duration: 0.3 }}
                                 >
                                     <Link
-                                        href={link.href}
+                                        href="/tickets"
                                         onClick={() => setIsOpen(false)}
-                                        className="block px-3 py-4 text-black hover:text-primary font-heading text-3xl tracking-widest border-l-4 border-transparent hover:border-primary transition-all uppercase"
+                                        className="block w-full text-center bg-primary text-white px-4 py-3.5 rounded-xl font-heading text-lg uppercase tracking-[0.15em] hover:bg-primary/90 transition-all duration-200 shadow-[0_4px_16px_rgba(5,8,124,0.3)] hover:shadow-[0_6px_24px_rgba(5,8,124,0.4)] hover:scale-[1.02] active:scale-[0.98]"
                                     >
-                                        {link.name}
+                                        Get Tickets →
                                     </Link>
                                 </motion.div>
-                            ))}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 }}
-                                className="pt-8"
-                            >
-                                <Link
-                                    href="/tickets"
-                                    onClick={() => setIsOpen(false)}
-                                    className="block w-full text-center bg-primary text-white px-4 py-5 font-heading text-2xl uppercase tracking-[0.1em] hover:bg-black transition-colors"
+
+                                {/* Subtle branding footer */}
+                                <motion.p
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="text-center text-[10px] text-gray-300 uppercase tracking-[0.3em] mt-4 mb-1"
                                 >
-                                    Get Tickets
-                                </Link>
-                            </motion.div>
-                        </div>
-                    </motion.div>
+                                    Lagos • March 2026
+                                </motion.p>
+                            </div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </nav>
