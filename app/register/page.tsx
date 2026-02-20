@@ -1,11 +1,16 @@
+import Navbar from '@/components/Navbar';
 import RegisterForm from '@/components/RegisterForm';
 
 export default function RegisterPage() {
     return (
         <div className="min-h-screen bg-white">
+            <Navbar />
+
             {/* Hero Section */}
-            <section className="relative bg-primary text-white py-20 px-4">
-                <div className="max-w-4xl mx-auto text-center">
+            <section className="relative bg-primary text-white py-24 px-4 overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-0"></div>
+                <div className="cinematic-bottom-blur" />
+                <div className="relative z-10 max-w-4xl mx-auto text-center">
                     <h1 className="font-heading text-5xl md:text-7xl mb-4">
                         Artist Application
                     </h1>
@@ -23,7 +28,7 @@ export default function RegisterPage() {
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-8 text-center">
                         <p className="text-lg text-gray-600">
-                            Complete this application to showcase your art at Lagos&apos; first transformative creative summit.
+                            Complete this application to showcase your art at Lagos&apos; first system-building experience.
                         </p>
                     </div>
 

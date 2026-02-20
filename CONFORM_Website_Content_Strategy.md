@@ -635,7 +635,7 @@ Email us at partnerships@conform.ng
 
 ## DESIGN GUIDELINES
 
-### COLOR PALETTE (Warm Terracotta Theme)
+### COLOR PALETTE (Warm Terracotta The
 
 **Primary:** #05087c (Blue - Identity, Strength)  
 **Secondary:** #E7E8D1 (Sand - Clean, professional)  

@@ -55,7 +55,8 @@ export default function Navbar() {
         { name: "Contact", href: "/contact" },
     ];
 
-    const isDarkHeader = isHome && !isScrolled;
+    const darkHeaderPaths = ["/", "/tickets", "/faq", "/sponsors", "/experience", "/artists", "/about", "/contact", "/register"];
+    const isDarkHeader = darkHeaderPaths.includes(pathname) && !isScrolled;
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-700 ${isScrolled ? "py-5" : "py-8"}`}>

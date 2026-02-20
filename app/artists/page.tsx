@@ -44,9 +44,13 @@ export default function Artists() {
             <Navbar />
 
             {/* Header */}
-            <section className="bg-black text-white py-20 px-4 text-center">
-                <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">Meet the 70+ Creatives</h1>
-                <p className="text-xl max-w-2xl mx-auto text-gray-400">Shaping the future of culture. Nurtured by Loom Rooms.</p>
+            <section className="relative bg-black text-white py-24 px-4 text-center overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-15 mix-blend-overlay z-0"></div>
+                <div className="cinematic-bottom-blur" />
+                <div className="relative z-10">
+                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">Meet the 70+ Creatives</h1>
+                    <p className="text-xl max-w-2xl mx-auto text-gray-300">Shaping the future of culture. Nurtured by Loom Rooms.</p>
+                </div>
             </section>
 
             {/* Filter Tabs (Visual only for now) */}

@@ -9,16 +9,18 @@ export default function Sponsors() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="bg-black text-white py-24 px-4 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary/10 z-0"></div>
+            <section className="relative bg-black text-white py-24 px-4 text-center overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-15 mix-blend-overlay z-0"></div>
+                <div className="absolute inset-0 bg-primary/20 z-0"></div>
+                <div className="cinematic-bottom-blur" />
                 <div className="relative z-10 max-w-4xl mx-auto">
                     <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">
                         Partnership Opportunities
                     </span>
-                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">
+                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6 text-white">
                         Power the Future of Creativity
                     </h1>
-                    <p className="text-xl max-w-2xl mx-auto opacity-80 mb-10">
+                    <p className="text-xl max-w-2xl mx-auto opacity-80 mb-10 text-white">
                         Join us in shaping the narrative of African creativity. Connect with over 500+ creatives, industry leaders, and tastemakers.
                     </p>
                     <a

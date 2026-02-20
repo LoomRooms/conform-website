@@ -17,10 +17,10 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "CON/FORM 1.0 - March 20-21, 2026",
-  description: "2 Days. 70+ Creatives. 1 Movement. Lagos' first transformative creative summit.",
+  description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
   openGraph: {
     title: "CON/FORM 1.0 - March 20-21, 2026",
-    description: "2 Days. 70+ Creatives. 1 Movement. Lagos' first transformative creative summit.",
+    description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
     url: "https://www.conformlagos.com",
     type: "website",
   },

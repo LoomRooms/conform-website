@@ -19,9 +19,13 @@ export default function Contact() {
             <Navbar />
 
             {/* Header */}
-            <section className="bg-primary text-white py-20 px-4 text-center">
-                <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">Get in Touch</h1>
-                <p className="text-xl max-w-2xl mx-auto opacity-90">Questions? Partnerships? Sponsorships? We'd love to hear from you.</p>
+            <section className="relative bg-primary text-white py-24 px-4 text-center overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-0"></div>
+                <div className="cinematic-bottom-blur" />
+                <div className="relative z-10">
+                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6 text-white">Get in Touch</h1>
+                    <p className="text-xl max-w-2xl mx-auto opacity-90 text-white">Sponsorships, Partnerships, Media, and General Inquiries &mdash; we&apos;d love to connect.</p>
+                </div>
             </section>
 
             <section className="py-20 px-4 max-w-7xl mx-auto">
@@ -38,8 +42,8 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-1">Email Us</h3>
-                                    <a href="mailto:hello@conform.ng" className="text-gray-600 hover:text-primary transition-colors block">hello@conform.ng</a>
-                                    <p className="text-sm text-gray-400 mt-1">General inquiries, ticket support</p>
+                                    <a href="mailto:hello@conform.com.ng" className="text-gray-600 hover:text-primary transition-colors block">hello@conform.com.ng</a>
+                                    <p className="text-sm text-gray-400 mt-1">General inquiries &amp; ticket support</p>
                                 </div>
                             </div>
 
@@ -49,8 +53,9 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-1">Call / WhatsApp</h3>
-                                    <p className="text-gray-600">+234 XXX XXX XXXX</p>
-                                    <p className="text-sm text-gray-400 mt-1">Mon-Sat 9AM-6PM</p>
+                                    <p className="text-gray-600 font-medium">09035998080</p>
+                                    <p className="text-sm text-gray-400 mt-1">Lead Convener: Shola Bamidele &mdash; Sponsorships &amp; Partnerships</p>
+                                    <p className="text-sm text-gray-400">Mon–Sat, 9AM–6PM</p>
                                 </div>
                             </div>
 

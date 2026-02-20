@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { Mic2, Palette, Film, Shirt, Users, MapPin } from "lucide-react";
+import { Mic2, Palette, Film, Shirt, MapPin, Clock } from "lucide-react";
 import Timeline from "@/components/Timeline";
 
 export default function Experience() {
@@ -10,9 +10,13 @@ export default function Experience() {
             <Navbar />
 
             {/* Header */}
-            <section className="bg-black text-white py-20 px-4 text-center">
-                <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">What to Expect at CON/FORM</h1>
-                <p className="text-xl max-w-2xl mx-auto text-gray-400">Two Days. Two Venues. One Transformative Eperience.</p>
+            <section className="relative bg-black text-white py-24 px-4 text-center overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-15 mix-blend-overlay z-0"></div>
+                <div className="cinematic-bottom-blur" />
+                <div className="relative z-10">
+                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">What to Expect at CON/FORM</h1>
+                    <p className="text-xl max-w-2xl mx-auto text-gray-300">Two Days. Two Venues. One Transformative Experience.</p>
+                </div>
             </section>
 
             {/* Day 1: CON */}
@@ -24,9 +28,13 @@ export default function Experience() {
                             <h2 className="font-heading font-bold text-5xl md:text-6xl text-black mb-4">CON</h2>
                             <p className="text-2xl font-light text-gray-500 mb-6">Conference</p>
 
-                            <div className="flex items-center text-gray-700 mb-8">
-                                <MapPin className="mr-2 text-primary" />
-                                <span>UNILAG Afe Babalola Hall</span>
+                            <div className="flex items-center text-gray-700 mb-3">
+                                <MapPin className="mr-2 text-primary shrink-0" size={18} />
+                                <span>UNILAG, Afe Babalola Hall</span>
+                            </div>
+                            <div className="flex items-center text-gray-500 mb-8">
+                                <Clock className="mr-2 text-primary shrink-0" size={18} />
+                                <span className="text-sm">11:00 AM – 6:00 PM</span>
                             </div>
 
                             <Link href="/tickets" className="hidden md:inline-block bg-black text-white px-6 py-3 font-bold uppercase hover:bg-primary transition-colors">
@@ -34,30 +42,35 @@ export default function Experience() {
                             </Link>
                         </div>
 
-                        <div className="md:w-2/3 space-y-12">
+                        <div className="md:w-2/3 space-y-6">
                             <div>
-                                <h3 className="font-bold text-2xl mb-4 text-black">Deconstruct Your Mind</h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">Day 1 is about breaking down barriers—the mental blocks, industry gatekeeping, and limiting beliefs that hold creatives back.</p>
+                                <h3 className="font-bold text-2xl mb-3 text-black">A Guided Journey Into the System</h3>
+                                <p className="text-gray-600 leading-relaxed mb-8">
+                                    Day 1 is designed as a guided journey into how culture is built, lived, and sustained. Focus: Thought, honesty, structure, and conversation. Every segment intentionally leads into the next.
+                                </p>
 
-                                <h4 className="font-bold text-lg mb-4 mt-8 uppercase tracking-wide text-gray-400">What You'll Experience</h4>
-                                <ul className="grid md:grid-cols-2 gap-6">
-                                    <li className="flex items-start">
-                                        <span className="bg-primary/10 p-2 rounded mr-4 text-primary"><Users size={20} /></span>
-                                        <span>Keynote Speeches from industry leaders</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="bg-primary/10 p-2 rounded mr-4 text-primary"><Users size={20} /></span>
-                                        <span>Panel Discussions on the creative economy</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="bg-primary/10 p-2 rounded mr-4 text-primary"><Users size={20} /></span>
-                                        <span>Workshops on film, music, fashion, art</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="bg-primary/10 p-2 rounded mr-4 text-primary"><Users size={20} /></span>
-                                        <span>Networking with 300+ creatives</span>
-                                    </li>
-                                </ul>
+                                <h4 className="font-bold text-sm mb-6 uppercase tracking-[0.2em] text-gray-400">The Day 1 Experience</h4>
+                                <div className="space-y-4">
+                                    {[
+                                        { time: "11:00 AM", title: "Arrival & Immersion: Entering the System", desc: "LED walls, ambient sound design, and sponsors as environments — not ads. Attendees are not entering an event. They are entering a system." },
+                                        { time: "11:20 AM", title: "Opening Address: Why CON/FORM Exists", desc: "Lead Convener Shola Bamidele formally opens the event, frames the Architects & Executors framework, and names the central tension: talent vs structure, culture vs economy." },
+                                        { time: "12:00 PM", title: "Panel Session 1 — The Architects", desc: "\"Designing Culture That Lasts.\" Senior cultural figures, institutional leaders, and legacy builders in an honest, reflective, and accountable conversation." },
+                                        { time: "1:15 PM", title: "Spoken Word / Poetry Response", desc: "Emotional grounding — translating institutional language into human language. Giving voice to what cannot be said in panels." },
+                                        { time: "1:30 PM", title: "The Systems Interlude", desc: "A live systems walkthrough: brands and institutions explain how their operating systems work — and what creatives can learn from them. This is where CON/FORM becomes different from every other creative event." },
+                                        { time: "2:00 PM", title: "Networking & Activation Window", desc: "Sponsor activations fully live. Informal conversations sparked by the Systems Interlude. Creatives engage brands with context, not desperation." },
+                                        { time: "3:00 PM", title: "Panel Session 2 — The Executors", desc: "\"Living Inside the System.\" Emerging creatives, artisans, founders, and entrepreneurs share honest, evidence-based accounts of daily creative survival, economic pressure, and what support structures are missing." },
+                                        { time: "4:30 PM", title: "Brand & Institution Conversations", desc: "Open format: fireside chats, small group conversations, and Q&A circles on how creatives can realistically engage brands — and where collaboration is truly possible." },
+                                        { time: "5:30 PM", title: "Day 1 Closing: Holding the Tension", desc: "\"We have named the system. Tomorrow, we will express what it feels like to live inside it.\"" },
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex gap-4 p-5 rounded-xl border border-gray-100 hover:border-primary/20 hover:bg-gray-50 transition-all duration-200">
+                                            <div className="text-primary font-bold text-xs uppercase tracking-wide shrink-0 w-16 pt-0.5">{item.time}</div>
+                                            <div>
+                                                <h5 className="font-bold text-gray-900 mb-1">{item.title}</h5>
+                                                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,13 +82,13 @@ export default function Experience() {
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row-reverse gap-12">
                         <div className="md:w-1/3 sticky top-24 h-fit text-right">
-                            <span className="text-secondary font-bold tracking-widest uppercase block mb-2 text-black/60">March 21, 2026</span>
+                            <span className="text-gray-500 font-bold tracking-widest uppercase block mb-2">March 21, 2026</span>
                             <h2 className="font-heading font-bold text-5xl md:text-6xl text-black mb-4">FORM</h2>
-                            <p className="text-2xl font-light text-gray-500 mb-6">Performance</p>
+                            <p className="text-2xl font-light text-gray-500 mb-6">Expression</p>
 
                             <div className="flex items-center justify-end text-gray-700 mb-8">
                                 <span>Egbeda (Loom Rooms Home)</span>
-                                <MapPin className="ml-2 text-secondary fill-current text-black" />
+                                <MapPin className="ml-2 text-primary shrink-0" size={18} />
                             </div>
 
                             <Link href="/tickets" className="hidden md:inline-block bg-primary text-white px-6 py-3 font-bold uppercase hover:bg-black transition-colors">
@@ -85,30 +98,31 @@ export default function Experience() {
 
                         <div className="md:w-2/3 space-y-12">
                             <div>
-                                <h3 className="font-bold text-2xl mb-4 text-black">Witness the Rebuild</h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">Day 2 is where theory becomes reality. Return to Egbeda—where Loom Rooms was born—and watch 70+ artists create magic.</p>
+                                <h3 className="font-bold text-2xl mb-3 text-black">Expression &amp; Release</h3>
+                                <p className="text-gray-600 leading-relaxed mb-4">Day 2 is earned. It is not a random performance — it is the emotional and cultural release of Day 1&apos;s conversations. Back in Egbeda, where Loom Rooms was born.</p>
+                                <p className="text-primary font-medium italic">&ldquo;If we understand the system better, how do we express ourselves differently?&rdquo;</p>
 
-                                <h4 className="font-bold text-lg mb-4 mt-8 uppercase tracking-wide text-gray-400">What You'll Experience</h4>
-                                <div className="grid sm:grid-cols-2 gap-6">
-                                    <div className="bg-white p-6 rounded shadow-sm border border-gray-100">
-                                        <Film className="mb-4 text-primary w-8 h-8" />
+                                <h4 className="font-bold text-sm mb-6 mt-10 uppercase tracking-[0.2em] text-gray-400">What You&apos;ll Experience</h4>
+                                <div className="grid sm:grid-cols-2 gap-5">
+                                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-primary/20 transition-all">
+                                        <Film className="mb-4 text-primary w-7 h-7" />
                                         <h5 className="font-bold mb-2">FILM</h5>
-                                        <p className="text-sm text-gray-500">Screenings of original short films by Loom Rooms alumni.</p>
+                                        <p className="text-sm text-gray-500">Screenings of original short films by Loom Rooms alumni — creative works as cultural evidence.</p>
                                     </div>
-                                    <div className="bg-white p-6 rounded shadow-sm border border-gray-100">
-                                        <Mic2 className="mb-4 text-primary w-8 h-8" />
+                                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-primary/20 transition-all">
+                                        <Mic2 className="mb-4 text-primary w-7 h-7" />
                                         <h5 className="font-bold mb-2">MUSIC</h5>
-                                        <p className="text-sm text-gray-500">Live performances across genres—Afrobeats, Hip-Hop, Afro-soul.</p>
+                                        <p className="text-sm text-gray-500">Live performances across genres — Afrobeats, Hip-Hop, Afro-soul, and DJ sets.</p>
                                     </div>
-                                    <div className="bg-white p-6 rounded shadow-sm border border-gray-100">
-                                        <Shirt className="mb-4 text-primary w-8 h-8" />
+                                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-primary/20 transition-all">
+                                        <Shirt className="mb-4 text-primary w-7 h-7" />
                                         <h5 className="font-bold mb-2">FASHION</h5>
-                                        <p className="text-sm text-gray-500">Runway shows featuring emerging designers.</p>
+                                        <p className="text-sm text-gray-500">Runway shows featuring emerging designers — expression through form and identity.</p>
                                     </div>
-                                    <div className="bg-white p-6 rounded shadow-sm border border-gray-100">
-                                        <Palette className="mb-4 text-primary w-8 h-8" />
+                                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-primary/20 transition-all">
+                                        <Palette className="mb-4 text-primary w-7 h-7" />
                                         <h5 className="font-bold mb-2">VISUAL ART</h5>
-                                        <p className="text-sm text-gray-500">Live painting, installations, and exhibitions.</p>
+                                        <p className="text-sm text-gray-500">Live painting, installations, and exhibitions — culture made visible.</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,12 +131,12 @@ export default function Experience() {
                 </div>
             </section>
 
+            {/* Full Timeline */}
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto text-center mb-10">
-                    <span className="text-secondary font-bold tracking-widest uppercase block mb-2">The Schedule</span>
+                    <span className="text-primary font-bold tracking-widest uppercase block mb-2">The Schedule</span>
                     <h2 className="font-heading font-bold text-4xl text-black">Event Timeline</h2>
                 </div>
-                {/* Lazy load Timeline to avoid hydration mismatch if possible, but for now direct import is fine */}
                 <Timeline />
             </section>
 
@@ -134,13 +148,13 @@ export default function Experience() {
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="font-heading font-bold text-4xl mb-6">The Vibe Check</h2>
-                        <p className="text-gray-400 max-w-2xl mx-auto">Come correct. Here's what you need to know to survive and thrive at CON/FORM.</p>
+                        <p className="text-gray-400 max-w-2xl mx-auto">Come correct. Here&apos;s what you need to know to survive and thrive at CON/FORM.</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
-                            <h3 className="font-bold text-xl mb-4 text-primary">Day 1: Smart & Sharp</h3>
-                            <p className="text-gray-300 mb-4">It's a conference, but make it fashion. Think "Creative Professional."</p>
+                            <h3 className="font-bold text-xl mb-4 text-primary">Day 1: Smart &amp; Sharp</h3>
+                            <p className="text-gray-300 mb-4">It&apos;s a conference, but make it fashion. Think &ldquo;Creative Professional.&rdquo;</p>
                             <ul className="text-sm text-gray-400 space-y-2">
                                 <li className="flex items-center"><span className="w-2 h-2 bg-primary rounded-full mr-2"></span>Business Casual / Smart Casual</li>
                                 <li className="flex items-center"><span className="w-2 h-2 bg-primary rounded-full mr-2"></span>Comfortable shoes (lots of walking)</li>
@@ -152,7 +166,7 @@ export default function Experience() {
                             <h3 className="font-bold text-xl mb-4 text-secondary">Day 2: Express Yourself</h3>
                             <p className="text-gray-300 mb-4">No rules. High fashion, streetwear, traditional fusion. Show us who you are.</p>
                             <ul className="text-sm text-gray-400 space-y-2">
-                                <li className="flex items-center"><span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>Bold colors & patterns</li>
+                                <li className="flex items-center"><span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>Bold colors &amp; patterns</li>
                                 <li className="flex items-center"><span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>Statement pieces</li>
                                 <li className="flex items-center"><span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>Camera ready fits</li>
                             </ul>
@@ -160,7 +174,7 @@ export default function Experience() {
 
                         <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
                             <h3 className="font-bold text-xl mb-4 text-white">Essentials</h3>
-                            <p className="text-gray-300 mb-4">Don't leave home without these.</p>
+                            <p className="text-gray-300 mb-4">Don&apos;t leave home without these.</p>
                             <ul className="text-sm text-gray-400 space-y-2">
                                 <li className="flex items-center"><span className="w-2 h-2 bg-white rounded-full mr-2"></span>Power bank (critical)</li>
                                 <li className="flex items-center"><span className="w-2 h-2 bg-white rounded-full mr-2"></span>Valid ID for entry</li>

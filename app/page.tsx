@@ -3,8 +3,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import VisionSection from "@/components/VisionSection";
 import Link from "next/link";
-import { MoveRight, CheckCircle2, Star, Users, Zap } from "lucide-react";
+import { MoveRight, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -15,85 +16,65 @@ export default function Home() {
       <Hero />
 
       {/* What is Conform Section */}
-      <section className="py-24 md:py-40 px-4 max-w-7xl mx-auto overflow-hidden">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
+      <VisionSection />
+
+      {/* Partners / Social Proof */}
+      <section className="py-20 bg-gray-50 border-y border-gray-100 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 mb-12">
+          <p className="text-center text-gray-400 text-sm uppercase tracking-[0.3em]">Validated by Culture • Powered by Community</p>
+        </div>
+
+
+        {/* Infinite Marquee */}
+        <div className="flex overflow-hidden select-none gap-12 group">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            animate={{ x: [0, -1000] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="flex flex-nowrap gap-12 items-center min-w-full"
           >
-            <span className="text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4 block">The Vision</span>
-            <h2 className="font-heading font-normal text-5xl md:text-7xl text-black mb-8 leading-[0.9]">
-              A Journey From <span className="text-primary italic">Thought</span> to <span className="text-primary italic">Expression</span>
-            </h2>
-            <p className="text-gray-600 text-xl mb-12 leading-relaxed font-light">
-              CON/FORM isn't just an event—it's a two-day transformation. Born in Egbeda, validated by tradition, and powered by raw creativity.
-            </p>
-
-            <div className="space-y-10">
-              <motion.div
-                whileHover={{ x: 10 }}
-                className="group border-l-2 border-primary/20 pl-8 hover:border-primary transition-all duration-300"
+            {[
+              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL",
+              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL"
+            ].map((partner, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-center px-12 py-6 rounded-2xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-xl hover:border-primary/20 transition-all duration-500 group/item"
               >
-                <h3 className="font-heading text-2xl mb-3 group-hover:text-primary transition-colors">Day 1: CON (Conference)</h3>
-                <p className="text-gray-500 text-lg">Deconstruct your assumptions. Challenge your thinking. Reset your creative compass at UNILAG.</p>
-              </motion.div>
-              <motion.div
-                whileHover={{ x: 10 }}
-                className="group border-l-2 border-secondary/20 pl-8 hover:border-secondary transition-all duration-300"
-              >
-                <h3 className="font-heading text-2xl mb-3 group-hover:text-primary transition-colors">Day 2: FORM (Performance)</h3>
-                <p className="text-gray-500 text-lg">Witness 70+ artists rebuild culture in real-time. Film. Music. Fashion. Visual art at Egbeda.</p>
-              </motion.div>
-            </div>
-
-            <Link href="/about" className="inline-flex items-center mt-16 text-primary font-heading hover:text-black transition-all uppercase tracking-[0.2em] group text-lg">
-              Read the full story <MoveRight className="ml-3 group-hover:translate-x-2 transition-transform" />
-            </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl">
-              <img
-                src="/3.png"
-                alt="Creatives collaborating"
-                className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-10 right-10 text-white">
-                <p className="font-heading text-3xl md:text-4xl leading-tight mb-4">"Talent is everywhere. Opportunity is not."</p>
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                  <Star className="text-white fill-white" size={20} />
-                </div>
+                <span className="font-heading text-4xl md:text-5xl text-gray-300 group-hover/item:text-primary transition-colors tracking-tighter">
+                  {partner}
+                </span>
               </div>
-            </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/30 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl -z-10" />
+            ))}
+          </motion.div>
+          {/* Duplicate for seamless loop */}
+          <motion.div
+            animate={{ x: [0, -1000] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="flex flex-nowrap gap-12 items-center min-w-full"
+            aria-hidden="true"
+          >
+            {[
+              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL",
+              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL"
+            ].map((partner, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-center px-12 py-6 rounded-2xl bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-xl hover:border-primary/20 transition-all duration-500 group/item"
+              >
+                <span className="font-heading text-4xl md:text-5xl text-gray-300 group-hover/item:text-primary transition-colors tracking-tighter">
+                  {partner}
+                </span>
+              </div>
+            ))}
           </motion.div>
         </div>
-      </section>
 
-      {/* Social Proof / Partners Strip */}
-      <section className="py-12 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <p className="text-center text-gray-400 text-sm uppercase tracking-[0.3em] mb-8">Validated by Culture • Powered by Community</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Logo placeholders - as per strategy */}
-            <div className="h-8 md:h-12 w-32 bg-gray-300 flex items-center justify-center font-bold text-xs rounded">LOOM ROOMS</div>
-            <div className="h-8 md:h-12 w-32 bg-gray-300 flex items-center justify-center font-bold text-xs rounded">UNILAG</div>
-            <div className="h-8 md:h-12 w-32 bg-gray-300 flex items-center justify-center font-bold text-xs rounded">ALIMOSHO LG</div>
-            <div className="h-8 md:h-12 w-32 bg-gray-300 flex items-center justify-center font-bold text-xs rounded">OBAS SEAL</div>
-          </div>
-        </div>
+        {/* Side Fades */}
+        <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white to-transparent z-10" />
+
+        {/* Seamless Blend Layer */}
+        <div className="cinematic-bottom-blur-primary h-24" />
       </section>
 
       {/* The Experience Section */}
@@ -114,30 +95,27 @@ export default function Home() {
                 This Isn't Like <br /> <span className="text-white/30 outline-text">Other Events</span>
               </h2>
               <p className="text-white/60 text-xl md:text-2xl font-light leading-relaxed">
-                We're dismantling the traditional conference model. No boring panels. No fluff. Just raw energy and unfiltered creativity.
+                CON/FORM is a system-building experience. It begins with honest conversation and culminates in live expression and performance.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {[
               {
-                icon: <Users size={28} />,
-                title: "Community Rooted",
-                desc: "Born in Egbeda. Blessed by tradition. Built by creators who understand the soul of the city.",
-                index: "01"
+                index: "01",
+                title: "Cross-Sector",
+                desc: "Creatives, brands, and institutions — in one shared space. Each with something to learn. Each with something to offer.",
               },
               {
-                icon: <Star size={28} />,
-                title: "Career Transforming",
-                desc: "Direct access to the gatekeepers. Network with industry leaders and get your work discovered.",
-                index: "02"
+                index: "02",
+                title: "System-Building",
+                desc: "Not a conference. Not a festival. A designed experience that moves from honest conversation to collective expression.",
               },
               {
-                icon: <Zap size={28} />,
-                title: "Energy Refined",
-                desc: "From the hallowed halls of UNILAG to the vibrant streets of Egbeda. Witness 70+ artists.",
-                index: "03"
+                index: "03",
+                title: "Earned Expression",
+                desc: "Day 2 is not random. It is the cultural release of Day 1's conversations — performance, art, and celebration as response.",
               }
             ].map((item, idx) => (
               <motion.div
@@ -148,23 +126,19 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="group relative"
               >
-                <div className="glass p-10 md:p-12 rounded-3xl h-full border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
-                  {/* Card Index Background */}
-                  <span className="absolute -top-4 -right-2 text-9xl font-heading text-white opacity-[0.03] group-hover:opacity-[0.05] transition-opacity pointer-events-none">
-                    {item.index}
-                  </span>
-
-                  {/* Icon Container */}
-                  <div className="mb-10 w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-500 ring-1 ring-white/10 shadow-2xl">
-                    <div className="text-white group-hover:text-primary transition-colors">
-                      {item.icon}
+                <div className="glass rounded-2xl md:rounded-3xl h-full border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden">
+                  {/* Mobile: horizontal compact layout / Desktop: vertical card */}
+                  <div className="flex md:flex-col items-start gap-4 p-6 md:p-12">
+                    <span className="text-4xl md:text-5xl font-heading text-white/10 group-hover:text-white/20 transition-colors shrink-0 leading-none">
+                      {item.index}
+                    </span>
+                    <div>
+                      <h3 className="font-heading text-xl md:text-3xl mb-2 md:mb-6 tracking-wide group-hover:translate-x-1 transition-transform">{item.title}</h3>
+                      <p className="text-white/50 text-sm md:text-lg leading-relaxed font-light group-hover:text-white/70 transition-colors">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
-
-                  <h3 className="font-heading text-3xl mb-6 tracking-wide group-hover:translate-x-1 transition-transform">{item.title}</h3>
-                  <p className="text-white/50 text-lg leading-relaxed font-light group-hover:text-white/70 transition-colors">
-                    {item.desc}
-                  </p>
                 </div>
               </motion.div>
             ))}
@@ -199,6 +173,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <img src="/6.png" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/90" />
+          <div className="cinematic-bottom-blur-primary" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">

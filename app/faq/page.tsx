@@ -8,27 +8,35 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
     {
         question: "What is CON/FORM?",
-        answer: "CON/FORM is a two-day creative summit featuring a conference (Day 1) and performance showcase (Day 2) with 70+ artists across film, music, fashion, and visual art. It's organized by Loom Rooms in Egbeda, Alimosho."
+        answer: "CON/FORM is a two-day cultural platform designed to bring creatives, artisans, entrepreneurs, institutions, and brands into one shared space — to confront how culture is created, funded, governed, and sustained in Nigeria and Africa. It is a system-building experience, beginning with honest conversation and culminating in live expression and performance. It is not positioned as a traditional conference or festival."
+    },
+    {
+        question: "Who is this event for?",
+        answer: "CON/FORM is for two groups: Architects — pioneers, industry leaders, and institutional figures who designed or shaped cultural and economic systems — and Executors — emerging creatives, artisans, founders, entrepreneurs, and youth currently operating within those systems. Both are equally essential. CON/FORM places them in conversation, not competition."
+    },
+    {
+        question: "What is the Architects & Executors framework?",
+        answer: "The Architects & Executors framework is CON/FORM's core philosophy. It removes hierarchy while honoring experience. Architects are the people who built the systems; Executors are the people living and working inside them. Day 1 brings both groups into honest dialogue — not for celebration, but for accountability, reflection, and collaborative design."
     },
     {
         question: "When and where is it happening?",
-        answer: "March 20-21, 2026. Day 1 (Conference) at UNILAG Afe Babalola Hall. Day 2 (Performance) in Egbeda, Alimosho."
+        answer: "March 20–21, 2026. Day 1 (CON — Conference) takes place at UNILAG, Afe Babalola Hall, from 11:00 AM – 6:00 PM. Day 2 (FORM — Expression) takes place in Egbeda, Alimosho — the home of Loom Rooms."
     },
     {
         question: "Do I need a ticket for both days?",
-        answer: "No! You can buy a Day 1 ticket (₦3,000), Day 2 ticket (₦4,000), or save money with the package for both days (₦6,000)."
+        answer: "No! You can buy a Day 1 ticket (₦3,000), Day 2 ticket (₦4,000), or save with the full package for both days (₦6,000)."
     },
     {
         question: "How do I get from Day 1 (UNILAG) to Day 2 (Egbeda)?",
         answer: "Package ticket holders get free shuttle transport from UNILAG to Egbeda on Day 2. Pickup details will be sent via email/SMS."
     },
     {
-        question: "Can I attend Day 2 only?",
-        answer: "Yes! Day 2 tickets are available for ₦4,000."
-    },
-    {
         question: "What's included in my ticket?",
         answer: "Full access to all sessions, performances, workshops, and networking on your ticketed day(s). Package holders also get free transport, exclusive merch, and priority seating."
+    },
+    {
+        question: "How can my brand or institution get involved?",
+        answer: "CON/FORM actively partners with brands and institutions that are willing to engage with the creative community authentically — not as spectators, but as participants. Sponsors appear as environments, not ads. To discuss partnerships or sponsorships, call 09035998080 or email hello@conform.com.ng."
     },
     {
         question: "Is food provided?",
@@ -36,7 +44,7 @@ const faqs = [
     },
     {
         question: "Can I get a refund?",
-        answer: "Tickets are non-refundable but transferable. Contact us at hello@conform.ng to transfer your ticket."
+        answer: "Tickets are non-refundable but transferable. Contact us at hello@conform.com.ng to transfer your ticket."
     },
 ];
 
@@ -48,9 +56,13 @@ export default function FAQ() {
             <Navbar />
 
             {/* Header */}
-            <section className="bg-black text-white py-20 px-4 text-center">
-                <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">Frequently Asked Questions</h1>
-                <p className="text-xl max-w-2xl mx-auto text-gray-400">Everything you need to know about CON/FORM 1.0.</p>
+            <section className="relative bg-black text-white py-24 px-4 text-center overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-15 mix-blend-overlay z-0"></div>
+                <div className="cinematic-bottom-blur" />
+                <div className="relative z-10">
+                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">Frequently Asked Questions</h1>
+                    <p className="text-xl max-w-2xl mx-auto text-gray-300">Everything you need to know about CON/FORM 1.0.</p>
+                </div>
             </section>
 
             {/* Accordion */}
@@ -71,7 +83,7 @@ export default function FAQ() {
                             </button>
 
                             <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? "max-h-48 opacity-100 p-6 pt-0" : "max-h-0 opacity-0"
+                                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? "max-h-80 opacity-100 p-6 pt-0" : "max-h-0 opacity-0"
                                     }`}
                             >
                                 <p className="text-gray-600 leading-relaxed">{faq.answer}</p>

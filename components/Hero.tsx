@@ -79,6 +79,9 @@ export default function Hero() {
                 </motion.div>
             </div>
 
+            {/* Blur Overlay */}
+            <div className="cinematic-bottom-blur" />
+
             {/* Scroll Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}

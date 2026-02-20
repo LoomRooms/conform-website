@@ -8,9 +8,13 @@ export default function Tickets() {
             <Navbar />
 
             {/* Header */}
-            <section className="bg-primary text-white py-20 px-4 text-center">
-                <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">Secure Your Spot</h1>
-                <p className="text-xl max-w-2xl mx-auto opacity-90">Limited capacity. 500 Attendees only.</p>
+            <section className="relative bg-primary text-white py-24 px-4 text-center overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-0"></div>
+                <div className="cinematic-bottom-blur" />
+                <div className="relative z-10">
+                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6">Secure Your Spot</h1>
+                    <p className="text-xl max-w-2xl mx-auto opacity-90">Limited capacity. 500 Attendees only.</p>
+                </div>
             </section>
 
             {/* Pricing Cards */}

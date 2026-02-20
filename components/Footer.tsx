@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Twitter, Facebook, Mail, Phone } from "lucide-react";
+import { Instagram, Twitter, Facebook, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -33,8 +33,8 @@ export default function Footer() {
                             />
                         </Link>
                         <p className="text-white/60 text-sm leading-relaxed max-w-xs pl-1">
-                            Deconstruct. Rebuild. Create. <br />
-                            Lagos' first transformative creative summit.
+                            A cultural system for conversation, creation &amp; continuity. <br />
+                            A system-building experience in Lagos.
                         </p>
                     </div>
 
@@ -44,18 +44,33 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm font-medium">
                             <li><Link href="/about" className="text-white/70 hover:text-white transition-colors">About CON/FORM</Link></li>
                             <li><Link href="/experience" className="text-white/70 hover:text-white transition-colors">The Experience</Link></li>
-                            <li><Link href="/artists" className="text-white/70 hover:text-white transition-colors">Artists & Lineup</Link></li>
                             <li><Link href="/tickets" className="text-white/70 hover:text-white transition-colors">Get Tickets</Link></li>
+                            <li><Link href="/faq" className="text-white/70 hover:text-white transition-colors">FAQ</Link></li>
                         </ul>
                     </div>
 
-                    {/* Column 3: Support & Social */}
+                    {/* Column 3: Support & Contact */}
                     <div>
-                        <h3 className="font-heading font-normal text-xl mb-6 tracking-widest text-white">Support & FAQ</h3>
-                        <ul className="space-y-4 text-sm font-medium mb-8">
-                            <li><Link href="/faq" className="text-white/70 hover:text-white transition-colors">FAQ</Link></li>
-                            <li><Link href="/contact" className="text-white/70 hover:text-white transition-colors">Contact Us</Link></li>
+                        <h3 className="font-heading font-normal text-xl mb-6 tracking-widest text-white">Contact</h3>
+                        <ul className="space-y-4 text-sm text-white/70 mb-8">
+                            <li className="flex items-center space-x-3">
+                                <Mail size={18} className="shrink-0 text-white/50" />
+                                <a href="mailto:hello@conform.com.ng" className="hover:text-white transition-colors">hello@conform.com.ng</a>
+                            </li>
+                            <li className="flex items-center space-x-3">
+                                <Phone size={18} className="shrink-0 text-white/50" />
+                                <a href="tel:09035998080" className="hover:text-white transition-colors">09035998080</a>
+                            </li>
+                            <li className="flex items-start space-x-3 leading-relaxed">
+                                <MapPin size={18} className="shrink-0 mt-1 text-white/50" />
+                                <span>Loom Rooms Creative Hub, <br />Egbeda, Alimosho, Lagos</span>
+                            </li>
                         </ul>
+                    </div>
+
+                    {/* Column 4: Follow Us */}
+                    <div>
+                        <h3 className="font-heading font-normal text-xl mb-6 tracking-widest text-white">Follow Us</h3>
                         <div className="flex space-x-4">
                             <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-[#05087c] transition-all">
                                 <Instagram size={20} />
@@ -67,20 +82,6 @@ export default function Footer() {
                                 <Facebook size={20} />
                             </a>
                         </div>
-                    </div>
-
-                    {/* Column 4: Contact */}
-                    <div>
-                        <h3 className="font-heading font-normal text-xl mb-6 tracking-widest text-white">Contact</h3>
-                        <ul className="space-y-4 text-sm text-white/70">
-                            <li className="flex items-center space-x-3">
-                                <Mail size={18} />
-                                <span>hello@conform.ng</span>
-                            </li>
-                            <li className="flex items-start space-x-3 leading-relaxed">
-                                <span className="mt-1">Loom Rooms Creative Hub, <br />Egbeda, Alimosho, Lagos</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
