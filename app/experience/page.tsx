@@ -25,7 +25,7 @@ export default function Experience() {
                     <div className="flex flex-col md:flex-row gap-12">
                         <div className="md:w-1/3 sticky top-[72px] md:top-32 h-fit relative z-30 md:z-10 -mx-4 px-4 md:mx-0 md:px-0 py-4 md:py-0">
                             {/* Refined Localized Blur for Mobile - Left Side only - Extended up to eliminate peek-through */}
-                            <div className="md:hidden absolute top-[-72px] bottom-0 left-0 w-[85%] bg-white/80 backdrop-blur-md z-0"
+                            <div className="md:hidden absolute top-[-72px] bottom-0 left-0 w-[85%] bg-white/80 backdrop-blur-sm z-0"
                                 style={{
                                     maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)',
                                     WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)',
@@ -95,7 +95,7 @@ export default function Experience() {
                     <div className="flex flex-col md:flex-row-reverse gap-12">
                         <div className="md:w-1/3 sticky top-[72px] md:top-32 h-fit text-right relative z-30 md:z-10 -mx-4 px-4 md:mx-0 md:px-0 py-4 md:py-0">
                             {/* Refined Localized Blur for Mobile - Right Side only - Extended up to eliminate peek-through */}
-                            <div className="md:hidden absolute top-[-72px] bottom-0 right-0 w-[85%] bg-[#F9FAFB]/80 backdrop-blur-md z-0"
+                            <div className="md:hidden absolute top-[-72px] bottom-0 right-0 w-[85%] bg-[#F9FAFB]/80 backdrop-blur-sm z-0"
                                 style={{
                                     maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to left, black 70%, transparent 100%)',
                                     WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to left, black 70%, transparent 100%)',
