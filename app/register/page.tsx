@@ -26,13 +26,6 @@ export default function RegisterPage() {
             {/* Form Section */}
             <section className="py-12 px-4">
                 <div className="max-w-4xl mx-auto">
-                    <div className="mb-8 text-center">
-                        <p className="text-lg text-gray-600">
-                            Complete this application to showcase your art at Lagos&apos; first system-building experience.
-                        </p>
-                    </div>
-
-                    {/* Form */}
                     <div className="bg-white rounded-lg shadow-xl p-8">
                         <RegisterForm />
                     </div>

@@ -231,17 +231,29 @@ export default function RegisterForm() {
 
     return (
         <div className="w-full">
+            {!submitSuccess && (
+                <div className="mb-8 text-center">
+                    <p className="text-lg text-gray-600">
+                        Complete this application to showcase your art at Lagos&apos; first system-building experience.
+                    </p>
+                </div>
+            )}
+
             {/* Progress Bar */}
             <div className="mb-8">
                 <div className="flex justify-between items-center mb-2">
-                    <span className="font-heading text-lg">Step {currentStep} of {totalSteps}</span>
-                    <span className="text-sm text-gray-500">{Math.round((currentStep / totalSteps) * 100)}%</span>
+                    <span className="font-heading text-lg">
+                        {submitSuccess ? 'Application Complete' : `Step ${currentStep} of ${totalSteps}`}
+                    </span>
+                    <span className="text-sm text-gray-500">
+                        {submitSuccess ? '100%' : `${Math.round((currentStep / totalSteps) * 100)}%`}
+                    </span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3">
                     <motion.div
                         className="bg-primary h-3 rounded-full"
                         initial={{ width: 0 }}
-                        animate={{ width: `${(currentStep / totalSteps) * 100}%` }}
+                        animate={{ width: submitSuccess ? '100%' : `${(currentStep / totalSteps) * 100}%` }}
                         transition={{ duration: 0.3 }}
                     />
                 </div>
