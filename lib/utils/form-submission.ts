@@ -1,4 +1,7 @@
+'use server';
+
 import { createClient } from '@/lib/supabase/client';
+import { createAdminClient } from '@/lib/supabase/admin';
 import type { ArtistApplicationInsert } from '@/lib/types/database.types';
 import { getCurrentUser } from '@/lib/auth/auth-helpers';
 
@@ -16,7 +19,7 @@ export async function uploadPortfolioFiles(
     userId: string
 ): Promise<{ success: boolean; urls?: string[]; error?: string }> {
     try {
-        const supabase = createClient();
+        const supabase = createAdminClient();
         const uploadedUrls: string[] = [];
 
         for (const file of files) {
@@ -61,7 +64,7 @@ export async function submitArtistApplication(
         // Get current user optionally
         const user = await getCurrentUser().catch(() => null);
 
-        const supabase = createClient();
+        const supabase = createAdminClient();
         let portfolioFileUrls: string[] = [];
 
         // Upload portfolio files if any
