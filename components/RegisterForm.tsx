@@ -202,6 +202,7 @@ export default function RegisterForm() {
                 setFormData({} as FormData);
                 setPortfolioFiles([]);
                 setCurrentStep(1);
+                localStorage.removeItem('conformRegistration'); // Added to clean up on success
             } else {
                 setSubmitError(result.error || 'Failed to submit application. Please try again.');
             }

@@ -179,8 +179,7 @@ export async function submitArtistApplication(
             return { success: false, error: `Failed to submit application: ${error.message}` };
         }
 
-        // Clear localStorage on successful submission
-        localStorage.removeItem('conformRegistration');
+        // localStorage.removeItem('conformRegistration'); // Removed: must be done on the client
 
         return { success: true, applicationId: data.id };
     } catch (error: any) {
