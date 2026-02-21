@@ -58,18 +58,16 @@ export async function submitArtistApplication(
     portfolioFiles?: File[]
 ): Promise<FormSubmissionResult> {
     try {
-        // Get current user
-        const user = await getCurrentUser();
-        if (!user) {
-            return { success: false, error: 'You must be logged in to submit an application' };
-        }
+        // Get current user optionally
+        const user = await getCurrentUser().catch(() => null);
 
         const supabase = createClient();
         let portfolioFileUrls: string[] = [];
 
         // Upload portfolio files if any
         if (portfolioFiles && portfolioFiles.length > 0) {
-            const uploadResult = await uploadPortfolioFiles(portfolioFiles, user.id);
+            const uploadUserId = user ? user.id : `anonymous-${Date.now()}`;
+            const uploadResult = await uploadPortfolioFiles(portfolioFiles, uploadUserId);
             if (!uploadResult.success) {
                 return { success: false, error: uploadResult.error };
             }
@@ -78,7 +76,7 @@ export async function submitArtistApplication(
 
         // Prepare application data
         const applicationData: ArtistApplicationInsert = {
-            user_id: user.id,
+            user_id: user ? user.id : null,
             // Step 1: Personal Information
             full_name: formData.fullName,
             artist_name: formData.artistName || formData.fullName,
