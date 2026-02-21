@@ -81,16 +81,16 @@ export async function submitArtistApplication(
         const applicationData: ArtistApplicationInsert = {
             user_id: user ? user.id : null,
             // Step 1: Personal Information
-            full_name: formData.fullName,
-            artist_name: formData.artistName || formData.fullName,
-            date_of_birth: formData.dateOfBirth,
-            primary_phone: formData.primaryPhone,
+            full_name: formData.fullName || '',
+            artist_name: formData.artistName || formData.fullName || '',
+            date_of_birth: formData.dateOfBirth || '',
+            primary_phone: formData.primaryPhone || '',
             secondary_phone: formData.secondaryPhone || null,
-            email: formData.email,
-            address: formData.address,
-            city: formData.city,
-            state: formData.state,
-            postal_code: formData.postalCode,
+            email: formData.email || '',
+            address: formData.address || '',
+            city: formData.city || '',
+            state: formData.state || '',
+            postal_code: formData.postalCode || '',
             // Social Media
             instagram: formData.instagram || null,
             twitter: formData.twitter || null,
@@ -98,7 +98,7 @@ export async function submitArtistApplication(
             youtube: formData.youtube || null,
             website: formData.website || null,
             // Step 2: Artist Profile
-            primary_category: formData.primaryCategory,
+            primary_category: formData.primaryCategory || 'Unspecified',
             disciplines: formData.discipline || [],
             years_active: parseInt(formData.yearsExperience || '0', 10),
             // Step 3: About Your Work
@@ -109,8 +109,8 @@ export async function submitArtistApplication(
             // Step 4: Your Presentation
             presentation_format: formData.presentationType || 'Other',
             presentation_duration: formData.presentationDuration || null,
-            proposed_piece_title: formData.presentationTitle,
-            proposed_piece_description: formData.presentationDescription,
+            proposed_piece_title: formData.presentationTitle || 'Untitled',
+            proposed_piece_description: formData.presentationDescription || '',
             portfolio_urls: formData.portfolioUrls || null,
             portfolio_files: portfolioFileUrls.length > 0 ? portfolioFileUrls : null,
             // Step 5: Technical Requirements
@@ -132,7 +132,7 @@ export async function submitArtistApplication(
             promotional_consent: formData.promotionalConsent || [],
             tag_handles: formData.tagHandles || null,
             agreements: formData.agreements || [],
-            signature: formData.signature,
+            signature: formData.signature || '',
             signature_date: new Date().toISOString().split('T')[0],
         };
 
