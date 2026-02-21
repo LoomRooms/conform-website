@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { submitArtistApplication, countWords, validateWordCount } from '@/lib/utils/form-submission';
+import { submitArtistApplication } from '@/lib/utils/form-submission';
+import { countWords, validateWordCount } from '@/lib/utils/text-helpers';
 
 type FormData = {
     // Step 1: Personal Information
