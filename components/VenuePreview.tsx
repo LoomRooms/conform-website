@@ -35,27 +35,27 @@ const venues = [
 
 export default function VenuePreview() {
   return (
-    <section className="relative bg-[#fcfcfc] py-28 md:py-44 overflow-hidden">
+    <section className="relative bg-[#fcfcfc] py-20 md:py-44 overflow-hidden">
       <div className="absolute inset-0 bg-african-pattern opacity-[0.02] mix-blend-multiply pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 -translate-x-1/2" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16 md:mb-24"
+          className="mb-12 md:mb-24"
         >
-          <span className="text-gray-300 font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-6 block flex items-center gap-3">
-            <span className="w-8 h-px bg-gray-300 block"></span>
+          <span className="text-gray-300 font-bold tracking-[0.6em] uppercase text-[9px] md:text-xs mb-4 md:mb-6 block flex items-center gap-3">
+            <span className="w-6 md:w-8 h-px bg-gray-300 block"></span>
             The Venues
           </span>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <h2 className="font-heading font-normal text-6xl md:text-8xl text-black leading-[0.85] tracking-tighter">
+            <h2 className="font-heading font-normal text-5xl md:text-8xl text-black leading-[0.85] tracking-tighter">
               Know Where{" "}
-              <span className="text-transparent outline-text italic font-serif text-[3.5rem] md:text-[6.5rem] ml-1">
+              <span className="text-transparent outline-text italic font-serif text-[2.8rem] md:text-[6.5rem] ml-0 md:ml-1 block md:inline mt-1 md:mt-0">
                 to Be
               </span>
             </h2>
@@ -74,81 +74,83 @@ export default function VenuePreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border border-gray-100/60 bg-white hover:border-primary/20 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(5,8,124,0.08)] transition-all duration-700 hover:-translate-y-2"
+              className="group relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-gray-100/60 bg-white hover:border-primary/20 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(5,8,124,0.08)] transition-all duration-700 hover:-translate-y-2 flex flex-col"
             >
               {/* Image */}
-              <div className="relative h-72 md:h-[22rem] overflow-hidden">
+              <div className="relative h-60 md:h-[22rem] overflow-hidden shrink-0">
                 <img
                   src={v.image}
                   alt={v.name}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100 origin-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/80" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/80 md:from-black/10" />
 
                 {/* Day badge */}
-                <div className="absolute top-6 left-6 md:top-8 md:left-8 flex gap-3">
-                  <span className="bg-black/30 backdrop-blur-xl ring-1 ring-white/20 text-white/90 text-[10px] font-bold uppercase tracking-[0.25em] px-4 py-2 rounded-full shadow-lg">
+                <div className="absolute top-5 left-5 md:top-8 md:left-8 flex flex-wrap gap-2 md:gap-3">
+                  <span className="bg-black/30 backdrop-blur-xl ring-1 ring-white/20 text-white/90 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.25em] px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-lg">
                     {v.day}
                   </span>
-                  <span className="bg-primary/90 backdrop-blur-xl ring-1 ring-primary/50 text-white text-[10px] font-bold uppercase tracking-[0.25em] px-4 py-2 rounded-full shadow-[0_4px_15px_rgba(0,102,255,0.4)]">
+                  <span className="bg-primary/90 backdrop-blur-xl ring-1 ring-primary/50 text-white text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.25em] px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-[0_4px_15px_rgba(0,102,255,0.4)]">
                     {v.tag}
                   </span>
                 </div>
 
                 {/* Venue name overlay */}
-                <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
-                  <p className="font-heading text-4xl md:text-5xl text-white tracking-tighter leading-none drop-shadow-xl">{v.name}</p>
+                <div className="absolute bottom-5 left-5 md:bottom-8 md:left-8 mr-5 md:mr-0">
+                  <p className="font-heading text-3xl md:text-5xl text-white tracking-tighter leading-none drop-shadow-xl">{v.name}</p>
                 </div>
                 
-                {/* Expand indicator overlay */}
-                <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ring-1 ring-white/20">
+                {/* Expand indicator overlay - Hide on mobile since hover behavior isn't intuitive */}
+                <div className="hidden md:flex absolute bottom-8 right-8 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md items-center justify-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ring-1 ring-white/20">
                     <ArrowRight size={18} className="text-white -rotate-45" />
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8 md:p-10 bg-white">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+              <div className="p-6 md:p-10 bg-white flex-1 flex flex-col">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4 mb-5 md:mb-6">
                   <div>
-                    <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-bold mb-1.5">{v.date}</p>
-                    <p className="text-gray-800 text-sm md:text-base font-medium">{v.sub}</p>
+                    <p className="text-primary text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold mb-1 md:mb-1.5">{v.date}</p>
+                    <p className="text-gray-800 text-sm md:text-base font-medium leading-tight">{v.sub}</p>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-500 text-xs shrink-0 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">
+                  <div className="flex items-center gap-2 text-gray-500 text-xs shrink-0 self-start md:self-auto bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">
                     <Clock size={12} className="text-primary" />
                     <span className="font-medium tracking-wide">{v.time}</span>
                   </div>
                 </div>
 
-                <p className="text-gray-500 text-sm md:text-base font-light leading-relaxed mb-6 md:mb-8 border-t border-gray-100 pt-6">
+                <p className="text-gray-500 text-sm md:text-base font-light leading-relaxed mb-6 md:mb-8 border-t border-gray-100 pt-5 md:pt-6">
                   {v.desc}
                 </p>
 
-                {/* Map Embed */}
-                <div className="w-full h-40 md:h-48 rounded-[1.5rem] overflow-hidden mb-6 md:mb-8 ring-1 ring-gray-100 bg-gray-50 relative group/map">
-                  {/* Subtle map overlay that vanishes on hover */}
-                  <div className="absolute inset-0 bg-black/5 pointer-events-none group-hover/map:opacity-0 transition-opacity duration-500 mix-blend-multiply z-10" />
-                  <iframe
-                    src={v.mapEmbed}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full grayscale-[0.8] contrast-125 opacity-70 group-hover/map:grayscale-0 group-hover/map:opacity-100 transition-all duration-700"
-                  />
-                </div>
+                <div className="mt-auto">
+                    {/* Map Embed */}
+                    <div className="w-full h-36 md:h-48 rounded-[1rem] md:rounded-[1.5rem] overflow-hidden mb-5 md:mb-8 ring-1 ring-gray-100 bg-gray-50 relative group/map">
+                      {/* Subtle map overlay that vanishes on hover */}
+                      <div className="absolute inset-0 bg-black/5 pointer-events-none group-hover/map:opacity-0 transition-opacity duration-500 mix-blend-multiply z-10 hidden md:block" />
+                      <iframe
+                        src={v.mapEmbed}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full h-full md:grayscale-[0.8] md:contrast-125 md:opacity-70 group-hover/map:grayscale-0 group-hover/map:opacity-100 transition-all duration-700"
+                      />
+                    </div>
 
-                <a
-                  href={v.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/btn inline-flex items-center gap-3 text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-black transition-colors duration-300 bg-gray-50 hover:bg-gray-100 px-6 py-3 rounded-full border border-gray-100 hover:border-gray-200 w-full justify-center md:w-auto md:justify-start"
-                >
-                  <MapPin size={14} className="text-primary group-hover/btn:text-black transition-colors" />
-                  Get Directions
-                  <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-300 text-gray-300 group-hover/btn:text-black" />
-                </a>
+                    <a
+                      href={v.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn inline-flex items-center gap-2 md:gap-3 text-[11px] md:text-sm font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-black transition-colors duration-300 bg-gray-50 hover:bg-gray-100 px-6 py-3.5 md:py-3 rounded-full border border-gray-100 hover:border-gray-200 w-full justify-center md:w-auto md:justify-start"
+                    >
+                      <MapPin size={14} className="text-primary group-hover/btn:text-black transition-colors" />
+                      Get Directions
+                      <ArrowRight size={14} className="md:group-hover/btn:translate-x-1 transition-transform duration-300 text-gray-300 group-hover/btn:text-black" />
+                    </a>
+                </div>
               </div>
             </motion.div>
           ))}
