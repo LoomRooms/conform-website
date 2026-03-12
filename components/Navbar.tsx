@@ -48,6 +48,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "About", href: "/about" },
+        { name: "Speakers", href: "/speakers" },
         { name: "Experience", href: "/experience" },
         { name: "Artists", href: "/artists" },
         { name: "Apply", href: "/register" },
@@ -55,7 +56,7 @@ export default function Navbar() {
         { name: "Contact", href: "/contact" },
     ];
 
-    const darkHeaderPaths = ["/", "/tickets", "/faq", "/sponsors", "/experience", "/artists", "/about", "/contact", "/register"];
+    const darkHeaderPaths = ["/", "/tickets", "/faq", "/sponsors", "/experience", "/artists", "/about", "/contact", "/register", "/speakers", "/press"];
     const isDarkHeader = darkHeaderPaths.includes(pathname) && !isScrolled;
 
     return (

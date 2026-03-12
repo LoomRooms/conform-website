@@ -4,6 +4,10 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import VisionSection from "@/components/VisionSection";
+import NewsletterSection from "@/components/NewsletterSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import SpeakersShowcase from "@/components/SpeakersShowcase";
+import VenuePreview from "@/components/VenuePreview";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -32,15 +36,18 @@ export default function Home() {
         {/* Background Texture Overlay */}
         <div className="absolute inset-0 bg-african-pattern opacity-[0.03] mix-blend-multiply pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 mb-20 relative z-10">
-          <motion.p
+        <div className="max-w-7xl mx-auto px-4 mb-14 relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center text-gray-400 text-xs md:text-sm uppercase tracking-[0.4em] font-bold"
+            className="text-center"
           >
-            Validated by Culture <span className="mx-2 text-primary/30">•</span> Powered by Community
-          </motion.p>
+            <p className="text-gray-300 text-[10px] md:text-xs uppercase tracking-[0.5em] font-bold mb-3">
+              Partners &amp; Sponsors
+            </p>
+            <p className="text-gray-400 text-xs font-light tracking-[0.2em]">Validated by Culture <span className="mx-2 text-primary/30">•</span> Powered by Community</p>
+          </motion.div>
         </div>
 
         {/* Infinite Marquee */}
@@ -92,7 +99,11 @@ export default function Home() {
         <div className="absolute inset-y-0 right-0 w-48 md:w-80 bg-gradient-to-l from-gray-50 to-transparent z-10" />
       </section>
 
+      {/* Speakers Showcase */}
+      <SpeakersShowcase />
+
       {/* The Experience Section */}
+
       <section ref={containerRef} className="py-32 md:py-56 bg-[#05087c] relative overflow-hidden text-white">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-african-pattern opacity-[0.05] mix-blend-overlay pointer-events-none" />
@@ -189,6 +200,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Venue Preview */}
+      <VenuePreview />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
+
       {/* CTA Section */}
       <section className="py-48 md:py-64 relative overflow-hidden bg-black px-6">
         <div className="absolute inset-0 opacity-40 pointer-events-none">
@@ -211,14 +228,29 @@ export default function Home() {
             <p className="text-2xl md:text-4xl mb-20 font-light opacity-70 max-w-3xl mx-auto leading-relaxed">
               March 20-21, 2026. Two days designed to change how you see, build, and express creativity.
             </p>
-            <Link
-              href="/tickets"
-              className="group relative overflow-hidden bg-white text-primary px-16 py-8 text-2xl md:text-3xl font-heading uppercase tracking-[0.3em] transition-all inline-block shadow-[0_0_60px_rgba(255,255,255,0.1)] hover:scale-105"
-            >
-              <span className="relative z-10">Get Your Tickets</span>
-              <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0" />
-              <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">Get Your Tickets</span>
-            </Link>
+            {/* 3 CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+              <Link
+                href="/tickets"
+                className="group relative overflow-hidden bg-white text-primary px-12 py-6 text-lg md:text-2xl font-heading uppercase tracking-[0.3em] transition-all inline-block shadow-[0_0_60px_rgba(255,255,255,0.1)] hover:scale-105"
+              >
+                <span className="relative z-10">Get Tickets</span>
+                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0" />
+                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-lg md:text-2xl font-heading uppercase tracking-[0.3em]">Get Tickets</span>
+              </Link>
+              <Link
+                href="/register"
+                className="border border-white/30 text-white px-12 py-6 text-lg md:text-2xl font-heading uppercase tracking-[0.3em] transition-all inline-block hover:border-white hover:scale-105 backdrop-blur-sm"
+              >
+                Apply as Artist
+              </Link>
+              <Link
+                href="/sponsors"
+                className="border border-white/15 text-white/60 px-12 py-6 text-lg md:text-2xl font-heading uppercase tracking-[0.3em] transition-all inline-block hover:border-white/40 hover:text-white hover:scale-105 backdrop-blur-sm"
+              >
+                Partner With Us
+              </Link>
+            </div>
             <p className="mt-14 text-xs md:text-sm opacity-40 uppercase tracking-[0.4em] font-medium">Limited capacity. Tickets moving fast.</p>
           </motion.div>
         </div>
@@ -226,6 +258,9 @@ export default function Home() {
         {/* Cinematic Blur Bottom */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
       </section>
+
+      {/* Newsletter */}
+      <NewsletterSection />
 
       <Footer />
     </main>

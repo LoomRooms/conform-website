@@ -209,6 +209,86 @@ export default function Experience() {
                 </div>
             </section>
 
+            {/* Venue Section */}
+            <section className="py-20 px-4 bg-white border-t border-gray-100">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <span className="text-primary font-bold tracking-widest uppercase block mb-2 text-xs">The Venues</span>
+                        <h2 className="font-heading font-bold text-4xl md:text-6xl text-black mb-4">Know Where to Be</h2>
+                        <p className="text-gray-400 max-w-xl mx-auto text-sm font-light">Two distinct spaces. Two distinct energies. Plan your movement.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        {/* Day 1 Venue */}
+                        <div className="border border-gray-100 rounded-[2.5rem] overflow-hidden hover:shadow-[0_20px_50px_rgba(5,8,124,0.07)] transition-all duration-500 group">
+                            <div className="aspect-[16/9] overflow-hidden bg-gray-100">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.3893793747554254!3d6.451745793536814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sUniversity%20of%20Lagos!5e0!3m2!1sen!2sng!4v1710000000000!5m2!1sen!2sng"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                            </div>
+                            <div className="p-8 md:p-10">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full">Day 1 — CON</span>
+                                    <span className="text-gray-300 text-[10px] uppercase tracking-wider">March 20, 2026</span>
+                                </div>
+                                <h3 className="font-heading text-2xl md:text-3xl text-black mb-2">UNILAG — Afe Babalola Hall</h3>
+                                <p className="text-gray-400 text-sm mb-6">University of Lagos, Akoka, Yaba, Lagos</p>
+                                <div className="space-y-2 text-sm text-gray-500">
+                                    <p>🕐 <span className="font-medium text-gray-700">11:00 AM – 6:00 PM</span></p>
+                                    <p>🚌 <span>From Lagos Island: take Third Mainland Bridge toward Yaba</span></p>
+                                    <p>🚕 <span>Bolt/Uber recommended — drop-off at UNILAG main gate</span></p>
+                                    <p>🅿️ <span>Parking available within campus</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Day 2 Venue */}
+                        <div className="border border-gray-100 rounded-[2.5rem] overflow-hidden hover:shadow-[0_20px_50px_rgba(5,8,124,0.07)] transition-all duration-500 group">
+                            <div className="aspect-[16/9] overflow-hidden bg-gray-100">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.4573046819297!2d3.2694583747568455!3d6.531752193533893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d5a6bfb9a49%3A0x4a5e7b2f28820f1a!2sEgbeda%2C%20Lagos!5e0!3m2!1sen!2sng!4v1710000000000!5m2!1sen!2sng"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                            </div>
+                            <div className="p-8 md:p-10">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="bg-black/5 text-gray-700 text-[10px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full">Day 2 — FORM</span>
+                                    <span className="text-gray-300 text-[10px] uppercase tracking-wider">March 21, 2026</span>
+                                </div>
+                                <h3 className="font-heading text-2xl md:text-3xl text-black mb-2">Loom Rooms Home Base</h3>
+                                <p className="text-gray-400 text-sm mb-6">Egbeda, Lagos — Loom Rooms Creative Hub</p>
+                                <div className="space-y-2 text-sm text-gray-500">
+                                    <p>🕐 <span className="font-medium text-gray-700">From 4:00 PM — Late Night</span></p>
+                                    <p>🚌 <span>Accessible via Lasu-Isheri / Idimu Road</span></p>
+                                    <p>🚕 <span>Exact address shared with ticket holders closer to the date</span></p>
+                                    <p>📍 <span>Details will be sent via email after registration</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Accommodation note */}
+                    <div className="mt-12 bg-gray-50 border border-gray-100 rounded-[2rem] p-8 text-center">
+                        <p className="text-gray-500 text-sm font-light leading-relaxed max-w-2xl mx-auto">
+                            <span className="text-black font-medium">Travelling from outside Lagos?</span> We recommend staying in the <span className="text-primary">Yaba / Maryland area</span> for Day 1 proximity, and <span className="text-primary">Ikeja</span> for Day 2. Hotels, Airbnbs and hostels are available in both areas.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             <section className="py-20 px-4 bg-primary text-white text-center">
                 <h2 className="font-heading font-bold text-3xl md:text-5xl mb-6">Ready for the Experience?</h2>
                 <Link

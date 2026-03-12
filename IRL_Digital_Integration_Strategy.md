@@ -36,6 +36,13 @@ Transform the CON/FORM website from a promotional tool into a **central interact
 *   **The Idea**: Certain high-end gallery pages on the site are "locked".
 *   **The Interaction**: They only unlock if the user's browser location is within the venue or if they scan a "Master Key" QR code at the entrance.
 
+### 7. CON/FORM Network ("The Bump")
+*   **The Idea**: A gamified networking hub where attendees create profiles (role, contact info) and can "bump" into others to meet IRL.
+*   **The Interaction**: Users browse a live directory (or heat map). To network, they initiate a "bump". A virtual coin flip decides who has to find whom. A mini-chat opens for location sharing.
+*   **The Rules**: To prevent spam, users can only reject 3 bumps per 30 minutes.
+*   **The Reward**: A live tracker on their profile shows how many people they've met, tied to a global leaderboard/ranking.
+*   **Traffic Driver**: Forces active participation via the website to facilitate real-life connections.
+
 ---
 
 ## 🛠 Project Research & Next Steps

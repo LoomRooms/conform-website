@@ -17,6 +17,90 @@ export default function About() {
                 </div>
             </section>
 
+            {/* WHY CON/FORM EXISTS — Manifesto Section */}
+            <section className="relative bg-black text-white py-32 md:py-48 px-6 overflow-hidden">
+                <div className="absolute inset-0 bg-african-pattern opacity-[0.04] mix-blend-overlay pointer-events-none" />
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] -z-0 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] -z-0 pointer-events-none" />
+
+                <div className="max-w-5xl mx-auto relative z-10">
+                    <span className="text-white/25 font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-12 block">
+                        The Origin
+                    </span>
+                    <h2 className="font-heading font-normal text-5xl md:text-[8rem] text-white mb-10 leading-[0.85] tracking-tighter">
+                        Why CON/FORM{" "}
+                        <span className="text-transparent outline-text-white italic font-serif text-[3.5rem] md:text-[6rem]">
+                            Exists
+                        </span>
+                    </h2>
+
+                    {/* The Big Statement */}
+                    <div className="border-l-2 border-primary pl-8 md:pl-12 mb-20 max-w-3xl">
+                        <p className="text-white/80 text-xl md:text-3xl font-light leading-relaxed italic">
+                            "Every system that ignored you is now watching what you build without it."
+                        </p>
+                    </div>
+
+                    {/* Narrative Paragraphs */}
+                    <div className="space-y-10 max-w-3xl mb-24">
+                        <p className="text-white/60 text-lg md:text-xl font-light leading-loose">
+                            Nigeria's creative generation is the most talented in history. They are making music that reaches the world, building fashion that redefines the continent's identity, telling stories on screens once shut to them, designing futures that weren't supposed to exist yet.
+                        </p>
+                        <p className="text-white/60 text-lg md:text-xl font-light leading-loose">
+                            But <span className="text-white font-normal">the systems were not built for them</span>. The institutions were slow. The brands were extractive. The infrastructure was missing. The conversations were closed.
+                        </p>
+                        <p className="text-white/60 text-lg md:text-xl font-light leading-loose">
+                            CON/FORM was born from one belief: that the most powerful thing you can do for a creative ecosystem is <span className="text-primary font-normal">put the right people in the same room and refuse to let them leave without a real conversation</span>.
+                        </p>
+                        <p className="text-white font-normal text-lg md:text-2xl leading-relaxed">
+                            Not a networking event. Not a conference. Not a festival.<br />
+                            <span className="text-white/40">A system-building experience.</span>
+                        </p>
+                    </div>
+
+                    {/* 4 Cultural Tensions */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        {[
+                            {
+                                num: "01",
+                                title: "Broken Systems",
+                                desc: "Creative infrastructure in Nigeria has always lagged behind creative talent. CON/FORM exists to name that gap and begin closing it — together.",
+                            },
+                            {
+                                num: "02",
+                                title: "Invisible Creatives",
+                                desc: "The most innovative people in the room are often the least heard. CON/FORM gives the room back to them.",
+                            },
+                            {
+                                num: "03",
+                                title: "Disconnected Institutions",
+                                desc: "Brands and institutions want cultural relevance but don't always know how to earn it. CON/FORM creates the honest space for that education.",
+                            },
+                            {
+                                num: "04",
+                                title: "Missing Infrastructure",
+                                desc: "Talent without structure eventually exhausts itself. CON/FORM is the first step in building the infrastructure that creative movements need to last.",
+                            },
+                        ].map((item) => (
+                            <div
+                                key={item.num}
+                                className="group border border-white/10 hover:border-white/25 rounded-[2rem] p-8 md:p-10 transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.03]"
+                            >
+                                <span className="text-5xl md:text-6xl font-heading text-white/10 group-hover:text-primary transition-all duration-500 block mb-4 leading-none">
+                                    {item.num}
+                                </span>
+                                <h3 className="font-heading text-xl md:text-2xl text-white mb-3 tracking-wide">
+                                    {item.title}
+                                </h3>
+                                <p className="text-white/40 text-sm md:text-base font-light leading-relaxed group-hover:text-white/60 transition-colors duration-500">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* The Problem */}
             <section className="py-20 px-4 max-w-4xl mx-auto">
                 <div className="prose prose-lg mx-auto text-gray-700 leading-relaxed">
