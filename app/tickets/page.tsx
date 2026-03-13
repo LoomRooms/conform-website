@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
+import KeyButton from "@/components/ui/KeyButton";
 
 export default function Tickets() {
     return (
@@ -23,7 +24,7 @@ export default function Tickets() {
 
                     {/* Day 1 Card */}
                     <div className="border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-shadow bg-white order-2 md:order-1">
-                        <h3 className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-2">Day 1 Only</h3>
+                        <h3 className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-2">Day 1 Only (March 20)</h3>
                         <div className="text-4xl font-heading font-bold mb-6">₦3,000</div>
                         <p className="text-gray-600 mb-8 border-b border-gray-100 pb-8">Perfect for those seeking knowledge and networking.</p>
 
@@ -34,9 +35,9 @@ export default function Tickets() {
                             <li className="flex items-start"><Check className="text-primary mr-3 shrink-0" size={20} /> <span>Lunch included</span></li>
                         </ul>
 
-                        <button className="w-full py-4 border-2 border-black font-bold uppercase hover:bg-black hover:text-white transition-colors">
+                        <KeyButton variant="outline" className="w-full py-4">
                             Buy Day 1
-                        </button>
+                        </KeyButton>
                     </div>
 
                     {/* Both Days Card (Highlighted) */}
@@ -57,14 +58,14 @@ export default function Tickets() {
                             <li className="flex items-start"><Check className="text-secondary bg-black rounded-full p-0.5 mr-3 shrink-0" size={20} /> <span>Priority seating</span></li>
                         </ul>
 
-                        <button className="w-full py-4 bg-primary text-white font-bold uppercase hover:bg-black transition-colors shadow-lg">
+                        <KeyButton variant="primary" className="w-full py-4">
                             Buy Full Package
-                        </button>
+                        </KeyButton>
                     </div>
 
                     {/* Day 2 Card */}
                     <div className="border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-shadow bg-white order-3">
-                        <h3 className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-2">Day 2 Only</h3>
+                        <h3 className="text-gray-500 font-bold uppercase tracking-widest text-sm mb-2">Day 2 Only (April 6)</h3>
                         <div className="text-4xl font-heading font-bold mb-6">₦4,000</div>
                         <p className="text-gray-600 mb-8 border-b border-gray-100 pb-8">For those who want to experience the energy.</p>
 
@@ -75,9 +76,9 @@ export default function Tickets() {
                             <li className="flex items-start"><Check className="text-primary mr-3 shrink-0" size={20} /> <span>After-party access</span></li>
                         </ul>
 
-                        <button className="w-full py-4 border-2 border-black font-bold uppercase hover:bg-black hover:text-white transition-colors">
+                        <KeyButton variant="outline" className="w-full py-4">
                             Buy Day 2
-                        </button>
+                        </KeyButton>
                     </div>
 
                 </div>

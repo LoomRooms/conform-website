@@ -1,6 +1,10 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import KeyButton from "@/components/ui/KeyButton";
 
 export default function About() {
     return (
@@ -27,16 +31,20 @@ export default function About() {
                     <span className="text-white/25 font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-12 block">
                         The Origin
                     </span>
-                    <h2 className="font-heading font-normal text-5xl md:text-[8rem] text-white mb-10 leading-[0.85] tracking-tighter">
-                        Why CON/FORM{" "}
-                        <span className="text-transparent outline-text-white italic font-serif text-[3.5rem] md:text-[6rem]">
-                            Exists
-                        </span>
-                    </h2>
+                    <motion.h2 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        className="font-heading font-normal text-4xl md:text-[6.5rem] text-white mb-10 leading-[0.85] tracking-tighter"
+                    >
+                        Redefining the{" "}
+                        <span className="font-heading tracking-wide text-[2.8rem] md:text-[5rem]">System</span>
+                    </motion.h2>
 
                     {/* The Big Statement */}
                     <div className="border-l-2 border-primary pl-8 md:pl-12 mb-20 max-w-3xl">
-                        <p className="text-white/80 text-xl md:text-3xl font-light leading-relaxed italic">
+                        <p className="text-white/80 text-xl md:text-3xl font-light leading-relaxed">
                             "Every system that ignored you is now watching what you build without it."
                         </p>
                     </div>
@@ -163,7 +171,15 @@ export default function About() {
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="max-w-3xl mb-16">
                         <span className="text-white/40 font-bold tracking-[0.4em] uppercase text-xs mb-4 block">The Framework</span>
-                        <h2 className="font-heading font-normal text-5xl md:text-7xl mb-6 leading-[0.9]">Architects <span className="text-white/30">&amp;</span> Executors</h2>
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="font-heading font-normal text-5xl md:text-7xl mb-6 leading-[0.9]"
+                        >
+                            Architects <span className="text-white/30">&amp;</span> Executors
+                        </motion.h2>
                         <p className="text-white/60 text-xl leading-relaxed">
                             CON/FORM introduces a framework that removes hierarchy while honoring experience.
                         </p>
@@ -174,14 +190,14 @@ export default function About() {
                             <span className="text-white/20 font-heading text-6xl block mb-4 leading-none">A</span>
                             <h3 className="font-heading text-3xl mb-4">Architects</h3>
                             <p className="text-white/50 text-lg leading-relaxed">
-                                Individuals who designed or shaped cultural, creative, and economic systems — pioneers, industry leaders, and institutional figures. They built the rooms that others now operate in.
+                                The pioneers and builders of Nigeria's creative industry. These individuals helped shape the systems that define the industry today, creating platforms, institutions, and opportunities that later generations would inherit.
                             </p>
                         </div>
                         <div className="border border-white/10 rounded-2xl p-8 md:p-12 hover:border-white/20 transition-all duration-300">
                             <span className="text-white/20 font-heading text-6xl block mb-4 leading-none">E</span>
                             <h3 className="font-heading text-3xl mb-4">Executors</h3>
                             <p className="text-white/50 text-lg leading-relaxed">
-                                Individuals currently operating within those systems — emerging creatives, artisans, founders, entrepreneurs, and youth. They are building the future from within.
+                                The current generation of creators and performers building careers within those systems. Artists, actors, performers, and cultural figures who navigate and adapt existing structures to fit a new generation.
                             </p>
                         </div>
                     </div>
@@ -205,10 +221,10 @@ export default function About() {
                     <div className="border-l-4 border-primary pl-8">
                         <span className="text-primary font-bold tracking-widest uppercase text-xs block mb-2">March 20, 2026 — UNILAG</span>
                         <h3 className="font-heading font-bold text-2xl mb-3">Day 1: CON</h3>
-                        <p className="text-gray-500 leading-relaxed">A guided journey into how culture is built, lived, and sustained. Thought. Honesty. Structure. Conversation. Every segment intentionally leads into the next.</p>
+                        <p className="text-gray-500 leading-relaxed">A guided journey into how culture is built, lived, and sustained. Unfolds through an Opening Address, Panel One (The Architects), a Systems Interlude, and Panel Two (The Executors).</p>
                     </div>
                     <div className="border-l-4 border-black pl-8">
-                        <span className="text-gray-400 font-bold tracking-widest uppercase text-xs block mb-2">March 21, 2026 — Egbeda</span>
+                        <span className="text-gray-400 font-bold tracking-widest uppercase text-xs block mb-2">April 6, 2026 — Egbeda</span>
                         <h3 className="font-heading font-bold text-2xl mb-3">Day 2: FORM</h3>
                         <p className="text-gray-500 leading-relaxed">Day 2 is earned. It is not a random performance. It is the emotional and cultural release of Day 1&apos;s conversations — live performances, DJ sets, visual art &amp; installations, community celebration.</p>
                     </div>
@@ -217,13 +233,14 @@ export default function About() {
                 <div className="bg-black text-white p-12 rounded-2xl relative overflow-hidden">
                     <div className="relative z-10">
                         <h3 className="font-heading font-bold text-2xl mb-4">Be Part of the System</h3>
-                        <p className="mb-8 text-gray-300">CON/FORM 1.0 is where it all begins. Join us March 20–21, 2026 in Lagos, Nigeria.</p>
-                        <Link
+                        <p className="mb-8 text-gray-300">CON/FORM 1.0 is where it all begins. Join us March 20 & April 6, 2026 in Lagos, Nigeria.</p>
+                        <KeyButton
                             href="/tickets"
-                            className="bg-primary hover:bg-white hover:text-primary text-white px-8 py-3 font-bold uppercase tracking-widest transition-colors inline-block"
+                            variant="secondary"
+                            className="px-8 py-3 tracking-widest !border-white"
                         >
                             Get Tickets
-                        </Link>
+                        </KeyButton>
                     </div>
                 </div>
             </section>

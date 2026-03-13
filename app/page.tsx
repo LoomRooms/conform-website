@@ -8,12 +8,87 @@ import NewsletterSection from "@/components/NewsletterSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import SpeakersShowcase from "@/components/SpeakersShowcase";
 import VenuePreview from "@/components/VenuePreview";
+import KeyButton from "@/components/ui/KeyButton";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+
+const ColorTrigger = ({
+  color,
+  textColor,
+  setTheme,
+  children,
+  className = ""
+}: {
+  color: string;
+  textColor: string;
+  setTheme: (theme: { bg: string; text: string }) => void;
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  const ref = useRef(null);
+  // Using -50% to trigger transition as soon as the section enters the middle/starts appearing
+  const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+
+  useEffect(() => {
+    if (isInView) {
+      setTheme({ bg: color, text: textColor });
+    }
+  }, [isInView, color, textColor, setTheme]);
+
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
+};
+
+const Counter = ({ value, label }: { value: string; label: string }) => {
+  const countRef = useRef(null);
+  const isInView = useInView(countRef, { once: true });
+  const [displayValue, setDisplayValue] = useState(0);
+  const target = parseInt(value);
+
+  useEffect(() => {
+    if (isInView) {
+      let start = 0;
+      const duration = 2000; // 2 seconds
+      const increment = target / (duration / 16); // 60fps
+      
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          setDisplayValue(target);
+          clearInterval(timer);
+        } else {
+          setDisplayValue(Math.floor(start));
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    }
+  }, [isInView, target]);
+
+  return (
+    <div ref={countRef}>
+      <p className="text-6xl md:text-7xl font-heading mb-4 tracking-tighter opacity-90">
+        {displayValue}{value.includes('+') ? '+' : ''}
+      </p>
+      <motion.p 
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 0.5, x: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold"
+      >
+        {label}
+      </motion.p>
+    </div>
+  );
+};
 
 export default function Home() {
   const containerRef = useRef(null);
+  const [theme, setTheme] = useState({ bg: "#000000", text: "#ffffff" });
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -23,246 +98,194 @@ export default function Home() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
-    <main className="min-h-screen bg-white">
+    <motion.main 
+      animate={{ backgroundColor: theme.bg, color: theme.text }}
+      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+      className="min-h-screen transition-colors duration-1000"
+    >
       <Navbar />
 
-      <Hero />
+      <ColorTrigger color="#000000" textColor="#ffffff" setTheme={setTheme}>
+        <Hero />
+      </ColorTrigger>
 
-      {/* What is Conform Section */}
-      <VisionSection />
+      {/* 2nd Section: Dark Blue */}
+      <ColorTrigger color="#0A0725" textColor="#ffffff" setTheme={setTheme}>
+        <VisionSection />
+      </ColorTrigger>
 
-      {/* Partners / Social Proof */}
-      <section className="py-24 md:py-32 bg-gray-50 border-y border-gray-100 relative overflow-hidden">
-        {/* Background Texture Overlay */}
-        <div className="absolute inset-0 bg-african-pattern opacity-[0.03] mix-blend-multiply pointer-events-none" />
+      {/* 3rd & 4th Section: Current/Same Blue */}
+      <ColorTrigger color="#100C68" textColor="#ffffff" setTheme={setTheme}>
+        <SpeakersShowcase />
+      </ColorTrigger>
 
-        <div className="max-w-7xl mx-auto px-4 mb-14 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-gray-300 text-[10px] md:text-xs uppercase tracking-[0.5em] font-bold mb-3">
-              Partners &amp; Sponsors
-            </p>
-            <p className="text-gray-400 text-xs font-light tracking-[0.2em]">Validated by Culture <span className="mx-2 text-primary/30">•</span> Powered by Community</p>
-          </motion.div>
-        </div>
+      {/* "This Isn't Like Other Events": Yellow BG */}
+      <ColorTrigger color="#F1F352" textColor="#000000" setTheme={setTheme}>
+        <section ref={containerRef} className="py-32 md:py-56 relative overflow-hidden">
+          {/* Parallax Decorative Glows - Adjusted for higher visibility on yellow if needed */}
+          <motion.div style={{ y: y1 }} className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-0" />
+          <motion.div style={{ y: y2 }} className="absolute bottom-20 left-0 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[120px] -z-0" />
 
-        {/* Infinite Marquee */}
-        <div className="flex overflow-hidden select-none gap-8 md:gap-16 group relative z-10">
-          <motion.div
-            animate={{ x: [0, -1000] }}
-            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-            className="flex flex-nowrap gap-8 md:gap-16 items-center min-w-full"
-          >
-            {[
-              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL",
-              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL"
-            ].map((partner, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-center px-10 md:px-16 py-8 md:py-10 rounded-[2rem] bg-white/40 backdrop-blur-sm border border-gray-200/50 hover:bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:border-primary/20 transition-all duration-700 group/item"
-              >
-                <span className="font-heading text-4xl md:text-6xl text-gray-200 group-hover/item:text-primary group-hover/item:scale-105 transition-all duration-500 tracking-tighter">
-                  {partner}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-          {/* Duplicate for seamless loop */}
-          <motion.div
-            animate={{ x: [0, -1000] }}
-            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-            className="flex flex-nowrap gap-8 md:gap-16 items-center min-w-full"
-            aria-hidden="true"
-          >
-            {[
-              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL",
-              "LOOM ROOMS", "UNILAG", "ALIMOSHO LG", "OBAS SEAL"
-            ].map((partner, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-center px-10 md:px-16 py-8 md:py-10 rounded-[2rem] bg-white/40 backdrop-blur-sm border border-gray-200/50 hover:bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:border-primary/20 transition-all duration-700 group/item"
-              >
-                <span className="font-heading text-4xl md:text-6xl text-gray-200 group-hover/item:text-primary group-hover/item:scale-105 transition-all duration-500 tracking-tighter">
-                  {partner}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Side Fades */}
-        <div className="absolute inset-y-0 left-0 w-48 md:w-80 bg-gradient-to-r from-gray-50 to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-48 md:w-80 bg-gradient-to-l from-gray-50 to-transparent z-10" />
-      </section>
-
-      {/* Speakers Showcase */}
-      <SpeakersShowcase />
-
-      {/* The Experience Section */}
-
-      <section ref={containerRef} className="py-32 md:py-56 bg-[#05087c] relative overflow-hidden text-white">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-african-pattern opacity-[0.05] mix-blend-overlay pointer-events-none" />
-
-        {/* Parallax Decorative Glows */}
-        <motion.div style={{ y: y1 }} className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/30 rounded-full blur-[120px] -z-0" />
-        <motion.div style={{ y: y2 }} className="absolute bottom-20 left-0 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-[120px] -z-0" />
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mb-32">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <span className="text-white/40 font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-8 block">The Experience</span>
-              <h2 className="font-heading font-normal text-6xl md:text-[9rem] mb-10 leading-[0.8] tracking-tighter transition-all">
-                This Isn't Like <br />
-                <span className="text-transparent outline-text-white opacity-40 italic font-serif text-[5rem] md:text-[7rem] leading-none block mt-4">Other Events</span>
-              </h2>
-              <p className="text-white/60 text-xl md:text-3xl font-light leading-relaxed max-w-2xl">
-                CON/FORM is a system-building experience. It begins with <span className="text-white italic">honest conversation</span> and culminates in live expression.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-            {[
-              {
-                index: "01",
-                title: "Cross-Sector",
-                desc: "Creatives, brands, and institutions — in one shared space. Each with something to learn. Each with something to offer.",
-              },
-              {
-                index: "02",
-                title: "System-Building",
-                desc: "Not a conference. Not a festival. A designed experience that moves from honest conversation to collective expression.",
-              },
-              {
-                index: "03",
-                title: "Earned Expression",
-                desc: "Day 2 is not random. It is the cultural release of Day 1's conversations — performance, art, and celebration as response.",
-              }
-            ].map((item, idx) => (
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="max-w-4xl mb-32">
               <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative"
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="bg-white/[0.03] backdrop-blur-xl rounded-[2.5rem] h-full border border-white/10 hover:border-white/25 transition-all duration-700 overflow-hidden group-hover:-translate-y-2">
-                  <div className="flex md:flex-col items-start gap-6 p-8 md:p-14">
-                    <span className="text-5xl md:text-7xl font-heading text-white/10 group-hover:text-primary transition-all duration-700 shrink-0 leading-none">
-                      {item.index}
-                    </span>
-                    <div>
-                      <h3 className="font-heading text-2xl md:text-4xl mb-4 md:mb-8 tracking-wide group-hover:text-white transition-colors">{item.title}</h3>
-                      <p className="text-white/40 text-base md:text-xl leading-relaxed font-light group-hover:text-white/70 transition-all duration-500">
-                        {item.desc}
-                      </p>
+                <motion.span 
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="opacity-60 font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-8 block"
+                >
+                  The Experience
+                </motion.span>
+                <motion.h2 
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="font-heading font-normal text-5xl md:text-[7.5rem] mb-10 leading-[0.8] tracking-tighter"
+                >
+                  This Isn't Like <br />
+                  <span className="font-heading tracking-wider text-[3.5rem] md:text-[6rem] leading-none block mt-4">Other Events</span>
+                </motion.h2>
+                <p className="opacity-80 text-xl md:text-3xl font-normal leading-relaxed max-w-2xl">
+                  CON/FORM is a system-building experience. It begins with <span className="font-bold opacity-100">honest conversation</span> and culminates in live expression.
+                </p>
+              </motion.div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+              {[
+                {
+                  index: "01",
+                  title: "Connect & Converse",
+                  desc: "Creatives, brands, and institutions in one shared space. Exchanging perspectives, discovering shared challenges, and learning.",
+                },
+                {
+                  index: "02",
+                  title: "Converge",
+                  desc: "Through honest dialogue, ideas begin to align. Finding where legacy meets adaptation to build new collective understanding.",
+                },
+                {
+                  index: "03",
+                  title: "Transform",
+                  desc: "Day 2 is the cultural release of Day 1's conversations — a new way of thinking expressed through live performance and art.",
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative"
+                >
+                  <div className="bg-current/[0.08] backdrop-blur-xl rounded-[2.5rem] h-full border border-current/20 hover:border-current/40 transition-all duration-700 overflow-hidden group-hover:-translate-y-2">
+                    <div className="flex md:flex-col items-start gap-6 p-8 md:p-14">
+                      <span className="text-5xl md:text-7xl font-heading opacity-50 group-hover:opacity-80 transition-all duration-700 shrink-0 leading-none">
+                        {item.index}
+                      </span>
+                      <div>
+                        <h3 className="font-heading text-2xl md:text-4xl mb-4 md:mb-8 tracking-wide transition-colors">{item.title}</h3>
+                        <p className="opacity-80 text-base md:text-xl leading-relaxed font-normal group-hover:opacity-100 transition-all duration-500">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section Integrated into Yellow Background area */}
+        <section className="py-32 relative overflow-hidden px-4">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-16 md:gap-12 text-center relative z-10">
+            {[
+              { value: "200+", label: "Loom Rooms Alumni" },
+              { value: "70+", label: "Performing Artists" },
+              { value: "500+", label: "Expected Attendees" },
+              { value: "2", label: "Transformative Days" }
+            ].map((stat, idx) => (
+              <Counter key={idx} value={stat.value} label={stat.label} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </ColorTrigger>
 
-      {/* Stats Section */}
-      <section className="py-32 bg-primary relative overflow-hidden px-4">
-        <div className="absolute inset-0 bg-african-pattern opacity-10 mix-blend-overlay pointer-events-none" />
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-16 md:gap-12 text-center relative z-10">
-          {[
-            { value: "200+", label: "Loom Rooms Alumni" },
-            { value: "70+", label: "Performing Artists" },
-            { value: "500+", label: "Expected Attendees" },
-            { value: "2", label: "Transformative Days" }
-          ].map((stat, idx) => (
+      {/* Know Where To Be: White BG */}
+      <ColorTrigger color="#ffffff" textColor="#000000" setTheme={setTheme}>
+        <VenuePreview />
+      </ColorTrigger>
+
+      {/* Next: Black BG */}
+      <ColorTrigger color="#000000" textColor="#ffffff" setTheme={setTheme}>
+        <TestimonialsSection />
+        
+        {/* CTA Section */}
+        <section className="py-48 md:py-64 relative overflow-hidden px-6">
+          <div className="absolute inset-0 opacity-40 pointer-events-none">
+            <img src="/6.webp" className="w-full h-full object-cover scale-110 animate-slow-zoom" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-primary/40 to-black mix-blend-multiply" />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+
+          <div className="relative z-10 max-w-5xl mx-auto text-center text-white">
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <p className="text-6xl md:text-7xl font-heading mb-4 text-white tracking-tighter">{stat.value}</p>
-              <p className="text-white/50 text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">{stat.label}</p>
+              <motion.span 
+                animate={{ x: [-2, 2, -2] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                className="text-white/40 font-bold tracking-[0.6em] uppercase text-xs mb-10 block"
+              >
+                Final Call
+              </motion.span>
+              <motion.h2 
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                className="font-heading font-normal text-5xl md:text-[8.5rem] mb-12 leading-[0.85] tracking-tighter"
+              >
+                Don't Miss <br /><span>CON/FORM</span> 1.0
+              </motion.h2>
+              <p className="text-2xl md:text-4xl mb-20 font-light opacity-70 max-w-3xl mx-auto leading-relaxed">
+                March 20 & April 6, 2026. Two days designed to change how you see, build, and express creativity.
+              </p>
+              {/* 3 CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+                <KeyButton href="/tickets" variant="secondary" className="px-12 py-6 text-lg md:text-2xl tracking-[0.3em]">
+                  Get Tickets
+                </KeyButton>
+                <KeyButton href="/register" variant="primary" className="px-12 py-6 text-lg md:text-2xl tracking-[0.3em]">
+                  Apply as Artist
+                </KeyButton>
+                <KeyButton href="/sponsors" variant="accent" className="px-12 py-6 text-lg md:text-2xl tracking-[0.3em]">
+                  Partner With Us
+                </KeyButton>
+              </div>
+              <p className="mt-14 text-xs md:text-sm opacity-40 uppercase tracking-[0.4em] font-medium">Limited capacity. Tickets moving fast.</p>
             </motion.div>
-          ))}
-        </div>
-      </section>
+          </div>
 
-      {/* Venue Preview */}
-      <VenuePreview />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
+        </section>
+      </ColorTrigger>
 
-      {/* Testimonials */}
-      <TestimonialsSection />
-
-      {/* CTA Section */}
-      <section className="py-48 md:py-64 relative overflow-hidden bg-black px-6">
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <img src="/6.webp" className="w-full h-full object-cover scale-110 animate-slow-zoom" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-primary/40 to-black mix-blend-multiply" />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="text-white/40 font-bold tracking-[0.6em] uppercase text-xs mb-10 block">Final Call</span>
-            <h2 className="font-heading font-normal text-6xl md:text-[10rem] mb-12 leading-[0.85] tracking-tighter">
-              Don't Miss <br /><span className="text-white/20 outline-text-white">CON/FORM</span> 1.0
-            </h2>
-            <p className="text-2xl md:text-4xl mb-20 font-light opacity-70 max-w-3xl mx-auto leading-relaxed">
-              March 20-21, 2026. Two days designed to change how you see, build, and express creativity.
-            </p>
-            {/* 3 CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-              <Link
-                href="/tickets"
-                className="group relative overflow-hidden bg-white text-primary px-12 py-6 text-lg md:text-2xl font-heading uppercase tracking-[0.3em] transition-all inline-block shadow-[0_0_60px_rgba(255,255,255,0.1)] hover:scale-105"
-              >
-                <span className="relative z-10">Get Tickets</span>
-                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-0" />
-                <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-lg md:text-2xl font-heading uppercase tracking-[0.3em]">Get Tickets</span>
-              </Link>
-              <Link
-                href="/register"
-                className="border border-white/30 text-white px-12 py-6 text-lg md:text-2xl font-heading uppercase tracking-[0.3em] transition-all inline-block hover:border-white hover:scale-105 backdrop-blur-sm"
-              >
-                Apply as Artist
-              </Link>
-              <Link
-                href="/sponsors"
-                className="border border-white/15 text-white/60 px-12 py-6 text-lg md:text-2xl font-heading uppercase tracking-[0.3em] transition-all inline-block hover:border-white/40 hover:text-white hover:scale-105 backdrop-blur-sm"
-              >
-                Partner With Us
-              </Link>
-            </div>
-            <p className="mt-14 text-xs md:text-sm opacity-40 uppercase tracking-[0.4em] font-medium">Limited capacity. Tickets moving fast.</p>
-          </motion.div>
-        </div>
-
-        {/* Cinematic Blur Bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
-      </section>
-
-      {/* Newsletter */}
-      <NewsletterSection />
+      {/* Newsletter - Back to Dark Blue */}
+      <ColorTrigger color="#0A0725" textColor="#ffffff" setTheme={setTheme}>
+        <NewsletterSection />
+      </ColorTrigger>
 
       <Footer />
-    </main>
+    </motion.main>
   );
 }

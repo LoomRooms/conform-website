@@ -34,7 +34,7 @@ const scheduleData: DaySchedule[] = [
         ],
     },
     {
-        date: "Day 2 | March 21",
+        date: "Day 2 | April 6",
         title: "PERFORMANCE",
         subtitle: "Rebuild & Express",
         events: [

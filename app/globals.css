@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #05087c;
-  --color-secondary: #E7E8D1;
-  --color-accent: #A7BEAE;
-  --color-dark: #2F3C7E;
-  --color-black: #212121;
+  --color-primary: #100C68;
+  --color-secondary: #F1F352;
+  --color-accent: #4BC6EF;
+  --color-dark: #0A0725;
+  --color-black: #000000;
   --color-white: #FFFFFF;
 
   --font-sans: 'Montserrat', var(--font-montserrat), sans-serif;
@@ -86,7 +86,7 @@
     height: 50%;
     background: linear-gradient(to bottom,
         transparent 0%,
-        rgba(5, 8, 124, 0.03) 20%,
+        rgba(16, 12, 104, 0.03) 20%,
         rgba(255, 255, 255, 0.2) 40%,
         rgba(255, 255, 255, 0.95) 90%,
         rgba(255, 255, 255, 1) 100%);
@@ -105,9 +105,9 @@
     background: linear-gradient(to bottom,
         transparent 0%,
         rgba(255, 255, 255, 0.03) 20%,
-        rgba(5, 8, 124, 0.4) 55%,
-        rgba(5, 8, 124, 0.95) 90%,
-        rgba(5, 8, 124, 1) 100%);
+        rgba(16, 12, 104, 0.4) 55%,
+        rgba(16, 12, 104, 0.95) 90%,
+        rgba(16, 12, 104, 1) 100%);
     backdrop-filter: blur(80px) saturate(180%) contrast(1.1);
     -webkit-backdrop-filter: blur(80px) saturate(180%) contrast(1.1);
     z-index: 15;

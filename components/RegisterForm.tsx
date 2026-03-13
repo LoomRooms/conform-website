@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { submitArtistApplication } from '@/lib/utils/form-submission';
 import { countWords, validateWordCount } from '@/lib/utils/text-helpers';
+import KeyButton from '@/components/ui/KeyButton';
 
 type FormData = {
     // Step 1: Personal Information
@@ -268,12 +269,13 @@ export default function RegisterForm() {
                 >
                     <h3 className="font-heading text-2xl text-green-800 mb-2">✅ Application Submitted!</h3>
                     <p className="text-green-700">Thank you! We'll review your application and get back to you soon.</p>
-                    <button
+                    <KeyButton
                         onClick={() => setSubmitSuccess(false)}
-                        className="mt-4 px-6 py-2 bg-green-600 text-white font-bold hover:bg-green-700"
+                        variant="secondary"
+                        className="mt-4 px-6 py-3"
                     >
                         Submit Another Application
-                    </button>
+                    </KeyButton>
                 </motion.div>
             )}
 
@@ -310,30 +312,33 @@ export default function RegisterForm() {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between mt-8 pt-6 border-t">
-                <button
+            <div className="flex justify-between mt-8 pt-6 border-t border-gray-100">
+                <KeyButton
                     onClick={prevStep}
                     disabled={currentStep === 1}
-                    className="px-6 py-3 border-2 border-gray-300 text-gray-700 font-bold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                    variant="outline"
+                    className={`px-6 py-3 ${currentStep === 1 ? 'opacity-0 pointer-events-none' : ''}`}
                 >
                     Previous
-                </button>
+                </KeyButton>
 
                 {currentStep < totalSteps ? (
-                    <button
+                    <KeyButton
                         onClick={nextStep}
-                        className="px-8 py-3 bg-primary text-white font-bold hover:bg-primary/90 transition-colors"
+                        variant="primary"
+                        className="px-8 py-3"
                     >
                         Next Step
-                    </button>
+                    </KeyButton>
                 ) : (
-                    <button
+                    <KeyButton
                         onClick={handleSubmit}
                         disabled={isSubmitting}
-                        className="px-8 py-3 bg-green-600 text-white font-bold hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        variant="secondary"
+                        className="px-8 py-3 disabled:opacity-50"
                     >
                         {isSubmitting ? 'Submitting...' : 'Submit Application'}
-                    </button>
+                    </KeyButton>
                 )}
             </div>
         </div>
@@ -898,9 +903,9 @@ function Step6({ formData, updateField, errors }: any) {
             </div>
 
             <div>
-                <label className="block font-bold mb-4">Can you attend BOTH days (March 20-21, 2026)? *</label>
+                <label className="block font-bold mb-4">Can you attend BOTH days (March 20 & April 6, 2026)? *</label>
                 <div className="space-y-2">
-                    {['Yes, both days', 'Only March 20', 'Only March 21', 'Flexible - coordinate with me'].map((opt) => (
+                    {['Yes, both days', 'Only March 20', 'Only April 6', 'Flexible - coordinate with me'].map((opt) => (
                         <label key={opt} className="flex items-center space-x-3 p-3 border-2 border-gray-300 cursor-pointer hover:bg-gray-50">
                             <input
                                 type="radio"

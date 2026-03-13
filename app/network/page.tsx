@@ -206,8 +206,8 @@ export default function NetworkPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                     >
-                        <h2 className="text-6xl md:text-8xl font-bebas tracking-tighter leading-none mb-4">
-                            THE <span className="text-conform-green italic">NETWORK</span>
+                        <h2 className="text-5xl md:text-7xl font-bebas tracking-tighter leading-none mb-4">
+                            THE <span className="text-conform-green">NETWORK</span>
                         </h2>
                         <div className="flex items-center gap-3 text-white/40 font-light max-w-lg">
                             <FiZap className="text-conform-green flex-shrink-0" />

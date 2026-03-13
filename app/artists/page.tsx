@@ -112,9 +112,10 @@ export default function Artists() {
                         <span className="text-primary font-bold tracking-[0.8em] uppercase text-[10px] md:text-xs mb-8 block opacity-80">
                             The Collective
                         </span>
-                        <h1 className="font-heading text-5xl md:text-[8rem] text-white mb-4 leading-[0.8] tracking-tighter">
-                            ARCHITECTS OF <br />
-                            <span className="text-transparent outline-text-white italic font-serif text-[3.5rem] md:text-[6.5rem] inline-block mt-6 uppercase">THE FUTURE</span>
+                        <h1 className="font-heading text-4xl md:text-[6.5rem] text-white mb-4 leading-[0.8] tracking-tighter">
+                            SOUNDING{" "}
+                            <br className="md:hidden" />
+                            <span className="font-heading tracking-wide text-[3rem] md:text-[5.5rem] inline-block mt-4 uppercase">THE FUTURE</span>
                         </h1>
                         <p className="text-white/40 text-[10px] md:text-xs uppercase tracking-[0.4em] font-light mt-12 max-w-2xl mx-auto">
                             70+ Creatives • Nurtured by Loom Rooms • Validated by the system
@@ -206,7 +207,7 @@ export default function Artists() {
                                         <div className="mt-8 transition-all duration-700 pointer-events-auto overflow-visible">
                                             <div className="h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                                                 <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 shadow-3xl translate-y-4 group-hover:translate-y-0 transition-transform duration-700 mb-2">
-                                                    <p className="text-white/70 text-xs font-light leading-relaxed italic mb-8">
+                                                    <p className="text-white/70 text-xs font-light leading-relaxed mb-8">
                                                         "{artist.bio}"
                                                     </p>
                                                     <div className="flex gap-4">
@@ -250,13 +251,13 @@ export default function Artists() {
             <section className="relative py-48 overflow-hidden bg-black text-center border-t border-white/5">
                 <div className="absolute inset-0 bg-african-pattern opacity-[0.03] mix-blend-overlay" />
                 <div className="max-w-4xl mx-auto px-4 relative z-10">
-                    <h2 className="font-heading text-[5rem] md:text-[10rem] text-white/10 leading-none tracking-tighter absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-20 select-none">
-                        GET YOUR ACCESS
+                    <h2 className="font-heading text-[4rem] md:text-[8rem] text-white/10 leading-none tracking-tighter absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap opacity-20 select-none">
+                        SONIC ARCHITECTS
                     </h2>
                     <div className="relative z-20">
                         <h2 className="font-heading text-6xl md:text-9xl mb-14 text-white leading-tight text-center">
                             WATCH THEM <br />
-                            <span className="text-transparent outline-text-white italic">CREATE</span>
+                            <span className="tracking-wide font-heading">CREATE</span>
                         </h2>
                         <Link
                             href="/tickets"

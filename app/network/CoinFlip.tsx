@@ -42,7 +42,7 @@ export default function CoinFlip({ onComplete, result }: CoinFlipProps) {
                             className="absolute inset-0 rounded-full border-8 border-white/20 bg-gradient-to-br from-white via-zinc-400 to-zinc-600 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.3)] backface-hidden"
                             style={{ backfaceVisibility: "hidden" }}
                         >
-                            <div className="text-black font-bebas text-6xl italic">H</div>
+                            <div className="text-black font-bebas text-6xl">H</div>
                         </div>
 
                         {/* Tails Side (Green/Dark) */}
@@ -50,7 +50,7 @@ export default function CoinFlip({ onComplete, result }: CoinFlipProps) {
                             className="absolute inset-0 rounded-full border-8 border-conform-green/20 bg-gradient-to-br from-conform-green via-emerald-700 to-zinc-900 flex items-center justify-center shadow-[0_0_50px_rgba(0,255,0,0.2)]"
                             style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
                         >
-                            <div className="text-white font-bebas text-6xl italic">T</div>
+                            <div className="text-white font-bebas text-6xl">T</div>
                         </div>
                     </motion.div>
                 </div>

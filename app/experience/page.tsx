@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Mic2, Palette, Film, Shirt, MapPin, Clock } from "lucide-react";
 import Timeline from "@/components/Timeline";
+import KeyButton from "@/components/ui/KeyButton";
 
 export default function Experience() {
     return (
@@ -48,9 +49,9 @@ export default function Experience() {
                                     <span className="text-xs md:text-sm tracking-tighter">11:00 AM – 6:00 PM</span>
                                 </div>
 
-                                <Link href="/tickets" className="hidden md:inline-block bg-black text-white px-8 py-4 font-heading text-lg tracking-widest hover:bg-primary transition-all hover:scale-105">
+                                <KeyButton href="/tickets" variant="dark" className="hidden md:inline-flex px-8 py-4">
                                     Get Day 1 Ticket
-                                </Link>
+                                </KeyButton>
                             </div>
                         </div>
 
@@ -105,7 +106,7 @@ export default function Experience() {
                             />
 
                             <div className="relative z-10 pt-2 pb-6">
-                                <span className="text-gray-500 font-bold tracking-widest uppercase block mb-2 text-xs md:text-base">March 21, 2026</span>
+                                <span className="text-gray-500 font-bold tracking-widest uppercase block mb-2 text-xs md:text-base">April 6, 2026</span>
                                 <h2 className="font-heading font-bold text-5xl md:text-7xl text-black mb-4 leading-none">FORM</h2>
                                 <p className="text-xl md:text-2xl font-light text-gray-500 mb-6 font-heading tracking-widest">Expression</p>
 
@@ -114,9 +115,9 @@ export default function Experience() {
                                     <MapPin className="ml-2 text-primary shrink-0" size={16} />
                                 </div>
 
-                                <Link href="/tickets" className="hidden md:inline-block bg-primary text-white px-8 py-4 font-heading text-lg tracking-widest hover:bg-black transition-all hover:scale-105">
+                                <KeyButton href="/tickets" variant="primary" className="hidden md:inline-flex px-8 py-4">
                                     Get Day 2 Ticket
-                                </Link>
+                                </KeyButton>
                             </div>
                         </div>
 
@@ -266,7 +267,7 @@ export default function Experience() {
                             <div className="p-8 md:p-10">
                                 <div className="flex items-center gap-3 mb-4">
                                     <span className="bg-black/5 text-gray-700 text-[10px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full">Day 2 — FORM</span>
-                                    <span className="text-gray-300 text-[10px] uppercase tracking-wider">March 21, 2026</span>
+                                    <span className="text-gray-300 text-[10px] uppercase tracking-wider">April 6, 2026</span>
                                 </div>
                                 <h3 className="font-heading text-2xl md:text-3xl text-black mb-2">Loom Rooms Home Base</h3>
                                 <p className="text-gray-400 text-sm mb-6">Egbeda, Lagos — Loom Rooms Creative Hub</p>
@@ -291,12 +292,13 @@ export default function Experience() {
 
             <section className="py-20 px-4 bg-primary text-white text-center">
                 <h2 className="font-heading font-bold text-3xl md:text-5xl mb-6">Ready for the Experience?</h2>
-                <Link
+                <KeyButton
                     href="/tickets"
-                    className="bg-white text-primary hover:bg-black hover:text-white px-10 py-4 text-xl font-bold uppercase tracking-widest transition-all inline-block shadow-lg"
+                    variant="secondary"
+                    className="px-10 py-4 text-xl"
                 >
                     Get Your Tickets
-                </Link>
+                </KeyButton>
             </section>
 
             <Footer />

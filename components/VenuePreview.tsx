@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { MapPin, ArrowRight, Clock } from "lucide-react";
+import KeyButton from "@/components/ui/KeyButton";
 
 const venues = [
   {
@@ -20,7 +21,7 @@ const venues = [
   },
   {
     day: "Day 2 — FORM",
-    date: "March 21, 2026",
+    date: "April 6, 2026",
     name: "Loom Rooms",
     sub: "Egbeda, Lagos — Creative Home Base",
     time: "4:00 PM — Late Night",
@@ -35,8 +36,7 @@ const venues = [
 
 export default function VenuePreview() {
   return (
-    <section className="relative bg-[#fcfcfc] py-20 md:py-44 overflow-hidden">
-      <div className="absolute inset-0 bg-african-pattern opacity-[0.02] mix-blend-multiply pointer-events-none" />
+    <section className="relative py-20 md:py-44 overflow-hidden">
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 -translate-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -53,9 +53,9 @@ export default function VenuePreview() {
             The Venues
           </span>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <h2 className="font-heading font-normal text-5xl md:text-8xl text-black leading-[0.85] tracking-tighter">
+            <h2 className="font-heading font-normal text-4xl md:text-7xl leading-[0.85] tracking-tighter">
               Know Where{" "}
-              <span className="text-transparent outline-text italic font-serif text-[2.8rem] md:text-[6.5rem] ml-0 md:ml-1 block md:inline mt-1 md:mt-0">
+              <span className="font-heading tracking-wide text-[2.5rem] md:text-[5.5rem] ml-0 md:ml-1 block md:inline mt-1 md:mt-0">
                 to Be
               </span>
             </h2>
@@ -140,16 +140,17 @@ export default function VenuePreview() {
                       />
                     </div>
 
-                    <a
+                    <KeyButton
                       href={v.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/btn inline-flex items-center gap-2 md:gap-3 text-[11px] md:text-sm font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-black transition-colors duration-300 bg-gray-50 hover:bg-gray-100 px-6 py-3.5 md:py-3 rounded-full border border-gray-100 hover:border-gray-200 w-full justify-center md:w-auto md:justify-start"
+                      variant="outline"
+                      className="w-full justify-center md:w-auto md:justify-start py-3.5 md:py-3 px-6 text-[11px] md:text-sm gap-2 md:gap-3 group/btn"
                     >
                       <MapPin size={14} className="text-primary group-hover/btn:text-black transition-colors" />
                       Get Directions
                       <ArrowRight size={14} className="md:group-hover/btn:translate-x-1 transition-transform duration-300 text-gray-300 group-hover/btn:text-black" />
-                    </a>
+                    </KeyButton>
                 </div>
               </div>
             </motion.div>
@@ -164,19 +165,16 @@ export default function VenuePreview() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center"
         >
-          <Link
+          <KeyButton
             href="/experience"
-            className="group inline-flex items-center gap-5 bg-white border border-gray-200 hover:border-primary/30 hover:shadow-[0_10px_30px_rgba(5,8,124,0.06)] px-8 py-4 rounded-full transition-all duration-500"
+            variant="outline"
+            className="px-8 py-4 gap-4"
           >
-            <span className="text-gray-500 group-hover:text-black transition-colors text-xs font-bold uppercase tracking-[0.2em]">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] group-hover:text-black">
               Full venue details + transport info
             </span>
-            <motion.span
-              className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500"
-            >
-              <ArrowRight size={14} />
-            </motion.span>
-          </Link>
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </KeyButton>
         </motion.div>
       </div>
     </section>

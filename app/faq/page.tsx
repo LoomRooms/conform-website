@@ -20,7 +20,7 @@ const faqs = [
     },
     {
         question: "When and where is it happening?",
-        answer: "March 20–21, 2026. Day 1 (CON — Conference) takes place at UNILAG, Afe Babalola Hall, from 11:00 AM – 6:00 PM. Day 2 (FORM — Expression) takes place in Egbeda, Alimosho — the home of Loom Rooms."
+        answer: "Day 1 (CON — Conference) takes place on March 20, 2026 at UNILAG, Afe Babalola Hall, from 11:00 AM – 6:00 PM. Day 2 (FORM — Expression) takes place on April 6, 2026 in Egbeda, Alimosho — the home of Loom Rooms."
     },
     {
         question: "Do I need a ticket for both days?",

@@ -88,7 +88,7 @@ export default function OnboardingPage() {
                         Digital pass v1.0
                     </motion.div>
                     <h1 className="text-6xl font-bebas tracking-tight mb-2">
-                        DROP <span className="text-conform-green italic text-5xl">IN</span>
+                        DROP <span className="text-conform-green text-5xl">IN</span>
                     </h1>
                     <p className="text-white/40 font-light text-sm">
                         Ready to encounter the network.

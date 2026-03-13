@@ -27,7 +27,7 @@ export default function Press() {
   };
 
   const assets = [
-    { label: "CON/FORM Logo (SVG)", href: "/conform-logo.svg", icon: <ImageIcon size={18} /> },
+    { label: "CON/FORM Logo (SVG)", href: "/conform-new-logo.svg", icon: <ImageIcon size={18} /> },
     { label: "Event Photos Pack", href: "#", icon: <ImageIcon size={18} /> },
     { label: "Press Release PDF", href: "#", icon: <FileText size={18} /> },
   ];
@@ -49,10 +49,10 @@ export default function Press() {
             <span className="text-primary font-bold tracking-[0.8em] uppercase text-[10px] md:text-xs mb-8 block">
               Press & Media
             </span>
-            <h1 className="font-heading text-5xl md:text-[7rem] text-white mb-6 leading-[0.85] tracking-tighter">
-              MEDIA <br />
-              <span className="text-transparent outline-text-white italic font-serif text-[3rem] md:text-[5rem]">
-                KIT
+            <h1 className="font-heading text-4xl md:text-[6rem] text-white mb-6 leading-[0.85] tracking-tighter">
+              CON/FORM in the{" "}
+              <span className="font-heading tracking-wide text-[2.5rem] md:text-[4.5rem]">
+                Media
               </span>
             </h1>
             <p className="text-white/40 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto">

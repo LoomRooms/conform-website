@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2 } from "lucide-react";
+import KeyButton from "@/components/ui/KeyButton";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -40,9 +41,8 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="relative py-32 md:py-44 bg-[#05087c] overflow-hidden">
+    <section className="relative py-32 md:py-44 overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-african-pattern opacity-[0.06] mix-blend-overlay pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[120px] -z-0 pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
@@ -55,9 +55,9 @@ export default function NewsletterSection() {
           <span className="text-white/30 font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-8 block">
             Stay Connected
           </span>
-          <h2 className="font-heading font-normal text-5xl md:text-8xl text-white mb-6 leading-[0.85] tracking-tighter">
+          <h2 className="font-heading font-normal text-4xl md:text-7xl mb-6 leading-[0.85] tracking-tighter">
             Join the{" "}
-            <span className="text-transparent outline-text-white italic font-serif">
+            <span className="font-heading tracking-wide">
               Community
             </span>
           </h2>
@@ -102,12 +102,12 @@ export default function NewsletterSection() {
                     <p className="absolute -bottom-6 left-0 text-red-400 text-xs tracking-wide">{errorMsg}</p>
                   )}
                 </div>
-                <button
+                <KeyButton
                   type="submit"
                   disabled={status === "loading"}
-                  className="group relative overflow-hidden bg-white text-primary px-8 py-4 text-xs font-bold uppercase tracking-[0.3em] transition-all hover:scale-105 disabled:opacity-60 flex items-center justify-center gap-2 shrink-0"
+                  variant="secondary"
+                  className="py-4 text-[10px] sm:text-xs tracking-[0.3em] gap-2 disabled:opacity-60"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
                     {status === "loading" ? (
                       <span className="animate-pulse">Sending...</span>
                     ) : (
@@ -116,12 +116,7 @@ export default function NewsletterSection() {
                         <Send size={14} className="group-hover:translate-x-1 transition-transform" />
                       </>
                     )}
-                  </span>
-                  <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0" />
-                  <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 gap-2 text-xs font-bold uppercase tracking-[0.3em]">
-                    Subscribe <Send size={14} />
-                  </span>
-                </button>
+                </KeyButton>
               </motion.form>
             )}
           </AnimatePresence>

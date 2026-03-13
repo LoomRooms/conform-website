@@ -108,11 +108,10 @@ export default function Speakers() {
             <span className="text-primary font-bold tracking-[0.8em] uppercase text-[10px] md:text-xs mb-8 block opacity-80">
               The Voices
             </span>
-            <h1 className="font-heading text-5xl md:text-[8rem] text-white mb-4 leading-[0.8] tracking-tighter">
-              VOICES THAT{" "}
-              <br />
-              <span className="text-transparent outline-text-white italic font-serif text-[3.5rem] md:text-[6.5rem] inline-block mt-6 uppercase">
-                RESHAPE SYSTEMS
+            <h1 className="font-heading text-4xl md:text-[6.5rem] text-white mb-4 leading-[0.8] tracking-tighter">
+              The{" "}
+              <span className="font-heading tracking-wide text-[3rem] md:text-[5.5rem] inline-block mt-4 uppercase">
+                Architects
               </span>
             </h1>
             <p className="text-white/40 text-[10px] md:text-xs uppercase tracking-[0.4em] font-light mt-12 max-w-2xl mx-auto">
@@ -242,7 +241,7 @@ export default function Speakers() {
             </span>
             <h2 className="font-heading text-6xl md:text-9xl mb-14 text-white leading-tight">
               BE IN THE <br />
-              <span className="text-transparent outline-text-white italic">ROOM</span>
+              <span className="tracking-wide font-heading">ROOM</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

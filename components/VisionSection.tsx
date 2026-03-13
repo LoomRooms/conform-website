@@ -67,18 +67,24 @@ export default function VisionSection() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
+                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     className="order-2 md:order-1"
                 >
-                    <span className="text-blue-400 font-bold tracking-[0.4em] uppercase text-xs md:text-sm mb-4 block">
+                    <span className="text-accent font-bold tracking-[0.4em] uppercase text-xs md:text-sm mb-4 block">
                         The Vision
                     </span>
-                    <h2 className="font-heading font-normal text-4xl sm:text-5xl md:text-7xl text-black mb-6 md:mb-8 leading-[0.9]">
+                    <motion.h2 
+                      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                      className="font-heading font-normal text-3xl sm:text-4xl md:text-6xl mb-6 md:mb-8 leading-[0.9]"
+                    >
                         A Journey From{" "}
-                        <span className="text-blue-400 italic font-serif">Thought</span>{" "}
+                        <span className="text-accent font-heading tracking-wider">Thought</span>{" "}
                         to{" "}
-                        <span className="text-blue-400 italic font-serif">Expression</span>
-                    </h2>
+                        <span className="text-accent font-heading tracking-wider">Expression</span>
+                    </motion.h2>
                     <p className="text-gray-600 text-base md:text-xl mb-8 md:mb-12 leading-relaxed font-light">
                         CON/FORM isn't just an event — it's a two-day transformation. Born
                         in Egbeda, validated by tradition, and powered by raw creativity.
@@ -113,7 +119,7 @@ export default function VisionSection() {
 
                     <Link
                         href="/about"
-                        className="inline-flex items-center mt-10 md:mt-16 text-blue-400 font-heading hover:text-black transition-all uppercase tracking-[0.2em] group text-sm md:text-lg"
+                        className="inline-flex items-center mt-10 md:mt-16 text-primary font-heading hover:text-accent transition-all uppercase tracking-[0.2em] group text-sm md:text-lg font-bold"
                     >
                         Read the full story{" "}
                         <MoveRight className="ml-3 group-hover:translate-x-2 transition-transform" />
@@ -125,7 +131,7 @@ export default function VisionSection() {
                     initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
                     className="order-1 md:order-2 relative"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
@@ -141,7 +147,7 @@ export default function VisionSection() {
                                 initial={{ opacity: 0, scale: 1.1 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
                             />
                         </AnimatePresence>
 
@@ -156,9 +162,9 @@ export default function VisionSection() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
-                                    transition={{ duration: 0.8, delay: 0.3 }}
+                                    transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                                 >
-                                    <span className="text-blue-400 text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase mb-4 block opacity-80">
+                                    <span className="text-accent text-[10px] md:text-xs font-bold tracking-[0.5em] uppercase mb-4 block opacity-80">
                                         {slide.tag}
                                     </span>
                                     <p className="font-heading text-white text-2xl md:text-4xl leading-[1.1] tracking-tight">
@@ -179,7 +185,7 @@ export default function VisionSection() {
                                     >
                                         {i === current && (
                                             <motion.div
-                                                className="absolute inset-y-0 left-0 bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.5)]"
+                                                className="absolute inset-y-0 left-0 bg-accent shadow-[0_0_10px_rgba(96,165,250,0.5)]"
                                                 initial={{ width: "0%" }}
                                                 animate={{ width: "100%" }}
                                                 transition={{ duration: 4.5, ease: "linear" }}

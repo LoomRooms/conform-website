@@ -24,13 +24,24 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
                     {/* Column 1: Brand & Description */}
                     <div className="col-span-1 md:col-span-1">
-                        <Link href="/" className="block mb-8 outline-none group">
-                            <img
-                                src="/conform-logo.svg"
-                                alt="CON/FORM Logo"
-                                className="h-16 w-auto transition-transform duration-500 group-hover:scale-105"
-                                style={{ filter: 'brightness(0) invert(1)' }}
-                            />
+                        <Link href="/" className="block mb-8 outline-none group text-white">
+                            <svg 
+                                className="h-16 w-auto transition-transform duration-500 group-hover:scale-105" 
+                                viewBox="0 0 505 138" 
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <text 
+                                    x="-6.489" 
+                                    y="135.513" 
+                                    className="font-heading"
+                                    style={{
+                                        fontSize: "190.864px",
+                                        fill: "currentColor"
+                                    }}
+                                >
+                                    c<tspan x="61.267 131.887 207.66 267.591 338.211 409.403 " y="135.513 135.513 135.513 135.513 135.513 135.513 ">onform</tspan>
+                                </text>
+                            </svg>
                         </Link>
                         <p className="text-white/60 text-sm leading-relaxed max-w-xs pl-1">
                             A cultural system for conversation, creation &amp; continuity. <br />

@@ -15,7 +15,7 @@ export default function RegisterPage() {
                         Artist Application
                     </h1>
                     <p className="text-xl md:text-2xl text-secondary font-light">
-                        CON/FORM 1.0 • March 20-21, 2026
+                        CON/FORM 1.0 • March 20 & April 6, 2026
                     </p>
                     <p className="mt-4 text-lg text-white/80">
                         Application Deadline: February 14, 2026

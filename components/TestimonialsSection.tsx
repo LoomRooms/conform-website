@@ -28,24 +28,22 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative py-32 md:py-48 bg-white overflow-hidden">
-      <div className="absolute inset-0 bg-african-pattern opacity-[0.025] mix-blend-multiply pointer-events-none" />
-
+    <section className="relative py-32 md:py-48 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="mb-20 md:mb-28"
         >
           <p className="text-gray-400 font-bold tracking-[0.5em] uppercase text-[10px] md:text-xs mb-4">
             What They're Saying
           </p>
-          <h2 className="font-heading font-normal text-5xl md:text-8xl leading-[0.85] tracking-tighter text-black">
+          <h2 className="font-heading font-normal text-4xl md:text-7xl leading-[0.85] tracking-tighter">
             The Community{" "}
-            <span className="text-transparent outline-text italic font-serif">Speaks</span>
+            <span className="font-heading tracking-wide">Speaks</span>
           </h2>
         </motion.div>
 
@@ -57,12 +55,12 @@ export default function TestimonialsSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="group relative"
             >
               <div className="h-full border border-gray-100 hover:border-primary/20 rounded-[2.5rem] p-8 md:p-10 bg-white hover:shadow-[0_30px_60px_rgba(5,8,124,0.06)] transition-all duration-700 hover:-translate-y-2">
                 {/* Opening quote mark */}
-                <span className="block font-serif text-[5rem] leading-[0.5] text-primary/15 mb-6 select-none">
+                <span className="block font-heading text-[4rem] leading-[0.5] text-primary/15 mb-6 select-none">
                   "
                 </span>
 

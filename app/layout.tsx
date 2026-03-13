@@ -16,18 +16,32 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "CON/FORM 1.0 - March 20-21, 2026",
+  title: "CON/FORM 1.0 - March 20 & April 6, 2026",
   description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/apple-icon.png",
+    icon: "/conform-icon.svg",
+    shortcut: "/conform-icon.svg",
+    apple: "/conform-icon.svg",
   },
   openGraph: {
-    title: "CON/FORM 1.0 - March 20-21, 2026",
+    title: "CON/FORM 1.0 - March 20 & April 6, 2026",
     description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
     url: "https://www.conformlagos.com",
     type: "website",
+    images: [
+      {
+        url: "/african-pattern.png",
+        width: 1200,
+        height: 630,
+        alt: "CON/FORM 1.0 - African Pattern",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CON/FORM 1.0 - March 20 & April 6, 2026",
+    description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
+    images: ["/african-pattern.png"],
   },
 };
 
