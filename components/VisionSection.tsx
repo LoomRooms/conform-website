@@ -85,7 +85,7 @@ export default function VisionSection() {
                         to{" "}
                         <span className="text-accent font-heading tracking-wider">Expression</span>
                     </motion.h2>
-                    <p className="text-gray-600 text-base md:text-xl mb-8 md:mb-12 leading-relaxed font-light">
+                    <p className="opacity-70 text-base md:text-xl mb-8 md:mb-12 leading-relaxed font-light">
                         CON/FORM isn't just an event — it's a two-day transformation. Born
                         in Egbeda, validated by tradition, and powered by raw creativity.
                     </p>
@@ -98,7 +98,7 @@ export default function VisionSection() {
                             <h3 className="font-heading text-xl md:text-2xl mb-2 group-hover:text-blue-400 transition-colors">
                                 Day 1: CON (Conference)
                             </h3>
-                            <p className="text-gray-500 text-sm md:text-lg leading-relaxed">
+                            <p className="opacity-60 text-sm md:text-lg leading-relaxed">
                                 A guided journey into how culture is built, lived, and
                                 sustained — through honest conversation at UNILAG.
                             </p>
@@ -110,7 +110,7 @@ export default function VisionSection() {
                             <h3 className="font-heading text-xl md:text-2xl mb-2 group-hover:text-blue-400 transition-colors">
                                 Day 2: FORM (Expression)
                             </h3>
-                            <p className="text-gray-500 text-sm md:text-lg leading-relaxed">
+                            <p className="opacity-60 text-sm md:text-lg leading-relaxed">
                                 Day 2 is earned — live performances, DJ sets, visual art
                                 installations, and community celebration in Egbeda.
                             </p>

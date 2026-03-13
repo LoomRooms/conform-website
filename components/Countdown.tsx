@@ -32,16 +32,13 @@ const TimeUnit = ({ value, label }: { value: number; label: string }) => {
     const digits = strValue.split("");
 
     return (
-        <div className="flex flex-col items-center">
-            <div className="w-14 h-14 md:w-18 md:h-18 glass rounded-xl flex items-center justify-center shadow-xl relative overflow-hidden group">
-                <div className="flex text-2xl md:text-3xl font-heading text-white relative z-10">
-                    {digits.map((d, i) => (
-                        <Digit key={i} val={d} />
-                    ))}
-                </div>
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="flex flex-col items-center md:items-end">
+            <div className="flex text-3xl md:text-6xl font-heading text-white tracking-tighter leading-none mb-1">
+                {digits.map((d, i) => (
+                    <Digit key={i} val={d} />
+                ))}
             </div>
-            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-secondary mt-3 font-bold">{label}</span>
+            <span className="text-[8px] md:text-[9px] uppercase tracking-[0.5em] text-secondary font-bold opacity-80">{label}</span>
         </div>
     );
 };
@@ -79,10 +76,13 @@ export default function Countdown() {
     if (!mounted) return null;
 
     return (
-        <div className="flex space-x-3 md:space-x-6 text-center">
+        <div className="flex space-x-6 md:space-x-10 text-center md:text-right">
             <TimeUnit value={timeLeft.days} label="Days" />
+            <div className="w-px h-8 bg-white/10 self-center hidden md:block" />
             <TimeUnit value={timeLeft.hours} label="Hours" />
+            <div className="w-px h-8 bg-white/10 self-center hidden md:block" />
             <TimeUnit value={timeLeft.minutes} label="Mins" />
+            <div className="w-px h-8 bg-white/10 self-center hidden md:block" />
             <TimeUnit value={timeLeft.seconds} label="Secs" />
         </div>
     );

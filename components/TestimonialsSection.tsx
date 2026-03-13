@@ -38,7 +38,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="mb-20 md:mb-28"
         >
-          <p className="text-gray-400 font-bold tracking-[0.5em] uppercase text-[10px] md:text-xs mb-4">
+          <p className="opacity-50 font-bold tracking-[0.5em] uppercase text-[10px] md:text-xs mb-4">
             What They're Saying
           </p>
           <h2 className="font-heading font-normal text-4xl md:text-7xl leading-[0.85] tracking-tighter">

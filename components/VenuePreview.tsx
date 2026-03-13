@@ -48,8 +48,8 @@ export default function VenuePreview() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12 md:mb-24"
         >
-          <span className="text-gray-300 font-bold tracking-[0.6em] uppercase text-[9px] md:text-xs mb-4 md:mb-6 block flex items-center gap-3">
-            <span className="w-6 md:w-8 h-px bg-gray-300 block"></span>
+          <span className="opacity-40 font-bold tracking-[0.6em] uppercase text-[9px] md:text-xs mb-4 md:mb-6 block flex items-center gap-3">
+            <span className="w-6 md:w-8 h-px bg-current opacity-40 block"></span>
             The Venues
           </span>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -59,7 +59,7 @@ export default function VenuePreview() {
                 to Be
               </span>
             </h2>
-            <p className="text-gray-400 text-sm md:text-base font-light max-w-sm leading-relaxed md:text-right">
+            <p className="opacity-50 text-sm md:text-base font-light max-w-sm leading-relaxed md:text-right">
               Two distinct spaces. Two distinct energies.<br />Plan your movement.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function VenuePreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-gray-100/60 bg-white hover:border-primary/20 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(5,8,124,0.08)] transition-all duration-700 hover:-translate-y-2 flex flex-col"
+              className="group relative rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-current/10 bg-current/[0.02] backdrop-blur-sm hover:border-primary/20 hover:shadow-[0_40px_80px_rgba(5,8,124,0.08)] transition-all duration-700 hover:-translate-y-2 flex flex-col"
             >
               {/* Image */}
               <div className="relative h-60 md:h-[22rem] overflow-hidden shrink-0">
@@ -107,19 +107,19 @@ export default function VenuePreview() {
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-10 bg-white flex-1 flex flex-col">
+              <div className="p-6 md:p-10 flex-1 flex flex-col">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4 mb-5 md:mb-6">
                   <div>
                     <p className="text-primary text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold mb-1 md:mb-1.5">{v.date}</p>
-                    <p className="text-gray-800 text-sm md:text-base font-medium leading-tight">{v.sub}</p>
+                    <p className="opacity-90 text-sm md:text-base font-medium leading-tight">{v.sub}</p>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-500 text-xs shrink-0 self-start md:self-auto bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">
+                  <div className="flex items-center gap-2 opacity-50 text-xs shrink-0 self-start md:self-auto bg-current/[0.05] px-3 py-1.5 rounded-full border border-current/10">
                     <Clock size={12} className="text-primary" />
                     <span className="font-medium tracking-wide">{v.time}</span>
                   </div>
                 </div>
 
-                <p className="text-gray-500 text-sm md:text-base font-light leading-relaxed mb-6 md:mb-8 border-t border-gray-100 pt-5 md:pt-6">
+                <p className="opacity-60 text-sm md:text-base font-light leading-relaxed mb-6 md:mb-8 border-t border-current/10 pt-5 md:pt-6">
                   {v.desc}
                 </p>
 

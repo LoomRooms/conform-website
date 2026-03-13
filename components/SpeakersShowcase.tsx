@@ -75,7 +75,7 @@ export default function SpeakersShowcase() {
               <span className="w-8 md:w-12 h-px bg-current opacity-40 block"></span>
               Day 1 — CON
             </span>
-            <h2 className="font-heading font-normal text-6xl md:text-[8rem] leading-[0.85] tracking-tighter drop-shadow-sm">
+            <h2 className="font-heading font-normal text-6xl md:text-[8rem] leading-[0.85] tracking-tighter">
               Featured{" "}
               <span className="font-heading text-[4rem] md:text-[8rem]">
                 Speakers
