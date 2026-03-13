@@ -138,21 +138,30 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
     ];
 
     const darkHeaderPaths = ["/", "/tickets", "/faq", "/sponsors", "/experience", "/artists", "/about", "/contact", "/register", "/speakers", "/press"];
-    
+    const lightBackgroundPaths = ["/about", "/tickets", "/experience", "/contact", "/register", "/sponsors", "/faq", "/legal"];
+
     // Determine if the header should be "dark" (white text/logo)
-    // We follow the user request: 
-    // - Light BG (White) -> Dark (Black logo)
-    // - Yellow BG -> White logo (user specifically asked)
-    // - Blue BG -> White logo
-    // - Dark BG -> White logo
     const getIsDarkHeader = () => {
+        // At the top of any page, we sit over the white background gap
+        // So we ALWAYS want a black logo/text for visibility (isDarkHeader = false)
+        if (!isScrolled) return false;
+
+        // Core theme-sensing logic for pages with dynamic color sections (like Homepage)
         if (currentTheme) {
-            // If it's the White background, we want Black logo/text (isDarkHeader = false)
-            if (currentTheme.bg.toLowerCase() === "#ffffff") return false;
-            // For everything else, including Yellow (#F1F352) and Blue, use White logo/text
+            // If the explicit text color is dark (black), then logo must be black (isDarkHeader = false)
+            if (currentTheme.text.toLowerCase() === "#000000" || currentTheme.text.toLowerCase() === "black") return false;
+            
+            const bg = currentTheme.bg.toLowerCase();
+            // Fallback to background check
+            if (bg === "#ffffff" || bg === "white" || bg === "#f1f352") return false;
             return true;
         }
-        return darkHeaderPaths.includes(pathname) && !isScrolled;
+
+        // On dark themed page content (Speakers, Artists, Press)
+        if (!lightBackgroundPaths.some(p => pathname.startsWith(p))) return true;
+
+        // Default to dark/black logo for light-themed static pages
+        return false;
     };
 
     const isDarkHeader = getIsDarkHeader();
@@ -166,11 +175,11 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
         if (isDarkHeader) {
             return isActive 
                 ? "bg-white text-black border-2 border-white shadow-[4px_4px_0_0_#ffffff] -translate-y-[2px] -translate-x-[2px]" 
-                : "bg-transparent text-white border-2 border-white shadow-[2px_2px_0_0_rgba(255,255,255,0.5)] hover:bg-white hover:text-black hover:shadow-[4px_4px_0_0_#ffffff] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]";
+                : "bg-[#1a1a1a]/40 text-white border-2 border-white/20 shadow-[2px_2px_0_0_rgba(255,255,255,0.2)] hover:bg-white hover:text-black hover:border-white hover:shadow-[4px_4px_0_0_#ffffff] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]";
         } else {
             return isActive
                 ? "bg-primary text-white border-2 border-black shadow-[4px_4px_0_0_#000000] -translate-y-[2px] -translate-x-[2px]"
-                : "bg-[#e5e5e5] text-black border-2 border-black shadow-[2px_2px_0_0_#000000] hover:bg-primary hover:text-white hover:shadow-[4px_4px_0_0_#000000] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]";
+                : "bg-white/40 text-black border-2 border-black/10 shadow-[2px_2px_0_0_rgba(0,0,0,0.1)] hover:bg-primary hover:text-white hover:border-black hover:shadow-[4px_4px_0_0_#000000] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]";
         }
     }
 
@@ -185,25 +194,13 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
             initial={{ y: 0, opacity: 1 }}
             animate={isVisible ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="sticky top-0 z-50 bg-white px-3 pb-6 pt-0"
+            className="sticky top-0 z-50 bg-transparent px-3 pb-4 pt-0"
         >
             <nav 
                 className={`relative w-full z-10 transition-all duration-500
                     ${isScrolled ? "py-3" : "py-5"}
                 `}
             >
-                {/* Cinematic Progressive Blur Layer */}
-                <div
-                    className={`absolute inset-0 transition-all duration-700 ${isScrolled ? "opacity-100" : "opacity-0"}`}
-                    style={{
-                        background: isDarkHeader ? 'rgba(0,0,0,0.5)' : 'rgba(255, 255, 255, 0.6)',
-                        backdropFilter: 'blur(30px)',
-                    WebkitBackdropFilter: 'blur(30px)',
-                    maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
-                }}
-            />
-
             <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 max-w-[1700px] mx-auto">
                 <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full gap-2">
                     
@@ -287,15 +284,15 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
                             {/* Tickets Button */}
                             <Link href="/tickets" className={`${basePillClass} ml-1 ${
                                 isDarkHeader 
-                                    ? "bg-primary text-white border-2 border-black shadow-[2px_2px_0_0_#000000] hover:bg-white hover:text-black hover:border-white hover:shadow-[4px_4px_0_0_#ffffff] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]" 
-                                    : "bg-primary text-white border-2 border-black shadow-[2px_2px_0_0_#000000] hover:bg-[#161286] hover:text-white hover:shadow-[4px_4px_0_0_#000000] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]"
+                                    ? "bg-primary text-white border-2 border-black shadow-[2px_2px_0_0_#000000] hover:bg-white hover:text-primary hover:border-white hover:shadow-[4px_4px_0_0_#ffffff] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]" 
+                                    : "bg-primary text-white border-2 border-black shadow-[2px_2px_0_0_#000000] hover:bg-secondary hover:text-black hover:shadow-[4px_4px_0_0_#000000] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]"
                             }`}>
                                 Tickets
                             </Link>
-
+                            
                             <Link href="/register" className={`${basePillClass} ${
                                 isDarkHeader 
-                                    ? "bg-white text-black border-2 border-white shadow-[2px_2px_0_0_rgba(255,255,255,0.5)] hover:bg-gray-200 hover:shadow-[4px_4px_0_0_#ffffff] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]" 
+                                    ? "bg-white text-black border-2 border-white shadow-[2px_2px_0_0_#ffffff] hover:bg-secondary hover:shadow-[4px_4px_0_0_#f1f352] hover:border-secondary hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]" 
                                     : "bg-black text-white border-2 border-black shadow-[2px_2px_0_0_#000000] hover:bg-primary hover:text-white hover:border-black hover:shadow-[4px_4px_0_0_#000000] hover:-translate-y-[2px] hover:-translate-x-[2px] active:shadow-none active:translate-y-[1px] active:translate-x-[1px]"
                             }`}>
                                 Register Now

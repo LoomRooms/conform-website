@@ -90,38 +90,40 @@ export default function Artists() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
+            <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
 
-            {/* Cinematic Hero */}
-            <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-center justify-center bg-black">
-                <div className="absolute inset-0 z-0 overflow-hidden">
-                    <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-20" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-[#050505] z-10" />
-                    <img
-                        src="/assets/hero-bg.png"
-                        alt="Background"
-                        className="w-full h-full object-cover scale-105 animate-slow-zoom opacity-40"
-                    />
-                </div>
+            {/* Cinematic Hero Pod */}
+            <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
+                <div className="relative min-h-[65vh] md:min-h-[85vh] flex items-center justify-center bg-black rounded-[3rem] md:rounded-[4.5rem] overflow-hidden">
+                    <div className="absolute inset-0 z-0 overflow-hidden">
+                        <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-20" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-[#050505] z-10" />
+                        <img
+                            src="/assets/hero-bg.png"
+                            alt="Background"
+                            className="w-full h-full object-cover scale-105 animate-slow-zoom opacity-40"
+                        />
+                    </div>
 
-                <div className="relative z-30 text-center px-4 max-w-5xl mx-auto pt-32 pb-24">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                        <span className="text-primary font-bold tracking-[0.8em] uppercase text-[10px] md:text-xs mb-8 block opacity-80">
-                            The Collective
-                        </span>
-                        <h1 className="font-heading text-4xl md:text-[6.5rem] text-white mb-4 leading-[0.8] tracking-tighter">
-                            SOUNDING{" "}
-                            <br className="md:hidden" />
-                            <span className="font-heading tracking-wide text-[3rem] md:text-[5.5rem] inline-block mt-4 uppercase">THE FUTURE</span>
-                        </h1>
-                        <p className="text-white/40 text-[10px] md:text-xs uppercase tracking-[0.4em] font-light mt-12 max-w-2xl mx-auto">
-                            70+ Creatives • Nurtured by Loom Rooms • Validated by the system
-                        </p>
-                    </motion.div>
+                    <div className="relative z-30 text-center px-4 max-w-5xl mx-auto pt-32 pb-24">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            <span className="text-primary font-bold tracking-[0.8em] uppercase text-[10px] md:text-xs mb-8 block opacity-80">
+                                The Collective
+                            </span>
+                            <h1 className="font-heading text-4xl md:text-[6.5rem] text-white mb-4 leading-[0.8] tracking-tighter">
+                                SOUNDING{" "}
+                                <br className="md:hidden" />
+                                <span className="font-heading tracking-wide text-[3rem] md:text-[5.5rem] inline-block mt-4 uppercase">THE FUTURE</span>
+                            </h1>
+                            <p className="text-white/40 text-[10px] md:text-xs uppercase tracking-[0.4em] font-light mt-12 max-w-2xl mx-auto">
+                                70+ Creatives • Nurtured by Loom Rooms • Validated by the system
+                            </p>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 

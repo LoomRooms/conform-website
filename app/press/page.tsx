@@ -35,31 +35,33 @@ export default function Press() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
+      <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
 
-      {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-african-pattern opacity-[0.06] mix-blend-overlay pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-[#050505] pointer-events-none" />
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-32 pb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="text-primary font-bold tracking-[0.8em] uppercase text-[10px] md:text-xs mb-8 block">
-              Press & Media
-            </span>
-            <h1 className="font-heading text-4xl md:text-[6rem] text-white mb-6 leading-[0.85] tracking-tighter">
-              CON/FORM in the{" "}
-              <span className="font-heading tracking-wide text-[2.5rem] md:text-[4.5rem]">
-                Media
+      {/* Hero Pod */}
+      <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
+        <div className="relative min-h-[60vh] flex items-center justify-center bg-black overflow-hidden rounded-[3rem] md:rounded-[4.5rem]">
+          <div className="absolute inset-0 bg-african-pattern opacity-[0.06] mix-blend-overlay pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-[#050505] pointer-events-none" />
+          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-32 pb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <span className="text-primary font-bold tracking-[0.8em] uppercase text-[10px] md:text-xs mb-8 block">
+                Press & Media
               </span>
-            </h1>
-            <p className="text-white/40 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto">
-              Everything you need to cover CON/FORM 1.0. Download assets, copy the press description, and contact our media team.
-            </p>
-          </motion.div>
+              <h1 className="font-heading text-4xl md:text-[6rem] text-white mb-6 leading-[0.85] tracking-tighter">
+                CON/FORM in the{" "}
+                <span className="font-heading tracking-wide text-[2.5rem] md:text-[4.5rem]">
+                  Media
+                </span>
+              </h1>
+              <p className="text-white/40 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto">
+                Everything you need to cover CON/FORM 1.0. Download assets, copy the press description, and contact our media team.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

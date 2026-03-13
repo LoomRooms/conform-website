@@ -7,29 +7,31 @@ export default function Sponsors() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
+            <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
 
-            {/* Hero Section */}
-            <section className="relative bg-black text-white py-24 px-4 text-center overflow-hidden">
-                <div className="absolute inset-0 bg-african-pattern opacity-15 mix-blend-overlay z-0"></div>
-                <div className="absolute inset-0 bg-primary/20 z-0"></div>
-                <div className="cinematic-bottom-blur" />
-                <div className="relative z-10 max-w-4xl mx-auto">
-                    <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">
-                        Partnership Opportunities
-                    </span>
-                    <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6 text-white">
-                        Power the Future of Creativity
-                    </h1>
-                    <p className="text-xl max-w-2xl mx-auto opacity-80 mb-10 text-white">
-                        Join us in shaping the narrative of African creativity. Connect with over 500+ creatives, industry leaders, and tastemakers.
-                    </p>
-                    <a
-                        href="#contact"
-                        className="bg-primary text-white hover:bg-white hover:text-primary px-8 py-4 font-bold uppercase tracking-widest transition-all inline-flex items-center group"
-                    >
-                        Become a Partner <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
+            {/* Hero Pod */}
+            <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
+                <div className="relative bg-black text-white py-24 px-4 text-center overflow-hidden rounded-[3rem] md:rounded-[4.5rem]">
+                    <div className="absolute inset-0 bg-african-pattern opacity-15 mix-blend-overlay z-0"></div>
+                    <div className="absolute inset-0 bg-primary/20 z-0"></div>
+                    <div className="cinematic-bottom-blur" />
+                    <div className="relative z-10 max-w-4xl mx-auto">
+                        <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">
+                            Partnership Opportunities
+                        </span>
+                        <h1 className="font-heading font-bold text-4xl md:text-6xl mb-6 text-white">
+                            Power the Future of Creativity
+                        </h1>
+                        <p className="text-xl max-w-2xl mx-auto opacity-80 mb-10 text-white">
+                            Join us in shaping the narrative of African creativity. Connect with over 500+ creatives, industry leaders, and tastemakers.
+                        </p>
+                        <a
+                            href="#contact"
+                            className="bg-primary text-white hover:bg-white hover:text-primary px-8 py-4 font-bold uppercase tracking-widest transition-all inline-flex items-center group"
+                        >
+                            Become a Partner <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                    </div>
                 </div>
             </section>
 

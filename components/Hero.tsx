@@ -65,11 +65,12 @@ export default function Hero() {
     return (
         <section
             ref={containerRef}
-            className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black"
+            className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0"
         >
+            <div className="relative min-h-[85vh] md:min-h-[92vh] w-full rounded-[3.5rem] md:rounded-[4.5rem] overflow-hidden bg-black flex items-center justify-center">
             {/* Layer 1: Static Cinematic Background — no scroll animation */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-black/40 z-10" />
+                <div className="absolute inset-0 bg-black/60 z-10" />
                 <img
                     src="/assets/hero-cinematic.png"
                     alt="Conform Event Atmosphere"
@@ -193,6 +194,7 @@ export default function Hero() {
                     transform: rotate(180deg);
                 }
             `}</style>
+            </div>
         </section>
     );
 }

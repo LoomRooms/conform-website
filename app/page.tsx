@@ -58,7 +58,7 @@ const Counter = ({ value, label }: { value: string; label: string }) => {
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [theme, setTheme] = useState({ bg: "#000000", text: "#ffffff" });
+  const [theme, setTheme] = useState({ bg: "#ffffff", text: "#000000" });
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -120,12 +120,12 @@ export default function Home() {
 
   return (
     <>
-      <Navbar currentTheme={{ bg: '#ffffff', text: '#000000' }} />
+      <Navbar currentTheme={theme} />
 
       <motion.main
         ref={containerRef}
         style={{ backgroundColor: bgColor, color: textColor }}
-        className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+        className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
       >
       <Hero />
 

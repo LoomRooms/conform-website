@@ -5,21 +5,23 @@ export default function RegisterPage() {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
-                {/* Hero Section */}
-                <section className="relative bg-primary text-white py-24 px-4 overflow-hidden">
-                    <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-0"></div>
-                    <div className="cinematic-bottom-blur" />
-                    <div className="relative z-10 max-w-4xl mx-auto text-center">
-                        <h1 className="font-heading text-5xl md:text-7xl mb-4">
-                            Artist Application
-                        </h1>
-                        <p className="text-xl md:text-2xl text-secondary font-light">
-                            CON/FORM 1.0 • March 20 & April 6, 2026
-                        </p>
-                        <p className="mt-4 text-lg text-white/80">
-                            Application Deadline: February 14, 2026
-                        </p>
+            <div className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
+                {/* Hero section Pod */}
+                <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
+                    <div className="relative bg-primary text-white py-24 px-4 overflow-hidden rounded-[3rem] md:rounded-[4.5rem] text-center">
+                        <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-0"></div>
+                        <div className="cinematic-bottom-blur" />
+                        <div className="relative z-10 max-w-4xl mx-auto">
+                            <h1 className="font-heading text-5xl md:text-7xl mb-4 text-white">
+                                Artist Application
+                            </h1>
+                            <p className="text-xl md:text-2xl text-secondary font-light">
+                                CON/FORM 1.0 • March 20 & April 6, 2026
+                            </p>
+                            <p className="mt-4 text-lg text-white/80">
+                                Application Deadline: February 14, 2026
+                            </p>
+                        </div>
                     </div>
                 </section>
 
