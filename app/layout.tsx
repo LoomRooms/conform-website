@@ -26,14 +26,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CON/FORM 1.0 - March 20 & April 6, 2026",
     description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
-    url: "https://www.conformlagos.com",
+    url: "https://www.conform.com.ng",
     type: "website",
     images: [
       {
-        url: "/african-pattern.png",
+        url: "/conform-share.png",
         width: 1200,
         height: 630,
-        alt: "CON/FORM 1.0 - African Pattern",
+        alt: "CON/FORM 2024 - The Intersection of Thought & Performance",
       },
     ],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CON/FORM 1.0 - March 20 & April 6, 2026",
     description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
-    images: ["/african-pattern.png"],
+    images: ["/conform-share.png"],
   },
 };
 
