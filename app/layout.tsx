@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/conform-share.png",
+        url: "/conform-share.webp",
         width: 1200,
         height: 630,
         alt: "CON/FORM 2024 - The Intersection of Thought & Performance",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CON/FORM 1.0 - March 20 & April 6, 2026",
     description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
-    images: ["/conform-share.png"],
+    images: ["/conform-share.webp"],
   },
 };
 
