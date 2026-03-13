@@ -64,7 +64,10 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const leftLinks = [
+    type DropdownLink = { name: string; href: string };
+    type NavLink = { name: string; href: string; id?: string; dropdown?: DropdownLink[] };
+
+    const leftLinks: NavLink[] = [
         { 
             name: "About & FAQ", 
             id: "about-faq",
@@ -95,7 +98,7 @@ export default function Navbar() {
         },
     ];
 
-    const rightLinks = [
+    const rightLinks: NavLink[] = [
         { name: "Artists", href: "/artists" },
         { name: "Contact", href: "/contact" },
     ];
