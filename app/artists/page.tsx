@@ -11,69 +11,197 @@ const categories = ["All", "Film", "Music", "Fashion", "Visual Art"];
 
 const artists = [
     {
-        name: "Chidi Okoro",
-        category: "Film",
-        role: "Director",
-        bio: "Award-winning filmmaker bringing Afro-futurist stories to life through cinematic excellence.",
-        image: "/trdforconform.webp",
-        handle: "loomrooms"
-    },
-    {
-        name: "Amara Nnaji",
-        category: "Music",
-        role: "Neo-Soul Artist",
-        bio: "Blending traditional Igbo sounds with modern jazz fusion, creating a unique sonic identity.",
-        image: "/3.webp",
-        handle: "loomrooms"
-    },
-    {
-        name: "Tunde Bakare",
+        name: "Mastermind",
+        role: "Head Of Finace",
         category: "Visual Art",
-        role: "Painter",
-        bio: "Exploring the chaos of Lagos through abstract expressionism and vibrant city-scapes.",
-        image: "/4.webp",
-        handle: "loomrooms"
+        bio: "Culture is the ultimate asset, and we are its stewards.",
+        image: "/The Creatives Shaping Culture/Mastermind.jpeg",
+        handle: "Mastermind"
     },
     {
-        name: "Zainab Yusuf",
-        category: "Fashion",
-        role: "Designer",
-        bio: "Sustainable fashion pioneer using upcycled Ankara fabrics to redefine African couture.",
-        image: "/6.webp",
-        handle: "loomrooms"
-    },
-    {
-        name: "David West",
+        name: "VOX",
+        role: "Artist/A&R",
         category: "Music",
+        bio: "The sound of tomorrow is built on the rhythms of today.",
+        image: "/The Creatives Shaping Culture/VOX.jpeg",
+        handle: "VOX"
+    },
+    {
+        name: "Kreddy",
+        role: "Artist",
+        category: "Music",
+        bio: "True art is uncomfortable; it challenges the status quo.",
+        image: "/The Creatives Shaping Culture/Kreddy.jpeg",
+        handle: "Kreddy"
+    },
+    {
+        name: "Shola Bamidele",
+        role: "Creative Director/CEO",
+        category: "Visual Art",
+        bio: "Design is not just what it looks like; it's how it shapes reality.",
+        image: "/The Creatives Shaping Culture/Shola.jpeg",
+        handle: "SholaBamidele"
+    },
+    {
+        name: "Jackefa",
+        role: "Creative",
+        category: "Visual Art",
+        bio: "Innovation begins where tradition meets exploration.",
+        image: "/The Creatives Shaping Culture/Jackefa.jpeg",
+        handle: "Jackefa"
+    },
+    {
+        name: "Limz",
         role: "Producer",
-        bio: "The sonic architect behind the new Lagos sound, bridging afro-beats and electronic music.",
-        image: "/afdabts.png",
-        handle: "loomrooms"
+        category: "Music",
+        bio: "Every beat tells a story that words cannot reach.",
+        image: "/The Creatives Shaping Culture/Limz.jpeg",
+        handle: "Limz"
     },
     {
-        name: "Sola Alabi",
-        category: "Film",
-        role: "Cinematographer",
-        bio: "Capturing the raw, unfiltered emotion of Lagos streets with award-winning visual storytelling.",
-        image: "/3.webp",
-        handle: "loomrooms"
-    },
-    {
-        name: "Lola Ade",
-        category: "Fashion",
-        role: "Stylist",
-        bio: "Elevating African craftsmanship through contemporary editorial styling and creative direction.",
-        image: "/4.webp",
-        handle: "loomrooms"
-    },
-    {
-        name: "Kemi Balogun",
+        name: "Zenith",
+        role: "Event Organizer/Admin Manager/Marketing Lead/PA",
         category: "Visual Art",
-        role: "Photographer",
-        bio: "Documenting the intersection of traditional culture and modern city life through her lens.",
-        image: "/6.webp",
-        handle: "loomrooms"
+        bio: "Excellence is in the details of the experience we craft.",
+        image: "/The Creatives Shaping Culture/Zenith.jpeg",
+        handle: "Zenith"
     },
+    {
+        name: "Snow",
+        role: "Cinematographer",
+        category: "Film",
+        bio: "Framing the world through a lens of infinite possibility.",
+        image: "/The Creatives Shaping Culture/Snow.jpeg",
+        handle: "Snow"
+    },
+    {
+        name: "Doyin",
+        role: "Talent and community manger",
+        category: "Visual Art",
+        bio: "Community is the heart of every creative movement.",
+        image: "/The Creatives Shaping Culture/Doyin.jpeg",
+        handle: "Doyin"
+    },
+    {
+        name: "Honeybelle",
+        role: "PR Manager/artist",
+        category: "Visual Art",
+        bio: "The narrative we build is the legacy we leave behind.",
+        image: "/The Creatives Shaping Culture/Honeybelle.jpeg",
+        handle: "Honeybelle"
+    },
+    {
+        name: "IFE",
+        role: "Fashion designer/OAP",
+        category: "Fashion",
+        bio: "Fashion is the language we speak before we say a word.",
+        image: "/The Creatives Shaping Culture/IFE.jpeg",
+        handle: "IFE"
+    },
+    {
+        name: "Uduak",
+        role: "Communication Lead/OAP",
+        category: "Visual Art",
+        bio: "Voices amplified through clarity and purpose.",
+        image: "/The Creatives Shaping Culture/Uduak.jpeg",
+        handle: "Uduak"
+    },
+    {
+        name: "KidHillz",
+        role: "Artist/Producer",
+        category: "Music",
+        bio: "Soundwaves that bridge the gap between dreams and reality.",
+        image: "/The Creatives Shaping Culture/KidHillz.jpeg",
+        handle: "KidHillz"
+    },
+    {
+        name: "Oporshevy",
+        role: "Talent manger",
+        category: "Visual Art",
+        bio: "Guiding the stars of tomorrow toward their zenith.",
+        image: "/The Creatives Shaping Culture/Oporshevy.jpeg",
+        handle: "Oporshevy"
+    },
+    {
+        name: "KayCee",
+        role: "Dance Instructor/Artist manger",
+        category: "Music",
+        bio: "Motion is the purest form of human expression.",
+        image: "/The Creatives Shaping Culture/KayCee.jpeg",
+        handle: "KayCee"
+    },
+    {
+        name: "Creddy",
+        role: "Artist",
+        category: "Music",
+        bio: "Visions translated into vibrant strokes of creativity.",
+        image: "/The Creatives Shaping Culture/Creddy.jpeg",
+        handle: "Creddy"
+    },
+    {
+        name: "Geexen",
+        role: "Artist/Head of Artist Manager",
+        category: "Music",
+        bio: "Leadership is about empowering every voice in the room.",
+        image: "/The Creatives Shaping Culture/GEEXEN.jpeg",
+        handle: "Geexen"
+    },
+    {
+        name: "LarryStix",
+        role: "Producer/Production Manager",
+        category: "Music",
+        bio: "Precision in production, passion in every sound.",
+        image: "/The Creatives Shaping Culture/Larry.jpeg",
+        handle: "LarryStix"
+    },
+    {
+        name: "SVNTN",
+        role: "Artist/Stage manger",
+        category: "Music",
+        bio: "The stage is where our collective energy comes alive.",
+        image: "/The Creatives Shaping Culture/SVNTN.jpeg",
+        handle: "SVNTN"
+    },
+    {
+        name: "BIDEX",
+        role: "Artist",
+        category: "Music",
+        bio: "Rhythms that resonate with the soul of the culture.",
+        image: "/The Creatives Shaping Culture/Bidex.jpeg",
+        handle: "BIDEX"
+    },
+    {
+        name: "Arewa",
+        role: "Artist",
+        category: "Music",
+        bio: "Beauty and strength redefined through artistic vision.",
+        image: "/The Creatives Shaping Culture/Arewa.jpeg",
+        handle: "Arewa"
+    },
+    {
+        name: "Mercy",
+        role: "Creative",
+        category: "Visual Art",
+        bio: "Details define the difference between good and great.",
+        image: "/The Creatives Shaping Culture/Mercy.jpeg",
+        handle: "Mercy"
+    },
+    {
+        name: "DJ Yinkus",
+        role: "DJ/Artist",
+        category: "Music",
+        bio: "The pulse of the city, captured one track at a time.",
+        image: "/The Creatives Shaping Culture/DJ Yinkus.jpeg",
+        handle: "DJYinkus"
+    },
+    {
+        name: "Lumi",
+        role: "Creative",
+        category: "Visual Art",
+        bio: "Illuminating the path for future culture shapers.",
+        image: "/The Creatives Shaping Culture/Lumi.jpeg",
+        handle: "Lumi"
+    }
 ];
 
 export default function Artists() {
@@ -90,11 +218,11 @@ export default function Artists() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
+            <main className="min-h-screen relative bg-[#050505] selection:bg-primary selection:text-white">
 
-            {/* Cinematic Hero Pod */}
-            <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
-                <div className="relative min-h-[65vh] md:min-h-[85vh] flex items-center justify-center bg-black rounded-[3rem] md:rounded-[4.5rem] overflow-hidden">
+            {/* Cinematic Hero Full-Screen */}
+            <section className="relative bg-transparent">
+                <div className="relative min-h-[65vh] md:min-h-[85vh] flex items-center justify-center bg-black overflow-hidden">
                     <div className="absolute inset-0 z-0 overflow-hidden">
                         <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-20" />
                         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-[#050505] z-10" />
@@ -214,10 +342,10 @@ export default function Artists() {
                                                         "{artist.bio}"
                                                     </p>
                                                     <div className="flex gap-4">
-                                                        <a href={`https://instagram.com/${artist.handle}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon">
+                                                        <a href={`https://www.instagram.com/explore/search/keyword/?q=${encodeURIComponent(artist.name)}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon">
                                                             <Instagram size={18} className="transition-transform group-hover/icon:scale-110" />
                                                         </a>
-                                                        <a href={`https://x.com/${artist.handle}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon">
+                                                        <a href={`https://x.com/search?q=${encodeURIComponent(artist.name)}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon">
                                                             <Twitter size={18} className="transition-transform group-hover/icon:scale-110" />
                                                         </a>
                                                     </div>

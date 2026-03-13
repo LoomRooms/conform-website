@@ -125,7 +125,7 @@ export default function Home() {
       <motion.main
         ref={containerRef}
         style={{ backgroundColor: bgColor, color: textColor }}
-        className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+        className="min-h-screen relative"
       >
       <Hero />
 

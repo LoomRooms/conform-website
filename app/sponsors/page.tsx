@@ -9,9 +9,9 @@ export default function Sponsors() {
             <Navbar />
             <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
 
-            {/* Hero Pod */}
-            <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
-                <div className="relative bg-black text-white py-24 px-4 text-center overflow-hidden rounded-[3rem] md:rounded-[4.5rem]">
+            {/* Hero Full-Screen */}
+            <section className="relative bg-transparent">
+                <div className="relative bg-black text-white py-24 px-4 text-center overflow-hidden">
                     <div className="absolute inset-0 bg-african-pattern opacity-15 mix-blend-overlay z-0"></div>
                     <div className="absolute inset-0 bg-primary/20 z-0"></div>
                     <div className="cinematic-bottom-blur" />

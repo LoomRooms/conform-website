@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 
 const speakers = [
   {
-    name: "Tunde Oladele",
-    title: "Creative Director",
-    org: "Pan-African Design Studio",
+    name: "Shola Bamidele",
+    title: "Creative Director / CEO",
+    org: "CONFORM",
     topic: "Designing Systems That Last",
-    bio: "A visionary creative director who has shaped the visual identity of some of West Africa's most recognised brands. At CON/FORM, Tunde will challenge how creatives think about legacy and infrastructure.",
-    image: "/trdforconform.webp",
-    handle: "loomrooms",
+    bio: "The Creative Director and CEO behind CON/FORM, Shola is a visionary leader who has shaped the visual identity of the movement. He challenges how creatives think about legacy and infrastructure.",
+    image: "/The Creatives Shaping Culture/Shola.jpeg",
+    handle: "SholaBamidele",
     day: "Day 1",
     type: "Keynote",
   },
@@ -52,15 +52,15 @@ const speakers = [
     type: "Keynote",
   },
   {
-    name: "Biodun Alagbe",
-    title: "Media Strategist",
-    org: "The Narrative Lab",
-    topic: "Owning Your Narrative",
-    bio: "Biodun has worked with brands, artists and institutions to craft the stories that define them. He will speak on why creatives who control their narrative control their future.",
-    image: "/afdabts.png",
-    handle: "loomrooms",
-    day: "Day 1",
-    type: "Workshop",
+    name: "Iyo Prosper",
+    title: "Influencer",
+    org: "Panelist",
+    topic: "Third Panel Session",
+    bio: "A renowned influencer and cultural voice, Iyo Prosper joins CON/FORM as a panelist to discuss the evolving dynamics of digital influence and its impact on modern culture.",
+    image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
+    handle: "iyoprosper",
+    day: "March 20",
+    type: "Panel",
   },
   {
     name: "Chisom Aneke",
@@ -86,11 +86,11 @@ export default function Speakers() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
+      <main className="min-h-screen relative bg-[#050505] selection:bg-primary selection:text-white">
 
-      {/* Cinematic Hero Pod */}
-      <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
-        <div className="relative min-h-[65vh] md:min-h-[85vh] flex items-center justify-center bg-black rounded-[3rem] md:rounded-[4.5rem] overflow-hidden">
+      {/* Cinematic Hero Full-Screen */}
+      <section className="relative bg-transparent">
+        <div className="relative min-h-[65vh] md:min-h-[85vh] flex items-center justify-center bg-black overflow-hidden">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-20" />
             <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-[#050505] z-10" />

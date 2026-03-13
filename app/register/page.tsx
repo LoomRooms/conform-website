@@ -5,10 +5,10 @@ export default function RegisterPage() {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
-                {/* Hero section Pod */}
-                <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
-                    <div className="relative bg-primary text-white py-24 px-4 overflow-hidden rounded-[3rem] md:rounded-[4.5rem] text-center">
+            <div className="min-h-screen relative bg-white">
+                {/* Hero section Full-Screen */}
+                <section className="relative bg-transparent">
+                    <div className="relative bg-primary text-white py-24 px-4 overflow-hidden text-center">
                         <div className="absolute inset-0 bg-african-pattern opacity-20 mix-blend-overlay z-0"></div>
                         <div className="cinematic-bottom-blur" />
                         <div className="relative z-10 max-w-4xl mx-auto">

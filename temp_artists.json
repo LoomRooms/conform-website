@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Mastermind",
+    "role": "Head Of Finace",
+    "category": "Visual Art",
+    "bio": "Culture is the ultimate asset, and we are its stewards.",
+    "image": "/The Creatives Shaping Culture/Mastermind.jpeg",
+    "handle": "Mastermind"
+  },
+  {
+    "name": "VOX",
+    "role": "Artist/A&R",
+    "category": "Music",
+    "bio": "The sound of tomorrow is built on the rhythms of today.",
+    "image": "/The Creatives Shaping Culture/VOX.jpeg",
+    "handle": "VOX"
+  },
+  {
+    "name": "Kreddy",
+    "role": "Artist",
+    "category": "Music",
+    "bio": "True art is uncomfortable; it challenges the status quo.",
+    "image": "/The Creatives Shaping Culture/Kreddy.jpeg",
+    "handle": "Kreddy"
+  },
+  {
+    "name": "Mr Shola",
+    "role": "Creative Director/CEO",
+    "category": "Visual Art",
+    "bio": "Design is not just what it looks like; it's how it shapes reality.",
+    "image": "/The Creatives Shaping Culture/Shola.jpeg",
+    "handle": "MrShola"
+  },
+  {
+    "name": "Jackefa",
+    "role": "Creative",
+    "category": "Visual Art",
+    "bio": "Innovation begins where tradition meets exploration.",
+    "image": "/The Creatives Shaping Culture/Jackefa.jpeg",
+    "handle": "Jackefa"
+  },
+  {
+    "name": "Limz",
+    "role": "Producer",
+    "category": "Music",
+    "bio": "Every beat tells a story that words cannot reach.",
+    "image": "/The Creatives Shaping Culture/Limz.jpeg",
+    "handle": "Limz"
+  },
+  {
+    "name": "Zenith",
+    "role": "Event Organizer/Admin Manager/Marketing Lead/PA",
+    "category": "Visual Art",
+    "bio": "Excellence is in the details of the experience we craft.",
+    "image": "/The Creatives Shaping Culture/Zenith.jpeg",
+    "handle": "Zenith"
+  },
+  {
+    "name": "Snow",
+    "role": "Cinematographer",
+    "category": "Film",
+    "bio": "Framing the world through a lens of infinite possibility.",
+    "image": "/The Creatives Shaping Culture/Snow.jpeg",
+    "handle": "Snow"
+  },
+  {
+    "name": "Doyin",
+    "role": "Talent and community manger",
+    "category": "Visual Art",
+    "bio": "Community is the heart of every creative movement.",
+    "image": "/The Creatives Shaping Culture/Doyin.jpeg",
+    "handle": "Doyin"
+  },
+  {
+    "name": "Honeybelle",
+    "role": "PR Manager/artist",
+    "category": "Visual Art",
+    "bio": "The narrative we build is the legacy we leave behind.",
+    "image": "/The Creatives Shaping Culture/Honeybelle.jpeg",
+    "handle": "Honeybelle"
+  },
+  {
+    "name": "IFE",
+    "role": "Fashion designer/OAP",
+    "category": "Fashion",
+    "bio": "Fashion is the language we speak before we say a word.",
+    "image": "/The Creatives Shaping Culture/IFE.jpeg",
+    "handle": "IFE"
+  },
+  {
+    "name": "Uduak",
+    "role": "Communication Lead/OAP",
+    "category": "Visual Art",
+    "bio": "Voices amplified through clarity and purpose.",
+    "image": "/The Creatives Shaping Culture/Uduak.jpeg",
+    "handle": "Uduak"
+  },
+  {
+    "name": "KidHillz",
+    "role": "Artist/Producer",
+    "category": "Music",
+    "bio": "Soundwaves that bridge the gap between dreams and reality.",
+    "image": "/The Creatives Shaping Culture/KidHillz.jpeg",
+    "handle": "KidHillz"
+  },
+  {
+    "name": "Oporshevy",
+    "role": "Talent manger",
+    "category": "Visual Art",
+    "bio": "Guiding the stars of tomorrow toward their zenith.",
+    "image": "/The Creatives Shaping Culture/Oporshevy.jpeg",
+    "handle": "Oporshevy"
+  },
+  {
+    "name": "KayCee",
+    "role": "Dance Instructor/Artist manger",
+    "category": "Music",
+    "bio": "Motion is the purest form of human expression.",
+    "image": "/The Creatives Shaping Culture/KayCee.jpeg",
+    "handle": "KayCee"
+  },
+  {
+    "name": "Creddy",
+    "role": "Artist",
+    "category": "Music",
+    "bio": "Visions translated into vibrant strokes of creativity.",
+    "image": "/The Creatives Shaping Culture/Creddy.jpeg",
+    "handle": "Creddy"
+  },
+  {
+    "name": "Geexen",
+    "role": "Artist/Head of Artist Manager",
+    "category": "Music",
+    "bio": "Leadership is about empowering every voice in the room.",
+    "image": "/The Creatives Shaping Culture/GEEXEN.jpeg",
+    "handle": "Geexen"
+  },
+  {
+    "name": "LarryStix",
+    "role": "Producer/Production Manager",
+    "category": "Music",
+    "bio": "Precision in production, passion in every sound.",
+    "image": "/The Creatives Shaping Culture/Larry.jpeg",
+    "handle": "LarryStix"
+  },
+  {
+    "name": "SVNTN",
+    "role": "Artist/Stage manger",
+    "category": "Music",
+    "bio": "The stage is where our collective energy comes alive.",
+    "image": "/The Creatives Shaping Culture/SVNTN.jpeg",
+    "handle": "SVNTN"
+  },
+  {
+    "name": "BIDEX",
+    "role": "Artist",
+    "category": "Music",
+    "bio": "Rhythms that resonate with the soul of the culture.",
+    "image": "/The Creatives Shaping Culture/Bidex.jpeg",
+    "handle": "BIDEX"
+  },
+  {
+    "name": "Arewa",
+    "role": "Artist",
+    "category": "Music",
+    "bio": "Beauty and strength redefined through artistic vision.",
+    "image": "/The Creatives Shaping Culture/Arewa.jpeg",
+    "handle": "Arewa"
+  },
+  {
+    "name": "Mercy",
+    "role": "Creative",
+    "category": "Visual Art",
+    "bio": "Details define the difference between good and great.",
+    "image": "/The Creatives Shaping Culture/Mercy.jpeg",
+    "handle": "Mercy"
+  },
+  {
+    "name": "DJ Yinkus",
+    "role": "DJ/Artist",
+    "category": "Music",
+    "bio": "The pulse of the city, captured one track at a time.",
+    "image": "/The Creatives Shaping Culture/DJ Yinkus.jpeg",
+    "handle": "DJYinkus"
+  },
+  {
+    "name": "Lumi",
+    "role": "Creative",
+    "category": "Visual Art",
+    "bio": "Illuminating the path for future culture shapers.",
+    "image": "/The Creatives Shaping Culture/Lumi.jpeg",
+    "handle": "Lumi"
+  }
+]

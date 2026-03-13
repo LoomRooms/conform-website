@@ -37,9 +37,9 @@ export default function Press() {
       <Navbar />
       <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
 
-      {/* Hero Pod */}
-      <section className="relative bg-transparent px-3 md:px-5 pt-4 md:pt-4 pb-0">
-        <div className="relative min-h-[60vh] flex items-center justify-center bg-black overflow-hidden rounded-[3rem] md:rounded-[4.5rem]">
+      {/* Hero Full-Screen */}
+      <section className="relative bg-transparent">
+        <div className="relative min-h-[60vh] flex items-center justify-center bg-black overflow-hidden">
           <div className="absolute inset-0 bg-african-pattern opacity-[0.06] mix-blend-overlay pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-[#050505] pointer-events-none" />
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-32 pb-24">

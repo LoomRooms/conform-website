@@ -7,11 +7,11 @@ import KeyButton from "@/components/ui/KeyButton";
 
 const featured = [
   {
-    name: "Tunde Oladele",
-    title: "Creative Director",
-    org: "Pan-African Design Studio",
+    name: "Shola Bamidele",
+    title: "Creative Director / CEO",
+    org: "CONFORM",
     topic: "Designing Systems That Last",
-    image: "/trdforconform.webp",
+    image: "/The Creatives Shaping Culture/Shola.jpeg",
     type: "KEYNOTE",
   },
   {
@@ -39,11 +39,11 @@ const featured = [
     type: "KEYNOTE",
   },
   {
-    name: "Tomiwa A.",
-    title: "Culture Analyst",
-    org: "Native Networks",
-    topic: "The Next Decade",
-    image: "/afdabts.png",
+    name: "Iyo Prosper",
+    title: "Influencer",
+    org: "Panelist",
+    topic: "Third Panel Session",
+    image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
     type: "PANEL",
   }
 ];

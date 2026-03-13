@@ -7,11 +7,14 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import KeyButton from "@/components/ui/KeyButton";
 
-const Logo = ({ isDarkHeader }: { isDarkHeader: boolean }) => {
+const Logo = ({ isDarkHeader, isMobile, isScrolled }: { isDarkHeader: boolean; isMobile?: boolean; isScrolled?: boolean }) => {
+    // Mobile logo is now ALWAYS white per user request
+    let logoColor = isMobile ? 'text-white' : (isDarkHeader ? 'text-white' : 'text-black');
+    
     return (
-        <div className={`flex items-center group transition-colors duration-500 ${isDarkHeader ? 'text-white' : 'text-black'}`}>
+        <div className={`flex items-center group transition-colors duration-500 ${logoColor}`}>
             <svg 
-                className="h-9 w-auto transition-all duration-500 group-hover:scale-105" 
+                className={`${isMobile ? 'h-7' : 'h-9'} w-auto transition-all duration-500 group-hover:scale-105`} 
                 viewBox="0 0 505 138" 
                 xmlns="http://www.w3.org/2000/svg"
             >
@@ -142,9 +145,9 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
 
     // Determine if the header should be "dark" (white text/logo)
     const getIsDarkHeader = () => {
-        // At the top of any page, we sit over the white background gap
-        // So we ALWAYS want a black logo/text for visibility (isDarkHeader = false)
-        if (!isScrolled) return false;
+        // At the top of any page, we now sit over dark cinematic hero content (video or dark blue)
+        // So we want a white logo/text for visibility (isDarkHeader = true)
+        if (!isScrolled) return true;
 
         // Core theme-sensing logic for pages with dynamic color sections (like Homepage)
         if (currentTheme) {
@@ -194,7 +197,7 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
             initial={{ y: 0, opacity: 1 }}
             animate={isVisible ? { y: 0, opacity: 1 } : { y: -100, opacity: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="sticky top-0 z-50 bg-transparent px-3 pb-4 pt-0"
+            className="fixed top-0 left-0 w-full z-50 bg-transparent"
         >
             <nav 
                 className={`relative w-full z-10 transition-all duration-500
@@ -256,13 +259,22 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
                             <Logo isDarkHeader={isDarkHeader} />
                         </Link>
                         
-                        {/* Mobile: Animated drift from center to left */}
+                        {/* Mobile: Animated drift from center to left with white pill background */}
                         <motion.div 
                             style={{ x: finalLogoX }}
                             className="lg:hidden flex items-center relative z-[110]"
                         >
-                            <Link href="/" className="font-heading font-bold flex items-center">
-                                <Logo isDarkHeader={isDarkHeader} />
+                            <Link href="/" className="font-heading font-bold flex items-center relative">
+                                {/* Translucent Dark Pill Background - shows on scroll to pop the white logo */}
+                                <motion.div 
+                                    initial={{ opacity: 0 }}
+                                    animate={{ 
+                                        opacity: isScrolled ? 1 : 0,
+                                        scale: isScrolled ? 1 : 0.8
+                                    }}
+                                    className="absolute -inset-x-6 -inset-y-3 bg-[#05087c]/60 backdrop-blur-md rounded-full -z-10 shadow-lg border border-white/20"
+                                />
+                                <Logo isDarkHeader={isDarkHeader} isMobile={true} isScrolled={isScrolled} />
                             </Link>
                         </motion.div>
                     </div>
