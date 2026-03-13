@@ -31,7 +31,7 @@ const Logo = ({ isDarkHeader }: { isDarkHeader: boolean }) => {
     );
 };
 
-export default function Navbar() {
+export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; text: string } }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
@@ -109,7 +109,24 @@ export default function Navbar() {
     ];
 
     const darkHeaderPaths = ["/", "/tickets", "/faq", "/sponsors", "/experience", "/artists", "/about", "/contact", "/register", "/speakers", "/press"];
-    const isDarkHeader = darkHeaderPaths.includes(pathname) && !isScrolled;
+    
+    // Determine if the header should be "dark" (white text/logo)
+    // We follow the user request: 
+    // - Light BG (White) -> Dark (Black logo)
+    // - Yellow BG -> White logo (user specifically asked)
+    // - Blue BG -> White logo
+    // - Dark BG -> White logo
+    const getIsDarkHeader = () => {
+        if (currentTheme) {
+            // If it's the White background, we want Black logo/text (isDarkHeader = false)
+            if (currentTheme.bg.toLowerCase() === "#ffffff") return false;
+            // For everything else, including Yellow (#F1F352) and Blue, use White logo/text
+            return true;
+        }
+        return darkHeaderPaths.includes(pathname) && !isScrolled;
+    };
+
+    const isDarkHeader = getIsDarkHeader();
 
     const basePillClass = `px-5 py-3 rounded-full text-xs font-bold uppercase tracking-[0.1em] transition-all duration-300 backdrop-blur-sm whitespace-nowrap`;
     

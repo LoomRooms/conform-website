@@ -103,7 +103,7 @@ export default function Home() {
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       className="min-h-screen transition-colors duration-1000"
     >
-      <Navbar />
+      <Navbar currentTheme={theme} />
 
       <ColorTrigger color="#000000" textColor="#ffffff" setTheme={setTheme}>
         <Hero />
