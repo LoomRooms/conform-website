@@ -38,7 +38,12 @@ export default function Tickets() {
                             <li className="flex items-start"><Check className="text-primary mr-3 shrink-0" size={20} /> <span>Lunch included</span></li>
                         </ul>
 
-                        <KeyButton variant="outline" className="w-full py-4">
+                        <KeyButton 
+                            href="https://www.tixtango.com/spotlight/conform-conference" 
+                            variant="outline" 
+                            className="w-full py-4"
+                            target="_blank"
+                        >
                             Buy Day 1
                         </KeyButton>
                     </div>
