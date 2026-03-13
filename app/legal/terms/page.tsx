@@ -3,8 +3,9 @@ import Footer from "@/components/Footer";
 
 export default function TermsOfService() {
     return (
-        <main className="min-h-screen bg-white">
+        <>
             <Navbar />
+            <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
 
             <section className="py-20 md:py-32 px-4 max-w-4xl mx-auto">
                 <h1 className="font-heading font-bold text-4xl mb-8">Terms of Service</h1>
@@ -51,5 +52,6 @@ export default function TermsOfService() {
 
             <Footer />
         </main>
+        </>
     );
 }

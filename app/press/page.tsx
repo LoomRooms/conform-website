@@ -33,8 +33,9 @@ export default function Press() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#050505] selection:bg-primary selection:text-white">
+    <>
       <Navbar />
+      <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
 
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-black overflow-hidden">
@@ -175,5 +176,6 @@ export default function Press() {
 
       <Footer />
     </main>
+    </>
   );
 }

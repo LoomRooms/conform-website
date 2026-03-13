@@ -5,8 +5,9 @@ import { Check, Mail, ArrowRight, Star, Award, Heart } from "lucide-react";
 
 export default function Sponsors() {
     return (
-        <main className="min-h-screen bg-white">
+        <>
             <Navbar />
+            <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-white">
 
             {/* Hero Section */}
             <section className="relative bg-black text-white py-24 px-4 text-center overflow-hidden">
@@ -247,6 +248,7 @@ export default function Sponsors() {
 
             <Footer />
         </main>
+        </>
     );
 }
 

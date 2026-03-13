@@ -84,8 +84,9 @@ const typeBadgeColor: Record<string, string> = {
 
 export default function Speakers() {
   return (
-    <main className="min-h-screen bg-[#050505] selection:bg-primary selection:text-white">
+    <>
       <Navbar />
+      <main className="min-h-screen relative rounded-t-[3rem] overflow-hidden mt-2 mx-2 shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-[#050505] selection:bg-primary selection:text-white">
 
       {/* Cinematic Hero */}
       <section className="relative min-h-[65vh] md:min-h-[85vh] flex items-center justify-center bg-black">
@@ -263,5 +264,6 @@ export default function Speakers() {
 
       <Footer />
     </main>
+    </>
   );
 }
