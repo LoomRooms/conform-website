@@ -12,7 +12,9 @@ export default function Tickets() {
         isOpen: false,
         targetUrl: '',
         status: '',
-        progress: 0
+        progress: 0,
+        isError: false,
+        isSoldOut: false,
     });
 
     const handleBuyClick = (e: React.MouseEvent, url: string) => {
@@ -22,7 +24,9 @@ export default function Tickets() {
             isOpen: true,
             targetUrl: url,
             status: 'Finding ticket availability...',
-            progress: 15
+            progress: 15,
+            isError: false,
+            isSoldOut: false,
         });
 
         setTimeout(() => {
@@ -34,23 +38,53 @@ export default function Tickets() {
         }, 2200);
 
         setTimeout(() => {
-            setLoadingState(prev => ({ ...prev, status: 'Ticket not...', progress: 80 }));
-        }, 3000);
+            setLoadingState(prev => ({ ...prev, status: 'Ticket not...', progress: 80, isError: true }));
+        }, 3400);
 
         setTimeout(() => {
             const remainingVals = [2, 3, 4, 7];
             const remaining = remainingVals[Math.floor(Math.random() * remainingVals.length)]; 
-            setLoadingState(prev => ({ ...prev, status: `Ticket found... ${remaining} remaining.`, progress: 100 }));
-        }, 4800);
+            setLoadingState(prev => ({ ...prev, status: `Ticket found... ${remaining} remaining.`, progress: 100, isError: false }));
+        }, 5200);
 
         setTimeout(() => {
             window.open(url, '_blank');
             setLoadingState(prev => ({ ...prev, isOpen: false }));
-        }, 6000);
+        }, 6500);
     };
 
-    // If no URL is provided, default to conformity tickets home
-    const fallbackUrl = "https://www.tixtango.com/spotlight/conform-conference";
+    const handleSoldOutClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        
+        setLoadingState({
+            isOpen: true,
+            targetUrl: '',
+            status: 'Finding ticket availability...',
+            progress: 10,
+            isError: false,
+            isSoldOut: true,
+        });
+
+        setTimeout(() => {
+            setLoadingState(prev => ({ ...prev, status: 'Finding location...', progress: 25 }));
+        }, 1500);
+
+        setTimeout(() => {
+            setLoadingState(prev => ({ ...prev, status: 'Securing your spot...', progress: 45 }));
+        }, 3000);
+
+        setTimeout(() => {
+            setLoadingState(prev => ({ ...prev, status: 'Ticket not...', progress: 70, isError: true }));
+        }, 4500);
+
+        setTimeout(() => {
+            setLoadingState(prev => ({ ...prev, status: 'Full Package Sold Out. Buy Day 1 or Day 2 Tickets.', progress: 100 }));
+        }, 6500);
+    };
+
+    const closeOverlay = () => {
+        setLoadingState(prev => ({ ...prev, isOpen: false }));
+    };
 
     return (
         <>
@@ -116,7 +150,7 @@ export default function Tickets() {
                         <KeyButton 
                             variant="primary" 
                             className="w-full py-4"
-                            onClick={(e) => handleBuyClick(e, fallbackUrl)}
+                            onClick={(e) => handleSoldOutClick(e)}
                         >
                             Buy Full Package
                         </KeyButton>
@@ -200,12 +234,20 @@ export default function Tickets() {
                                 <div className="mt-4 mb-8 w-full">
                                     <div className="w-full h-4 bg-black/50 rounded-full overflow-hidden border border-white/10 p-0.5 shadow-inner">
                                         <motion.div 
-                                            className="h-full rounded-full relative overflow-hidden"
-                                            style={{ background: 'linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%)' }}
+                                            className="h-full rounded-full relative overflow-hidden transition-colors duration-500"
+                                            style={{ 
+                                                background: loadingState.isError 
+                                                    ? 'linear-gradient(90deg, #f59e0b 0%, #ef4444 100%)' // Yellow to Red
+                                                    : 'linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%)' // Blue gradient
+                                            }}
                                             initial={{ width: 0 }}
                                             animate={{ width: `${loadingState.progress}%` }}
                                             transition={{ ease: "easeOut", duration: 0.5 }}
                                         >
+                                            {/* Striped overlay for extra movement effect */}
+                                            {loadingState.progress < 100 && !loadingState.isError && (
+                                                <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.15)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.15)_50%,rgba(255,255,255,0.15)_75%,transparent_75%,transparent)] bg-[length:1rem_1rem] animate-[shimmer_1s_linear_infinite]" />
+                                            )}
                                         </motion.div>
                                     </div>
                                     <div className="flex justify-between items-center mt-3 text-xs font-bold text-[#a4b1cf] tracking-widest uppercase">
@@ -216,10 +258,15 @@ export default function Tickets() {
                                 
                                 <div className="mt-2 w-full">
                                     <button 
-                                        disabled 
-                                        className="w-full py-4 rounded-full bg-white text-black font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(255,255,255,0.25)] border-2 border-white/90"
+                                        disabled={loadingState.progress < 100 || (!loadingState.isSoldOut && loadingState.progress === 100)} 
+                                        onClick={loadingState.isSoldOut ? closeOverlay : undefined}
+                                        className={`w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(255,255,255,0.25)] border-2 border-white/90 
+                                            ${(loadingState.isSoldOut && loadingState.progress === 100)
+                                                ? 'bg-secondary text-black hover:bg-white cursor-pointer' 
+                                                : 'bg-white text-black opacity-50 cursor-not-allowed'
+                                            }`}
                                     >
-                                        {loadingState.progress === 100 ? 'Redirecting...' : 'Restart Now'}
+                                        {loadingState.progress < 100 ? 'Processing...' : (loadingState.isSoldOut ? 'Close' : 'Redirecting...')}
                                     </button>
                                 </div>
                             </div>
