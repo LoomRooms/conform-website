@@ -272,7 +272,7 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
                                         opacity: isScrolled ? 1 : 0,
                                         scale: isScrolled ? 1 : 0.8
                                     }}
-                                    className="absolute -inset-x-6 -inset-y-3 bg-[#05087c]/60 backdrop-blur-md rounded-full -z-10 shadow-lg border border-white/20"
+                                    className="absolute -inset-x-6 -inset-y-3 bg-black/30 backdrop-blur-lg rounded-full -z-10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/30"
                                 />
                                 <Logo isDarkHeader={isDarkHeader} isMobile={true} isScrolled={isScrolled} />
                             </Link>
@@ -316,11 +316,7 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
                                 aria-label="Toggle menu"
-                                className={`relative w-10 h-10 flex flex-col items-center justify-center gap-[6px] rounded-full transition-all duration-300 
-                                    ${isDarkHeader 
-                                        ? "bg-white/10 hover:bg-white/20 text-white" 
-                                        : "bg-black/10 hover:bg-black/20 text-black"
-                                    } focus:outline-none`}
+                                className="relative w-10 h-10 flex flex-col items-center justify-center gap-[6px] rounded-full transition-all duration-300 bg-black/30 hover:bg-black/50 text-white backdrop-blur-md border border-white/20 shadow-lg focus:outline-none z-50"
                             >
                                 <motion.span 
                                     animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}

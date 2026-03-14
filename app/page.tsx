@@ -14,29 +14,37 @@ import { motion, useScroll, useTransform, useInView, useMotionValueEvent } from 
 import { useRef, useState, useEffect } from "react";
 
 
+// Easing function for buttery smooth counting
+const easeOutCubic = (t: number): number => 1 - Math.pow(1 - t, 3);
+
 const Counter = ({ value, label }: { value: string; label: string }) => {
   const countRef = useRef(null);
-  const isInView = useInView(countRef, { once: true });
+  const isInView = useInView(countRef, { once: true, margin: "-50px" });
   const [displayValue, setDisplayValue] = useState(0);
   const target = parseInt(value);
 
   useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const duration = 2000; // 2 seconds
-      const increment = target / (duration / 16); // 60fps
+    if (!isInView) return;
+    
+    const duration = 1800; // ms
+    let startTime: number | null = null;
+    let rafId: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
       
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-          setDisplayValue(target);
-          clearInterval(timer);
-        } else {
-          setDisplayValue(Math.floor(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
-    }
+      setDisplayValue(Math.round(easedProgress * target));
+      
+      if (progress < 1) {
+        rafId = requestAnimationFrame(animate);
+      }
+    };
+
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
   }, [isInView, target]);
 
   return (
@@ -83,14 +91,14 @@ export default function Home() {
 
   const textColor = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.35, 0.48, 0.52, 0.68, 0.72, 0.85, 1],
+    [0, 0.2, 0.35, 0.49, 0.5, 0.68, 0.72, 0.85, 1],
     [
       "#ffffff", // Hero
       "#ffffff", // Vision
-      "#ffffff", // Speakers start
-      "#ffffff", // Speakers end (white until near yellow)
-      "#000000", // Experience/Stats (black on yellow)
-      "#000000", // Yellow end (black until near white)
+      "#ffffff", // Speakers
+      "#ffffff", // Just before yellow
+      "#000000", // Instant snap to black when yellow hits
+      "#000000", // Stay black through yellow and white
       "#000000", // Venue (black on white)
       "#ffffff", // CTA (white on black)
       "#ffffff", // Newsletter

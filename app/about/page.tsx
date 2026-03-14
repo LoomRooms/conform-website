@@ -82,7 +82,7 @@ export default function About() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <h2 className="text-3xl md:text-5xl lg:text-7xl font-light leading-tight tracking-tight text-white/90">
-                            "Every system that <span className="font-heading italic font-bold tracking-widest text-primary px-4 bg-white/5 rounded-2xl border border-white/10 glass-premium inline-block transform -rotate-2">ignored you</span> is now watching what you build <span className="text-white border-b-2 border-secondary pb-2">without it</span>."
+                            "Every system that <span className="font-heading italic font-bold tracking-widest text-[#00d2ff] px-4 bg-white/5 rounded-2xl border border-white/10 glass-premium inline-block transform -rotate-2">ignored you</span> is now watching what you build <span className="text-white border-b-2 border-secondary pb-2">without it</span>."
                         </h2>
                     </motion.div>
                 </div>
@@ -136,7 +136,7 @@ export default function About() {
                         <p className="text-white font-normal text-2xl md:text-4xl leading-snug font-heading tracking-wide">
                             Not a networking event. <br className="hidden md:block"/>
                             Not a conference. Not a festival.<br />
-                            <span className="text-primary mt-4 block text-4xl md:text-6xl drop-shadow-[0_0_20px_rgba(16,12,104,0.8)]">A SYSTEM-BUILDING EXPERIENCE.</span>
+                            <span className="text-[#00d2ff] mt-4 block text-4xl md:text-6xl drop-shadow-[0_0_20px_rgba(0,180,255,0.4)]">A SYSTEM-BUILDING EXPERIENCE.</span>
                         </p>
                     </motion.div>
                 </div>
@@ -273,7 +273,7 @@ export default function About() {
                             className="glass border border-white/20 p-10 rounded-3xl relative overflow-hidden group hover:border-primary transition-colors"
                         >
                             <div className="absolute top-0 left-0 w-full h-1 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                            <span className="text-primary font-bold tracking-widest uppercase text-xs block mb-4">March 20, 2026 — UNILAG</span>
+                            <span className="text-[#00d2ff] font-bold tracking-widest uppercase text-xs block mb-4">March 20, 2026 — UNILAG</span>
                             <h3 className="font-heading text-4xl text-white mb-4">Day 1: CON</h3>
                             <p className="text-white/60 leading-relaxed font-light text-lg">A guided journey into how culture is built, lived, and sustained. Unfolds through an Opening Address, Panel One (The Architects), a Systems Interlude, and Panel Two (The Executors).</p>
                         </motion.div>
