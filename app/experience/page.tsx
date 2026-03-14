@@ -1,11 +1,17 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { Mic2, Palette, Film, Shirt, MapPin, Clock } from "lucide-react";
+import { Mic2, Palette, Film, Shirt, MapPin, Clock, ChevronDown } from "lucide-react";
 import Timeline from "@/components/Timeline";
 import KeyButton from "@/components/ui/KeyButton";
+import { useState } from "react";
 
 export default function Experience() {
+    const [day1Open, setDay1Open] = useState(false);
+    const [day2Open, setDay2Open] = useState(false);
+
     return (
         <>
             <Navbar />
@@ -26,33 +32,58 @@ export default function Experience() {
             {/* Day 1: CON */}
             <section className="py-20 px-4 border-b border-gray-100">
                 <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-12">
-                        <div className="md:w-1/3 sticky top-[72px] md:top-32 h-fit relative z-30 md:z-10 -mx-4 px-4 md:mx-0 md:px-0 py-4 md:py-0">
-                            {/* Refined Localized Blur for Mobile - Left Side only - Extended up to eliminate peek-through */}
-                            <div className="md:hidden absolute top-[-72px] bottom-0 left-0 w-[85%] bg-white/80 backdrop-blur-sm z-0"
-                                style={{
-                                    maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)',
-                                    WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)',
-                                    maskComposite: 'intersect',
-                                    WebkitMaskComposite: 'source-in'
-                                }}
+
+                    {/* Mobile: Collapsible info card */}
+                    <div className="md:hidden mb-6">
+                        <button
+                            onClick={() => setDay1Open(!day1Open)}
+                            className="w-full flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300"
+                        >
+                            <div className="flex items-center gap-4 text-left">
+                                <div>
+                                    <span className="text-primary font-bold tracking-widest uppercase text-[10px] block">March 20, 2026</span>
+                                    <span className="font-heading font-bold text-2xl text-black leading-none">CON — Conference</span>
+                                </div>
+                            </div>
+                            <ChevronDown
+                                size={20}
+                                className={`text-primary shrink-0 transition-transform duration-300 ${day1Open ? "rotate-180" : ""}`}
                             />
+                        </button>
 
-                            <div className="relative z-10 pt-2 pb-6">
-                                <span className="text-primary font-bold tracking-widest uppercase block mb-2 text-xs md:text-base">March 20, 2026</span>
-                                <h2 className="font-heading font-bold text-5xl md:text-7xl text-black mb-4 leading-none">CON</h2>
-                                <p className="text-xl md:text-2xl font-light text-gray-500 mb-6 font-heading tracking-widest">Conference</p>
+                        {day1Open && (
+                            <div className="mt-2 bg-gray-50 border border-gray-100 rounded-2xl px-5 py-5 space-y-3 animate-in slide-in-from-top-2 duration-300">
+                                <div className="flex items-center text-gray-700">
+                                    <MapPin className="mr-2 text-primary shrink-0" size={15} />
+                                    <span className="text-sm">UNILAG, Afe Babalola Hall</span>
+                                </div>
+                                <div className="flex items-center text-gray-500">
+                                    <Clock className="mr-2 text-primary shrink-0" size={15} />
+                                    <span className="text-sm">11:00 AM – 6:00 PM</span>
+                                </div>
+                                <KeyButton href="/tickets" variant="dark" className="w-full py-3 justify-center text-sm">
+                                    Get Day 1 Ticket
+                                </KeyButton>
+                            </div>
+                        )}
+                    </div>
 
-                                <div className="flex items-center text-gray-700 mb-2 md:mb-3">
+                    <div className="flex flex-col md:flex-row gap-12">
+                        {/* Desktop Sticky Sidebar — Day 1 */}
+                        <div className="hidden md:block md:w-1/3 sticky top-32 h-fit">
+                            <div className="pt-2 pb-6">
+                                <span className="text-primary font-bold tracking-widest uppercase block mb-2">March 20, 2026</span>
+                                <h2 className="font-heading font-bold text-7xl text-black mb-4 leading-none">CON</h2>
+                                <p className="text-2xl font-light text-gray-500 mb-6 font-heading tracking-widest">Conference</p>
+                                <div className="flex items-center text-gray-700 mb-3">
                                     <MapPin className="mr-2 text-primary shrink-0" size={16} />
-                                    <span className="text-sm md:text-base">UNILAG, Afe Babalola Hall</span>
+                                    <span>UNILAG, Afe Babalola Hall</span>
                                 </div>
-                                <div className="flex items-center text-gray-500 mb-4 md:mb-8">
+                                <div className="flex items-center text-gray-500 mb-8">
                                     <Clock className="mr-2 text-primary shrink-0" size={16} />
-                                    <span className="text-xs md:text-sm tracking-tighter">11:00 AM – 6:00 PM</span>
+                                    <span className="text-sm tracking-tighter">11:00 AM – 6:00 PM</span>
                                 </div>
-
-                                <KeyButton href="/tickets" variant="dark" className="hidden md:inline-flex px-8 py-4">
+                                <KeyButton href="/tickets" variant="dark" className="px-8 py-4">
                                     Get Day 1 Ticket
                                 </KeyButton>
                             </div>
@@ -96,29 +127,50 @@ export default function Experience() {
             {/* Day 2: FORM */}
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row-reverse gap-12">
-                        <div className="md:w-1/3 sticky top-[72px] md:top-32 h-fit text-right relative z-30 md:z-10 -mx-4 px-4 md:mx-0 md:px-0 py-4 md:py-0">
-                            {/* Refined Localized Blur for Mobile - Right Side only - Extended up to eliminate peek-through */}
-                            <div className="md:hidden absolute top-[-72px] bottom-0 right-0 w-[85%] bg-[#F9FAFB]/80 backdrop-blur-sm z-0"
-                                style={{
-                                    maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to left, black 70%, transparent 100%)',
-                                    WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%), linear-gradient(to left, black 70%, transparent 100%)',
-                                    maskComposite: 'intersect',
-                                    WebkitMaskComposite: 'source-in'
-                                }}
+
+                    {/* Mobile: Collapsible info card */}
+                    <div className="md:hidden mb-6">
+                        <button
+                            onClick={() => setDay2Open(!day2Open)}
+                            className="w-full flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300"
+                        >
+                            <div className="flex items-center gap-4 text-left">
+                                <div>
+                                    <span className="text-gray-500 font-bold tracking-widest uppercase text-[10px] block">April 6, 2026</span>
+                                    <span className="font-heading font-bold text-2xl text-black leading-none">FORM — Expression</span>
+                                </div>
+                            </div>
+                            <ChevronDown
+                                size={20}
+                                className={`text-primary shrink-0 transition-transform duration-300 ${day2Open ? "rotate-180" : ""}`}
                             />
+                        </button>
 
-                            <div className="relative z-10 pt-2 pb-6">
-                                <span className="text-gray-500 font-bold tracking-widest uppercase block mb-2 text-xs md:text-base">April 6, 2026</span>
-                                <h2 className="font-heading font-bold text-5xl md:text-7xl text-black mb-4 leading-none">FORM</h2>
-                                <p className="text-xl md:text-2xl font-light text-gray-500 mb-6 font-heading tracking-widest">Expression</p>
+                        {day2Open && (
+                            <div className="mt-2 bg-white border border-gray-100 rounded-2xl px-5 py-5 space-y-3 animate-in slide-in-from-top-2 duration-300">
+                                <div className="flex items-center text-gray-700">
+                                    <MapPin className="mr-2 text-primary shrink-0" size={15} />
+                                    <span className="text-sm">Egbeda (Loom Rooms Home)</span>
+                                </div>
+                                <KeyButton href="/tickets" variant="primary" className="w-full py-3 justify-center text-sm">
+                                    Get Day 2 Ticket
+                                </KeyButton>
+                            </div>
+                        )}
+                    </div>
 
-                                <div className="flex items-center justify-end text-gray-700 mb-4 md:mb-8">
-                                    <span className="text-sm md:text-base">Egbeda (Loom Rooms Home)</span>
+                    <div className="flex flex-col md:flex-row-reverse gap-12">
+                        {/* Desktop Sticky Sidebar — Day 2 */}
+                        <div className="hidden md:block md:w-1/3 sticky top-32 h-fit text-right">
+                            <div className="pt-2 pb-6">
+                                <span className="text-gray-500 font-bold tracking-widest uppercase block mb-2">April 6, 2026</span>
+                                <h2 className="font-heading font-bold text-7xl text-black mb-4 leading-none">FORM</h2>
+                                <p className="text-2xl font-light text-gray-500 mb-6 font-heading tracking-widest">Expression</p>
+                                <div className="flex items-center justify-end text-gray-700 mb-8">
+                                    <span>Egbeda (Loom Rooms Home)</span>
                                     <MapPin className="ml-2 text-primary shrink-0" size={16} />
                                 </div>
-
-                                <KeyButton href="/tickets" variant="primary" className="hidden md:inline-flex px-8 py-4">
+                                <KeyButton href="/tickets" variant="primary" className="px-8 py-4">
                                     Get Day 2 Ticket
                                 </KeyButton>
                             </div>
@@ -158,6 +210,7 @@ export default function Experience() {
                     </div>
                 </div>
             </section>
+
 
             {/* Full Timeline */}
             <section className="py-20 px-4">
