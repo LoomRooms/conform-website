@@ -33,11 +33,11 @@ export default function Experience() {
             <section className="py-20 px-4 border-b border-gray-100">
                 <div className="max-w-7xl mx-auto">
 
-                    {/* Mobile: Collapsible info card */}
-                    <div className="md:hidden mb-6">
+                    {/* Mobile: Sticky Collapsible info card */}
+                    <div className="md:hidden sticky top-[72px] z-30 mb-6 -mx-4 px-4 pt-2 pb-0 bg-white">
                         <button
                             onClick={() => setDay1Open(!day1Open)}
-                            className="w-full flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300"
+                            className="w-full flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-2xl px-5 py-4 shadow-sm active:shadow-inner transition-all duration-300"
                         >
                             <div className="flex items-center gap-4 text-left">
                                 <div>
@@ -51,8 +51,8 @@ export default function Experience() {
                             />
                         </button>
 
-                        {day1Open && (
-                            <div className="mt-2 bg-gray-50 border border-gray-100 rounded-2xl px-5 py-5 space-y-3 animate-in slide-in-from-top-2 duration-300">
+                        <div className={`overflow-hidden transition-all duration-300 ${day1Open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}`}>
+                            <div className="mt-2 bg-gray-50 border border-gray-100 rounded-2xl px-5 py-5 space-y-3 mb-2">
                                 <div className="flex items-center text-gray-700">
                                     <MapPin className="mr-2 text-primary shrink-0" size={15} />
                                     <span className="text-sm">UNILAG, Afe Babalola Hall</span>
@@ -65,7 +65,7 @@ export default function Experience() {
                                     Get Day 1 Ticket
                                 </KeyButton>
                             </div>
-                        )}
+                        </div>
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-12">
@@ -128,11 +128,11 @@ export default function Experience() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
 
-                    {/* Mobile: Collapsible info card */}
-                    <div className="md:hidden mb-6">
+                    {/* Mobile: Sticky Collapsible info card */}
+                    <div className="md:hidden sticky top-[72px] z-30 mb-6 -mx-4 px-4 pt-2 pb-0 bg-gray-50">
                         <button
                             onClick={() => setDay2Open(!day2Open)}
-                            className="w-full flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300"
+                            className="w-full flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-2xl px-5 py-4 shadow-sm active:shadow-inner transition-all duration-300"
                         >
                             <div className="flex items-center gap-4 text-left">
                                 <div>
@@ -146,8 +146,8 @@ export default function Experience() {
                             />
                         </button>
 
-                        {day2Open && (
-                            <div className="mt-2 bg-white border border-gray-100 rounded-2xl px-5 py-5 space-y-3 animate-in slide-in-from-top-2 duration-300">
+                        <div className={`overflow-hidden transition-all duration-300 ${day2Open ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}>
+                            <div className="mt-2 bg-white border border-gray-100 rounded-2xl px-5 py-5 space-y-3 mb-2">
                                 <div className="flex items-center text-gray-700">
                                     <MapPin className="mr-2 text-primary shrink-0" size={15} />
                                     <span className="text-sm">Egbeda (Loom Rooms Home)</span>
@@ -156,7 +156,7 @@ export default function Experience() {
                                     Get Day 2 Ticket
                                 </KeyButton>
                             </div>
-                        )}
+                        </div>
                     </div>
 
                     <div className="flex flex-col md:flex-row-reverse gap-12">
