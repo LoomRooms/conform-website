@@ -73,35 +73,48 @@ export default function Home() {
     offset: ["start start", "end end"]
   });
 
-  // Map scroll progress to background colors
-  // Refined offsets to better match section transitions
+  // Map scroll progress to background colors with INSTANT snapping (no gradual transitions)
   const bgColor = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.35, 0.5, 0.7, 0.85, 1],
     [
-      "#000000", // Hero (Black)
-      "#0A0725", // Vision (Dark Blue)
-      "#100C68", // Speakers (Primary Blue)
-      "#F1F352", // Experience/Stats (Secondary Yellow)
-      "#ffffff", // Venue (White)
-      "#000000", // Testimonials/CTA (Black)
-      "#0A0725", // Newsletter (Dark Blue)
+      0, 0.199,
+      0.2, 0.349,
+      0.35, 0.499,
+      0.5, 0.699,
+      0.7, 0.849,
+      0.85, 0.999,
+      1
+    ],
+    [
+      "#000000", "#000000", // Hero (Black)
+      "#0A0725", "#0A0725", // Vision (Dark Blue)
+      "#100C68", "#100C68", // Speakers (Primary Blue)
+      "#F1F352", "#F1F352", // Experience/Stats (Secondary Yellow)
+      "#ffffff", "#ffffff", // Venue (White)
+      "#000000", "#000000", // Testimonials/CTA (Black)
+      "#0A0725"             // Newsletter (Dark Blue)
     ]
   );
 
   const textColor = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.35, 0.49, 0.5, 0.68, 0.72, 0.85, 1],
     [
-      "#ffffff", // Hero
-      "#ffffff", // Vision
-      "#ffffff", // Speakers
-      "#ffffff", // Just before yellow
-      "#000000", // Instant snap to black when yellow hits
-      "#000000", // Stay black through yellow and white
-      "#000000", // Venue (black on white)
-      "#ffffff", // CTA (white on black)
-      "#ffffff", // Newsletter
+      0, 0.199,
+      0.2, 0.349,
+      0.35, 0.499,
+      0.5, 0.699,
+      0.7, 0.849,
+      0.85, 0.999,
+      1
+    ],
+    [
+      "#ffffff", "#ffffff", // Hero
+      "#ffffff", "#ffffff", // Vision
+      "#ffffff", "#ffffff", // Speakers
+      "#000000", "#000000", // Experience/Stats (Instant black on yellow)
+      "#000000", "#000000", // Venue
+      "#ffffff", "#ffffff", // CTA
+      "#ffffff"             // Newsletter
     ]
   );
 

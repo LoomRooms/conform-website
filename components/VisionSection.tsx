@@ -119,7 +119,7 @@ export default function VisionSection() {
 
                     <Link
                         href="/about"
-                        className="inline-flex items-center mt-10 md:mt-16 text-primary font-heading hover:text-accent transition-all uppercase tracking-[0.2em] group text-sm md:text-lg font-bold"
+                        className="inline-flex items-center mt-10 md:mt-16 text-[#00d2ff] font-heading hover:text-accent transition-all uppercase tracking-[0.2em] group text-sm md:text-lg font-bold"
                     >
                         Read the full story{" "}
                         <MoveRight className="ml-3 group-hover:translate-x-2 transition-transform" />

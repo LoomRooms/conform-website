@@ -199,8 +199,7 @@ export default function Tickets() {
                     </div>
                     <div>
                         <h4 className="font-bold text-lg mb-4">Group Discounts?</h4>
-                        <p className="text-gray-600 mb-4">Bringing a squad? Groups of 10+ get package tickets for ₦5,000 each.</p>
-                        <a href="mailto:hello@conform.ng" className="text-primary font-bold underline">Contact us for group booking</a>
+                        <a href="mailto:hello@conform.com.ng" className="text-primary font-bold underline">Contact us for group booking</a>
                     </div>
                 </div>
             </section>

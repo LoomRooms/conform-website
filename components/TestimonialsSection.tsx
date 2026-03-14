@@ -15,14 +15,14 @@ const testimonials = [
       "I've been to panels, summits, conferences. Nothing has brought together this calibre of thinkers and makers in the same room. What Loom Rooms has built here is rare.",
     name: "Ngozi Okonkwo",
     role: "Founder, Studio North",
-    image: "/3.webp",
+    image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
   },
   {
     quote:
       "This is the kind of event that Nigerian creatives have been building toward — intentional, cultural, and uncompromising in its vision.",
     name: "Emeka Diribe",
     role: "Music Executive & Curator",
-    image: "/4.webp",
+    image: "/The Creatives Shaping Culture/Speakers/Chude Jideonwo.jpeg",
   },
 ];
 

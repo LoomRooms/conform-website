@@ -21,10 +21,11 @@ const Logo = ({ isDarkHeader, isMobile, isScrolled }: { isDarkHeader: boolean; i
                 <text 
                     x="-6.489" 
                     y="135.513" 
-                    className="font-heading"
+                    className="font-heading font-normal"
                     style={{
                         fontSize: "190.864px",
-                        fill: "currentColor"
+                        fill: "currentColor",
+                        fontWeight: "normal"
                     }}
                 >
                     c<tspan x="61.267 131.887 207.66 267.591 338.211 409.403 " y="135.513 135.513 135.513 135.513 135.513 135.513 ">onform</tspan>
@@ -255,7 +256,7 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
                     {/* Center Section / Logo — desktop always visible; mobile handled here too */}
                     <div className="flex items-center justify-center pt-0.5 relative">
                         {/* Desktop: always visible */}
-                        <Link href="/" className="hidden lg:flex font-heading font-bold items-center">
+                        <Link href="/" className="hidden lg:flex font-heading items-center">
                             <Logo isDarkHeader={isDarkHeader} />
                         </Link>
                         
@@ -264,7 +265,7 @@ export default function Navbar({ currentTheme }: { currentTheme?: { bg: string; 
                             style={{ x: finalLogoX }}
                             className="lg:hidden flex items-center relative z-[110]"
                         >
-                            <Link href="/" className="font-heading font-bold flex items-center relative">
+                            <Link href="/" className="font-heading flex items-center relative">
                                 {/* Translucent Dark Pill Background - shows on scroll to pop the white logo */}
                                 <motion.div 
                                     initial={{ opacity: 0 }}

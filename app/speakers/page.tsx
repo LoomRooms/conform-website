@@ -12,66 +12,44 @@ const speakers = [
     title: "Creative Director / CEO",
     org: "CONFORM",
     topic: "Designing Systems That Last",
-    bio: "The Creative Director and CEO behind CON/FORM, Shola is a visionary leader who has shaped the visual identity of the movement. He challenges how creatives think about legacy and infrastructure.",
-    image: "/The Creatives Shaping Culture/Shola.jpeg",
+    bio: "The Creative Director and CEO behind CON/FORM, Shola is a visionary leader who has shaped the visual identity of the movement. He challenges how creatives think about legacy and infrastructure. Speaking on Panel 1 — The Architects.",
+    image: "/The Creatives Shaping Culture/Speakers/Shola Bamidele.jpeg",
     handle: "SholaBamidele",
-    day: "Day 1",
+    day: "March 20",
     type: "Keynote",
   },
   {
-    name: "Adaeze Nwosu",
-    title: "Founder",
-    org: "Lagos Fashion Week",
-    topic: "Building Industry From Culture",
-    bio: "Adaeze turned a cultural moment into an industry. She will share the blueprint for how creatives can move from makers to institution-builders within their own ecosystem.",
-    image: "/3.webp",
-    handle: "loomrooms",
-    day: "Day 1",
+    name: "Chude Jideonwo",
+    title: "Journalist & Media Entrepreneur",
+    org: "Red Africa / WithChude",
+    topic: "Building Narrative Infrastructure for a New Africa",
+    bio: "Co-founder of Red Africa and host of #WithChude, Chude Jideonwo is one of Africa's most influential media voices. Forbes 30 Under 30, Yale World Fellow, and a champion of African storytelling at a global scale. Speaking on Panel 1 — The Architects.",
+    image: "/The Creatives Shaping Culture/Speakers/Chude Jideonwo.jpeg",
+    handle: "chudejideonwo",
+    day: "March 20",
     type: "Panel",
   },
   {
-    name: "Emeka Eze",
-    title: "Tech Entrepreneur & Storyteller",
-    org: "The Builder's Table",
-    topic: "When Technology Meets Culture",
-    bio: "Emeka sits at the intersection of African tech and cultural narrative. He explores why the next generation of African builders must also be storytellers.",
-    image: "/4.webp",
-    handle: "loomrooms",
-    day: "Day 1",
-    type: "Talk",
-  },
-  {
-    name: "Yetunde Balogun",
-    title: "Music Executive",
-    org: "Afrobeats Global",
-    topic: "The Business of African Sound",
-    bio: "One of the most powerful forces behind the globalisation of Afrobeats, Yetunde will pull back the curtain on what it truly takes to build a music career as a system, not a hustle.",
-    image: "/6.webp",
-    handle: "loomrooms",
-    day: "Day 1",
-    type: "Keynote",
-  },
-  {
     name: "Iyo Prosper",
-    title: "Influencer",
+    title: "Influencer & Content Creator",
     org: "Panelist",
-    topic: "Third Panel Session",
-    bio: "A renowned influencer and cultural voice, Iyo Prosper joins CON/FORM as a panelist to discuss the evolving dynamics of digital influence and its impact on modern culture.",
+    topic: "The Creator Economy & Digital Culture",
+    bio: "A renowned influencer and cultural voice, Iyo Prosper joins CON/FORM as a panelist to discuss the evolving dynamics of digital influence and its impact on modern culture. Speaking on Panel 2 — The Executors.",
     image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
     handle: "iyoprosper",
     day: "March 20",
     type: "Panel",
   },
   {
-    name: "Chisom Aneke",
-    title: "Architect & Urban Planner",
-    org: "Studio Aneke",
-    topic: "Designing the African City",
-    bio: "Chisom believes that how we design our cities reflects what we believe about our people. Her talk at CON/FORM will be a rallying call to creatives to reclaim spatial narratives.",
-    image: "/3.webp",
-    handle: "loomrooms",
-    day: "Day 1",
-    type: "Talk",
+    name: "Kingsley Omeokwe",
+    title: "Influencer & Cultural Voice",
+    org: "Panelist",
+    topic: "Community, Content & The New Creative Class",
+    bio: "Kingsley Omeokwe is a prominent influencer and creative community builder whose work bridges digital culture and real-world impact. He speaks to a generation building careers at the intersection of content and culture. Speaking on Panel 2 — The Executors.",
+    image: "/The Creatives Shaping Culture/Speakers/Kingsley.jpeg",
+    handle: "kingsleyomeokwe",
+    day: "March 20",
+    type: "Panel",
   },
 ];
 
@@ -208,25 +186,6 @@ export default function Speakers() {
           ))}
         </div>
 
-        {/* More speakers teaser */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-24 text-center"
-        >
-          <p className="text-white/20 uppercase tracking-[0.5em] text-xs mb-4">More speakers to be announced</p>
-          <div className="flex justify-center gap-2">
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={i}
-                className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center"
-              >
-                <span className="text-white/20 text-lg font-heading">?</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </section>
 
       {/* CTA Final */}

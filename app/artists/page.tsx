@@ -243,7 +243,7 @@ export default function Artists() {
                                 The Collective
                             </span>
                             <h1 className="font-heading text-4xl md:text-[6.5rem] text-white mb-4 leading-[0.8] tracking-tighter">
-                                SOUNDING{" "}
+                                SHAPING{" "}
                                 <br className="md:hidden" />
                                 <span className="font-heading tracking-wide text-[3rem] md:text-[5.5rem] inline-block mt-4 uppercase">THE FUTURE</span>
                             </h1>
