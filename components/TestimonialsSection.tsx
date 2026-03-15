@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
                     <img
                       src={t.image}
                       alt={t.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                      className="w-full h-full object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
                     />
                   </div>
                   <div>

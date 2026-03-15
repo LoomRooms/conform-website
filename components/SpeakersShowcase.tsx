@@ -143,7 +143,7 @@ export default function SpeakersShowcase() {
                       <img 
                         src={speaker.image} 
                         alt={speaker.name} 
-                        className="w-full h-full object-cover grayscale opacity-20 md:opacity-30 group-hover:grayscale-0 transition-all duration-1000 saturate-150" 
+                        className="w-full h-full object-cover grayscale-0 md:grayscale opacity-20 md:opacity-30 md:group-hover:grayscale-0 transition-all duration-1000 saturate-150" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 mix-blend-multiply" />
                     </motion.div>

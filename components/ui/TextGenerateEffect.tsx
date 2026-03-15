@@ -36,7 +36,7 @@ export const TextGenerateEffect = ({
         },
         {
           duration: duration ? duration : 1,
-          delay: stagger(0.35), // Reverted to 0.35 as requested
+          delay: stagger(0.2), // Sped up for a faster reading pace
         }
       );
     }

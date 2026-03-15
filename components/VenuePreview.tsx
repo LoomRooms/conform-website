@@ -81,7 +81,7 @@ export default function VenuePreview() {
                 <img
                   src={v.image}
                   alt={v.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100 origin-center"
+                  className="w-full h-full object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-1000 scale-100 md:scale-105 md:group-hover:scale-100 origin-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/80 md:from-black/10" />
 
