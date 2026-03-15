@@ -1,0 +1,1 @@
+Favour Ugochi Anabelle Anosike popularly known as Ugoccie, is a Nigerian singer, songwriter, rapper and voice over artiste. She is known for her hit single "Do You Really Like Me?" The song went viral on TikTok, which earned her the Rookie of the year nomination at The Headies 2022.

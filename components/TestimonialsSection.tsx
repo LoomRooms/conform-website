@@ -6,23 +6,23 @@ const testimonials = [
   {
     quote:
       "CON/FORM isn't just an event — it's the language we've been trying to speak for years. Lagos finally has a space where the conversation is as important as the performance.",
-    name: "Adewale Fashola",
-    role: "Creative Strategist, Lagos",
-    image: "/trdforconform.webp",
+    name: "KING",
+    role: "Brand Strategist",
+    image: "/Community Speaking/KING (Brand Strategist).jpg",
   },
   {
     quote:
       "I've been to panels, summits, conferences. Nothing has brought together this calibre of thinkers and makers in the same room. What Loom Rooms has built here is rare.",
-    name: "Ngozi Okonkwo",
-    role: "Founder, Studio North",
-    image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
+    name: "Honeybelle",
+    role: "PR Manager",
+    image: "/The Creatives Shaping Culture/Honeybelle.jpeg",
   },
   {
     quote:
       "This is the kind of event that Nigerian creatives have been building toward — intentional, cultural, and uncompromising in its vision.",
-    name: "Emeka Diribe",
-    role: "Music Executive & Curator",
-    image: "/The Creatives Shaping Culture/Speakers/Chude Jideonwo.jpeg",
+    name: "Edgar",
+    role: "CEO, Founder PayDues",
+    image: "/Community Speaking/Edgar (CEO, Founder PayDues).JPG",
   },
 ];
 
