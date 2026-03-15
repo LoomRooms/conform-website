@@ -11,12 +11,60 @@ const categories = ["All", "Film", "Music", "Fashion", "Visual Art"];
 
 const artists = [
     {
+        name: "Shola Bamidele",
+        role: "Creative Director/CEO",
+        category: "Visual Art",
+        bio: "Design is not just what it looks like; it's how it shapes reality.",
+        image: "/The Creatives Shaping Culture/Shola.jpeg",
+        handle: "SholaBamidele"
+    },
+    {
         name: "Mastermind",
         role: "Head Of Finace",
         category: "Visual Art",
         bio: "Culture is the ultimate asset, and we are its stewards.",
         image: "/The Creatives Shaping Culture/Mastermind.jpeg",
         handle: "Mastermind"
+    },
+    {
+        name: "Zenith",
+        role: "Event Organizer/Admin Manager/Marketing Lead/PA",
+        category: "Visual Art",
+        bio: "Excellence is in the details of the experience we craft.",
+        image: "/The Creatives Shaping Culture/Zenith.jpeg",
+        handle: "Zenith"
+    },
+    {
+        name: "Doyin",
+        role: "Talent and community manger",
+        category: "Visual Art",
+        bio: "Community is the heart of every creative movement.",
+        image: "/The Creatives Shaping Culture/Doyin.jpeg",
+        handle: "Doyin"
+    },
+    {
+        name: "SVNTN",
+        role: "Artist/Stage manger",
+        category: "Music",
+        bio: "The stage is where our collective energy comes alive.",
+        image: "/The Creatives Shaping Culture/SVNTN.jpeg",
+        handle: "SVNTN"
+    },
+    {
+        name: "LarryStix",
+        role: "Producer/Production Manager",
+        category: "Music",
+        bio: "Precision in production, passion in every sound.",
+        image: "/The Creatives Shaping Culture/Larry.jpeg",
+        handle: "LarryStix"
+    },
+    {
+        name: "Snow",
+        role: "Cinematographer",
+        category: "Film",
+        bio: "Framing the world through a lens of infinite possibility.",
+        image: "/The Creatives Shaping Culture/Snow.jpeg",
+        handle: "Snow"
     },
     {
         name: "VOX",
@@ -35,14 +83,6 @@ const artists = [
         handle: "Kreddy"
     },
     {
-        name: "Shola Bamidele",
-        role: "Creative Director/CEO",
-        category: "Visual Art",
-        bio: "Design is not just what it looks like; it's how it shapes reality.",
-        image: "/The Creatives Shaping Culture/Shola.jpeg",
-        handle: "SholaBamidele"
-    },
-    {
         name: "Jackefa",
         role: "Creative",
         category: "Visual Art",
@@ -57,30 +97,6 @@ const artists = [
         bio: "Every beat tells a story that words cannot reach.",
         image: "/The Creatives Shaping Culture/Limz.jpeg",
         handle: "Limz"
-    },
-    {
-        name: "Zenith",
-        role: "Event Organizer/Admin Manager/Marketing Lead/PA",
-        category: "Visual Art",
-        bio: "Excellence is in the details of the experience we craft.",
-        image: "/The Creatives Shaping Culture/Zenith.jpeg",
-        handle: "Zenith"
-    },
-    {
-        name: "Snow",
-        role: "Cinematographer",
-        category: "Film",
-        bio: "Framing the world through a lens of infinite possibility.",
-        image: "/The Creatives Shaping Culture/Snow.jpeg",
-        handle: "Snow"
-    },
-    {
-        name: "Doyin",
-        role: "Talent and community manger",
-        category: "Visual Art",
-        bio: "Community is the heart of every creative movement.",
-        image: "/The Creatives Shaping Culture/Doyin.jpeg",
-        handle: "Doyin"
     },
     {
         name: "Honeybelle",
@@ -145,22 +161,6 @@ const artists = [
         bio: "Leadership is about empowering every voice in the room.",
         image: "/The Creatives Shaping Culture/GEEXEN.jpeg",
         handle: "Geexen"
-    },
-    {
-        name: "LarryStix",
-        role: "Producer/Production Manager",
-        category: "Music",
-        bio: "Precision in production, passion in every sound.",
-        image: "/The Creatives Shaping Culture/Larry.jpeg",
-        handle: "LarryStix"
-    },
-    {
-        name: "SVNTN",
-        role: "Artist/Stage manger",
-        category: "Music",
-        bio: "The stage is where our collective energy comes alive.",
-        image: "/The Creatives Shaping Culture/SVNTN.jpeg",
-        handle: "SVNTN"
     },
     {
         name: "BIDEX",
