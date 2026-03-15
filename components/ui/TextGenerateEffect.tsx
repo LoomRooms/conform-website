@@ -36,7 +36,7 @@ export const TextGenerateEffect = ({
         },
         {
           duration: duration ? duration : 1,
-          delay: stagger(0.25), // Adjusted to human reading pace, in the goldilocks zone
+          delay: stagger(0.35), // Reverted to 0.35 as requested
         }
       );
     }
