@@ -1,0 +1,3 @@
+Dayo McIntosh is a founder, technologist, and creative builder who works at the intersection of art, culture, and technology. She is the founder of Yateou, a robotics and AI company exploring new ways technology can interact with everyday experiences, starting with personalized beauty and wellness products. She is also the founder of Panthreads, a platform connecting global audiences to authentic cultural fashion and design.
+
+At heart, Dayo is a creator who believes innovation and creativity are deeply connected. Whether she's building robots and systems, designing new consumer experiences, or launching cultural platforms, her work is driven by the idea that creativity is one of the most powerful forces for shaping the future.
