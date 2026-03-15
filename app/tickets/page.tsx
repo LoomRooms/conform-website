@@ -41,22 +41,17 @@ export default function Tickets() {
             setLoadingState(prev => ({ ...prev, status: 'Ticket not...', progress: 80, isError: true }));
         }, 3400);
 
+        // Success state - we stop here and let the user click the final button
         setTimeout(() => {
             const remainingVals = [2, 3, 4, 7];
             const remaining = remainingVals[Math.floor(Math.random() * remainingVals.length)]; 
-            setLoadingState(prev => ({ ...prev, status: `Ticket found... ${remaining} remaining.`, progress: 100, isError: false }));
+            setLoadingState(prev => ({ 
+                ...prev, 
+                status: `Ticket secured! ${remaining} remaining.`, 
+                progress: 100, 
+                isError: false 
+            }));
         }, 5200);
-
-        setTimeout(() => {
-            const link = document.createElement('a');
-            link.href = url;
-            link.target = '_blank';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            setLoadingState(prev => ({ ...prev, isOpen: false }));
-        }, 6500);
     };
 
     const handleSoldOutClick = (e: React.MouseEvent) => {
@@ -262,17 +257,29 @@ export default function Tickets() {
                                 </div>
                                 
                                 <div className="mt-2 w-full">
-                                    <button 
-                                        disabled={loadingState.progress < 100 || (!loadingState.isSoldOut && loadingState.progress === 100)} 
-                                        onClick={loadingState.isSoldOut ? closeOverlay : undefined}
-                                        className={`w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(255,255,255,0.25)] border-2 border-white/90 
-                                            ${(loadingState.isSoldOut && loadingState.progress === 100)
-                                                ? 'bg-secondary text-black hover:bg-white cursor-pointer' 
-                                                : 'bg-white text-black opacity-50 cursor-not-allowed'
-                                            }`}
-                                    >
-                                        {loadingState.progress < 100 ? 'Processing...' : (loadingState.isSoldOut ? 'Close' : 'Redirecting...')}
-                                    </button>
+                                    {loadingState.progress === 100 && !loadingState.isSoldOut ? (
+                                        <a 
+                                            href={loadingState.targetUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => setTimeout(() => closeOverlay(), 500)}
+                                            className="w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(255,255,255,0.25)] border-2 border-white/90 bg-secondary text-black hover:bg-white flex justify-center items-center"
+                                        >
+                                            Proceed to Checkout
+                                        </a>
+                                    ) : (
+                                        <button 
+                                            disabled={loadingState.progress < 100} 
+                                            onClick={loadingState.isSoldOut ? closeOverlay : undefined}
+                                            className={`w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(255,255,255,0.25)] border-2 border-white/90 
+                                                ${(loadingState.progress === 100)
+                                                    ? 'bg-secondary text-black hover:bg-white cursor-pointer' 
+                                                    : 'bg-white text-black opacity-50 cursor-not-allowed'
+                                                }`}
+                                        >
+                                            {loadingState.progress < 100 ? 'Processing...' : 'Close'}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>
