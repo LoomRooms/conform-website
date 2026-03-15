@@ -7,7 +7,7 @@ const storyText =
 
 export default function StorySection() {
     return (
-        <section className="relative py-32 md:py-48 px-6 bg-[#03051a] overflow-hidden min-h-screen flex items-center justify-center">
+        <section className="relative py-20 md:py-48 px-6 bg-[#000000] overflow-hidden min-h-[60vh] md:min-h-screen flex items-center justify-center">
             {/* Soft background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-full max-h-screen bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
             

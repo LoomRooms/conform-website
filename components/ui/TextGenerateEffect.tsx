@@ -26,7 +26,8 @@ export const TextGenerateEffect = ({
   let wordsArray = words.split(" ");
   
   useEffect(() => {
-    if (!animationRef.current && scope.current) {
+    // Only animate if in view and the animation hasn't started yet
+    if (isInView && !animationRef.current && scope.current) {
       animationRef.current = animate(
         "span",
         {
@@ -35,23 +36,11 @@ export const TextGenerateEffect = ({
         },
         {
           duration: duration ? duration : 1,
-          delay: stagger(0.35), // Slowed down for reading
+          delay: stagger(0.25), // Adjusted to human reading pace, in the goldilocks zone
         }
       );
-      // Pause initially so it only plays when in view
-      animationRef.current.pause();
     }
-  }, [animate, duration, filter, scope]);
-
-  useEffect(() => {
-    if (animationRef.current) {
-      if (isInView) {
-        animationRef.current.play();
-      } else {
-        animationRef.current.pause();
-      }
-    }
-  }, [isInView]);
+  }, [isInView, animate, duration, filter, scope]);
 
   const renderWords = () => {
     return (
@@ -76,7 +65,8 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-light", className)}>
       <div className="mt-4">
-        <div className="text-white/80 text-xl md:text-3xl lg:text-4xl leading-relaxed md:leading-[1.5] tracking-wide max-w-[42rem] mx-auto text-left">
+        {/* Adjusted padding on mobile to limit height, relaxed line height to make it readable */}
+        <div className="text-white/80 text-xl md:text-3xl lg:text-4xl leading-relaxed md:leading-[1.6] tracking-wide max-w-[42rem] mx-auto text-left px-2">
           {renderWords()}
         </div>
       </div>
