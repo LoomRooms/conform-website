@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import StorySection from "@/components/StorySection";
 import Footer from "@/components/Footer";
 import VisionSection from "@/components/VisionSection";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -149,6 +150,8 @@ export default function Home() {
         className="min-h-screen relative"
       >
       <Hero />
+
+      <StorySection />
 
       <VisionSection />
 

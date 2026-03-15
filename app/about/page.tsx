@@ -136,8 +136,82 @@ export default function About() {
                         <p className="text-white font-normal text-2xl md:text-4xl leading-snug font-heading tracking-wide">
                             Not a networking event. <br className="hidden md:block"/>
                             Not a conference. Not a festival.<br />
-                            <span className="text-[#00d2ff] mt-4 block text-4xl md:text-6xl drop-shadow-[0_0_20px_rgba(0,180,255,0.4)]">A SYSTEM-BUILDING EXPERIENCE.</span>
+                            <span className="text-secondary mt-4 block text-4xl md:text-6xl drop-shadow-[0_0_20px_rgba(241,243,82,0.4)]">A TWO-STAGE SYSTEM FOR BUILDING ANYTHING THAT LASTS.</span>
                         </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* NEW SECTION: THE CULTURAL DIAGNOSIS (THE ROAD) */}
+            <section className="relative py-32 px-6 bg-black z-20 overflow-hidden border-y border-white/5">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.05),transparent_70%)] pointer-events-none" />
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                    <div className="flex-1">
+                        <span className="text-red-500 font-bold tracking-[0.4em] uppercase text-xs mb-6 block">The Cultural Diagnosis</span>
+                        <h2 className="font-heading font-normal text-4xl md:text-6xl text-white mb-8 leading-[1.1]">
+                            What if we <span className="text-red-500">listened to the road</span> first?
+                        </h2>
+                        <div className="space-y-6 text-white/70 text-lg md:text-xl font-light leading-relaxed">
+                            <p>
+                                Research reveals a startling fact: <span className="text-white font-bold underline decoration-red-500 underline-offset-4 decoration-2">Men are responsible for 73% of fatal road accidents worldwide.</span>
+                            </p>
+                            <p>
+                                This is not about driving skill. It is about a missing education. We have been raised to skip straight to <span className="text-white font-bold">FORM</span> — to output, action, and speed — without the <span className="text-white font-bold">CON</span>.
+                            </p>
+                            <p>
+                                Every creative, cultural, or institutional breakdown is caused by the same thing: <span className="italic">Execution without processing. Building without listening.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex-1 relative group w-full max-w-md">
+                        <div className="absolute -inset-4 bg-gradient-to-r from-red-500/20 to-transparent blur-2xl group-hover:opacity-100 transition-opacity opacity-50" />
+                        <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 bg-[#050505] flex items-center justify-center p-12 text-center">
+                            <div className="space-y-6">
+                                <span className="text-6xl md:text-8xl font-heading text-red-500 drop-shadow-[0_0_20px_rgba(239,68,68,0.4)] block animate-pulse">73%</span>
+                                <p className="text-white/40 uppercase tracking-[0.5em] text-[10px] font-bold">The Global Consequence of skipping the sequence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* NEW SECTION: THE PHILOSOPHY OF THE SLASH */}
+            <section className="relative py-32 md:py-48 px-6 bg-white text-black z-20 overflow-hidden">
+                <div className="absolute top-0 right-0 p-24 opacity-[0.03] pointer-events-none select-none">
+                    <span className="text-[30rem] font-light leading-none">/</span>
+                </div>
+                
+                <div className="max-w-5xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transformTemplate={({ scale }) => `scale(${scale})`}
+                        viewport={{ once: true }}
+                    >
+                        <span className="text-primary font-bold tracking-[0.5em] uppercase text-xs mb-10 block">The Philosophy of the integration</span>
+                        <div className="flex justify-center items-center gap-8 mb-16">
+                            <span className="font-heading text-4xl md:text-8xl text-black/20">CON</span>
+                            <span className="font-heading text-6xl md:text-[12rem] text-primary">/</span>
+                            <span className="font-heading text-4xl md:text-8xl text-black/20">FORM</span>
+                        </div>
+                        <h2 className="font-heading text-3xl md:text-5xl mb-12 leading-tight">
+                            The slash is not decoration. <br />
+                            <span className="italic">It is the entire philosophy.</span>
+                        </h2>
+                        <div className="grid md:grid-cols-3 gap-12 text-left">
+                            <div className="space-y-4">
+                                <h4 className="font-bold uppercase tracking-widest text-sm text-primary">The Moment</h4>
+                                <p className="text-black/60 leading-relaxed font-light">The slash is the pause between receiving and building. The integration of the inner world before it meets the outer world.</p>
+                            </div>
+                            <div className="space-y-4">
+                                <h4 className="font-bold uppercase tracking-widest text-sm text-primary">The Bridge</h4>
+                                <p className="text-black/60 leading-relaxed font-light">It represents the bridge between who you are and what you create. It is where the authentic self is consulted.</p>
+                            </div>
+                            <div className="space-y-4">
+                                <h4 className="font-bold uppercase tracking-widest text-sm text-primary">The Sequence</h4>
+                                <p className="text-black/60 leading-relaxed font-light">Without the slash: a demand from the system. With the slash: an invitation from within.</p>
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
             </section>

@@ -7,39 +7,34 @@ import { MoveRight } from "lucide-react";
 
 const slides = [
     {
-        // Black young man in creative studio (verified)
         image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=90&fit=crop",
         alt: "Young black creative in a studio",
         tag: "The Creator",
-        quote: "Every system that ignored you is now watching what you build without it.",
+        quote: "You've been FORMing beautifully for years. But when did you last CON?",
     },
     {
-        // Black man performing on stage — nappy.co collection
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=90&fit=crop",
         alt: "Black artist performing on stage",
         tag: "The Performer",
-        quote: "Culture doesn't audition. It arrives — fully formed, unapologetically real.",
+        quote: "Day 2 is earned on Day 1. The performance that matches the process.",
     },
     {
-        // Black woman portrait — Eye for Ebony collection (verified)
         image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&q=90&fit=crop",
         alt: "Black woman leader",
         tag: "The Architect",
-        quote: "The seat was never offered. So we built the table, the room, and the whole building.",
+        quote: "You were never behind. You were operating with a full system while the world only counted outputs.",
     },
     {
-        // Group of Black friends — Vonecia Carswell (verified)
         image: "/afdabts.png",
         alt: "Pan-African creatives collaborating",
-        tag: "The Collective",
-        quote: "CON/FORM is where the next generation stops waiting for permission.",
+        tag: "The Institution",
+        quote: "A brand that skips the conversation doesn't build loyalty. It builds noise.",
     },
     {
-        // Black man portrait — nappy.co collection
         image: "/trdforconform.webp",
         alt: "Black creative visionary",
         tag: "The Visionary",
-        quote: "When your lens captures your own story, the narrative finally belongs to you.",
+        quote: "The reason you keep crashing is not because you're not strong enough. It's because you never learned to CON.",
     },
 ];
 

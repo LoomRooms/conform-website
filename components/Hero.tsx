@@ -123,19 +123,29 @@ export default function Hero() {
 
                     <div className="mt-8 md:mt-12 space-y-6 md:max-w-xl">
                         {/* Typewriter line */}
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.4, delay: 1.0 }}
-                            className="text-lg md:text-2xl font-light tracking-[0.2em] text-white/70 uppercase leading-relaxed min-h-[2em]"
-                        >
-                            <Typewriter text="Deconstruct. Rebuild. Create." delay={1.2} />
-                        </motion.p>
+                        <div className="min-h-[3em]">
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.4, delay: 1.0 }}
+                                className="text-lg md:text-2xl font-light tracking-[0.2em] text-white/70 uppercase leading-relaxed"
+                            >
+                                <Typewriter text="First Listen. Then Build." delay={1.2} />
+                            </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.4, delay: 4.0 }}
+                                className="text-sm md:text-lg font-bold tracking-[0.4em] text-secondary mt-2 uppercase"
+                            >
+                                <Typewriter text="Return to yourself." delay={4.2} />
+                            </motion.p>
+                        </div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: 3.6 }}
+                            transition={{ duration: 1, delay: 6.5 }}
                             className="flex flex-wrap gap-6 items-center"
                         >
                             <KeyButton href="/tickets" variant="secondary" className="px-10 py-4 text-sm tracking-[0.3em] font-bold">
