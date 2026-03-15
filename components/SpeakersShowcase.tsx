@@ -43,6 +43,15 @@ const featured = [
     panel: "Panel 1 — The Architects",
   },
   {
+    name: "Iyo Prosper",
+    title: "Influencer & Content Creator",
+    org: "Panelist",
+    topic: "The Creator Economy & Digital Culture",
+    image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
+    type: "PANEL",
+    panel: "Panel 2 — The Executors",
+  },
+  {
     name: "Kingsley Omeokwe",
     title: "Influencer & Cultural Voice",
     org: "Panelist",
