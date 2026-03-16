@@ -25,15 +25,6 @@ const featured = [
     panel: "Day 1 — The Systems",
   },
   {
-    name: "Jennifer Mairo",
-    title: "CEO, Joy, Inc.",
-    org: "Joy, Inc",
-    topic: "Storytelling & Organizational Transformation",
-    image: "/The Creatives Shaping Culture/Speakers/Jennifer-Mairo-Ceo-Joy-Inc.jpg",
-    type: "SYSTEMS INTERLUDE",
-    panel: "Day 1 — The Systems",
-  },
-  {
     name: "Bimbo CiDAR",
     title: "Music Executive",
     org: "CiDAR Africa",

@@ -31,17 +31,6 @@ const speakers = [
     type: "Systems Interlude",
   },
   {
-    name: "Jennifer Mairo",
-    title: "CEO, Joy, Inc.",
-    org: "Joy, Inc",
-    topic: "Storytelling & Organizational Transformation",
-    bio: "Jennifer Mairo is a multi-sector professional and leader with nearly two decades of experience spanning project management, media, and film. As CEO of Joy, Inc., she has collaborated with major global foundations and heads the Fourthmainland Creator Fund, dedicated to supporting young African storytellers.",
-    image: "/The Creatives Shaping Culture/Speakers/Jennifer-Mairo-Ceo-Joy-Inc.jpg",
-    handle: "jennifermairo",
-    day: "March 20",
-    type: "Systems Interlude",
-  },
-  {
     name: "Iyo Prosper",
     title: "Influencer & Content Creator",
     org: "Panelist",
