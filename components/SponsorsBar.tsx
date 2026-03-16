@@ -7,6 +7,16 @@ import KeyButton from "@/components/ui/KeyButton";
 // light: logo is light-colored → give it a dark pill background
 const sponsors = [
   {
+    name: "Soundcity",
+    image: "/Sponsors/Logos/Soundcity Logo.jpeg",
+    bg: "light",
+  },
+  {
+    name: "The Ball Cave",
+    image: "/Sponsors/Logos/The Ball cave Logo.JPEG",
+    bg: "light",
+  },
+  {
     name: "Loom Rooms",
     image: "/Sponsors/Logos/Loom Rooms Logo.png",
     bg: "light",   // Updated to light
@@ -47,22 +57,12 @@ const sponsors = [
     image: "/Sponsors/Logos/Lagos Art and Tourism.jpeg",
     bg: "light",
   },
-  {
-    name: "Soundcity",
-    image: "/Sponsors/Logos/Soundcity Logo.jpeg",
-    bg: "light",
-  },
-  {
-    name: "The Ball Cave",
-    image: "/Sponsors/Logos/The Ball cave Logo.JPEG",
-    bg: "light",
-  },
 ];
 
-// Duplicate for infinite scroll effect
-const allSponsors = [...sponsors, ...sponsors, ...sponsors];
-
 export default function SponsorsBar() {
+  // Duplicate for infinite scroll effect
+  const allSponsors = [...sponsors, ...sponsors, ...sponsors];
+
   return (
     <section className="py-10 md:py-14 overflow-hidden relative">
       {/* Subtle fade edges */}
