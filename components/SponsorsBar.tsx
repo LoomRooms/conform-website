@@ -10,11 +10,13 @@ const sponsors = [
     name: "Soundcity",
     image: "/Sponsors/Logos/Soundcity Logo.jpeg",
     bg: "light",
+    fill: true,
   },
   {
     name: "The Ball Cave",
     image: "/Sponsors/Logos/The Ball cave Logo.JPEG",
     bg: "light",
+    fill: true,
   },
   {
     name: "Loom Rooms",
@@ -103,7 +105,8 @@ export default function SponsorsBar() {
               className={`
                 relative flex-shrink-0 w-[100px] h-[100px] md:w-[110px] md:h-[110px]
                 rounded-[20px] md:rounded-[22px] overflow-hidden
-                flex items-center justify-center p-3.5
+                flex items-center justify-center 
+                ${sponsor.fill ? "p-0" : "p-3.5"}
                 border transition-all duration-300
                 ${sponsor.bg === "dark"
                   ? "bg-[#0e0e0e] border-white/10 hover:border-white/25"
@@ -115,7 +118,7 @@ export default function SponsorsBar() {
               <img
                 src={sponsor.image}
                 alt={sponsor.name}
-                className="w-full h-full object-contain transition-transform duration-500"
+                className={`w-full h-full ${sponsor.fill ? "object-cover" : "object-contain"} transition-transform duration-500`}
                 style={{ transform: `scale(${sponsor.scale || 1})` }}
               />
             </div>
