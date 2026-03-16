@@ -22,14 +22,29 @@ const sponsors = [
     bg: "light",  // Logo likely dark on light
   },
   {
-    name: "Yateou",
+    name: "Dayo McIntosh",
     image: "/Sponsors/Logos/Yateou.jpg.jpeg",
-    bg: "light",  // Logo likely dark on light
+    bg: "light",
   },
   {
     name: "CiDAR Africa",
     image: "/Sponsors/Logos/cidar logo.png",
-    bg: "light",   // Updated to light
+    bg: "light",
+  },
+  {
+    name: "Alimosho Local Government",
+    image: "/Sponsors/Logos/Alimosho-Local-Government.jpg",
+    bg: "light",
+  },
+  {
+    name: "Da Circles",
+    image: "/Sponsors/Logos/Da-circles-Logo.jpg",
+    bg: "light",
+  },
+  {
+    name: "Lagos Art & Tourism",
+    image: "/Sponsors/Logos/Lagos Art and Tourism.jpeg",
+    bg: "light",
   },
 ];
 
