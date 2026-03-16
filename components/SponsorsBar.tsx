@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import KeyButton from "@/components/ui/KeyButton";
 
 // dark: logo is dark-colored → give it a white pill background
 // light: logo is light-colored → give it a dark pill background
@@ -92,6 +93,23 @@ export default function SponsorsBar() {
               />
             </div>
           ))}
+        </motion.div>
+      </div>
+
+      <div className="mt-14 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <KeyButton 
+            href="/contact" 
+            variant="secondary"
+            className="px-8 py-4 text-[10px] md:text-xs tracking-[0.3em] font-bold"
+          >
+            Become a Sponsor / Partner
+          </KeyButton>
         </motion.div>
       </div>
     </section>
