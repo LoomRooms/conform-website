@@ -9,6 +9,7 @@ import NewsletterSection from "@/components/NewsletterSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import SpeakersShowcase from "@/components/SpeakersShowcase";
 import VenuePreview from "@/components/VenuePreview";
+import SponsorsBar from "@/components/SponsorsBar";
 import KeyButton from "@/components/ui/KeyButton";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useInView, useMotionValueEvent } from "framer-motion";
@@ -154,6 +155,8 @@ export default function Home() {
       <StorySection />
 
       <VisionSection />
+
+      <SponsorsBar />
 
       <SpeakersShowcase />
 
