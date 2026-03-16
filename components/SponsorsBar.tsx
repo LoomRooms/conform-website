@@ -35,6 +35,7 @@ const sponsors = [
     name: "Alimosho Local Government",
     image: "/Sponsors/Logos/Alimosho-Local-Government.jpg",
     bg: "light",
+    scale: 1.4,
   },
   {
     name: "Da Circles",
@@ -104,7 +105,8 @@ export default function SponsorsBar() {
               <img
                 src={sponsor.image}
                 alt={sponsor.name}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain transition-transform duration-500"
+                style={{ transform: `scale(${sponsor.scale || 1})` }}
               />
             </div>
           ))}
