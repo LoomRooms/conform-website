@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -182,6 +183,10 @@ const typeBadgeColor: Record<string, string> = {
 };
 
 export default function Speakers() {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+
+  const toggle = (idx: number) => setActiveIdx(prev => prev === idx ? null : idx);
+
   return (
     <>
       <Navbar />
@@ -226,85 +231,91 @@ export default function Speakers() {
       {/* Speakers Grid */}
       <section className="py-24 md:py-40 px-4 max-w-[90rem] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {speakers.map((speaker, idx) => (
-            <motion.div
-              key={speaker.name}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-neutral-900 border border-white/5 shadow-2xl transition-all duration-700 hover:border-white/20">
-                {/* Image */}
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="object-cover w-full h-full transition-transform duration-[2s] group-hover:scale-105 opacity-75 group-hover:opacity-95 grayscale group-hover:grayscale-0"
-                />
+          {speakers.map((speaker, idx) => {
+            const isActive = activeIdx === idx;
+            return (
+              <motion.div
+                key={speaker.name}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="relative cursor-pointer"
+                onClick={() => toggle(idx)}
+              >
+                <div className={`relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-neutral-900 border shadow-2xl transition-all duration-700 ${isActive ? "border-white/20" : "border-white/5"}`}>
+                  {/* Image */}
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className={`object-cover w-full h-full transition-all duration-[2s] ${isActive ? "scale-105 opacity-95 grayscale-0" : "opacity-75 grayscale"}`}
+                  />
 
-                {/* Type + Day Badge */}
-                <div className="absolute top-6 left-6 flex gap-2 z-20">
-                  <span className="text-[8px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full border backdrop-blur-md bg-white/10 text-white border-white/15">
-                    {speaker.type}
-                  </span>
-                  <span className="text-[8px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full border bg-black/30 text-white/40 border-white/10 backdrop-blur-md">
-                    {speaker.day}
-                  </span>
-                </div>
-
-                {/* Bottom Content */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
-                  <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-4">
-                    <span className="text-accent font-bold uppercase tracking-[0.3em] text-[8px] md:text-[9px] mb-2 block">
-                      {speaker.org}
+                  {/* Type + Day Badge */}
+                  <div className="absolute top-6 left-6 flex gap-2 z-20">
+                    <span className="text-[8px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full border backdrop-blur-md bg-white/10 text-white border-white/15">
+                      {speaker.type}
                     </span>
-                    <h3 className="font-heading text-3xl md:text-4xl text-white mb-1 leading-[0.9] tracking-tight">
-                      {speaker.name}
-                    </h3>
-                    <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-light">
-                      {speaker.title}
-                    </p>
+                    <span className="text-[8px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full border bg-black/30 text-white/40 border-white/10 backdrop-blur-md">
+                      {speaker.day}
+                    </span>
                   </div>
 
-                  {/* Hover Detail Card */}
-                  <div className="mt-6 overflow-hidden">
-                    <div className="h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
-                      <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 shadow-3xl translate-y-4 group-hover:translate-y-0 transition-transform duration-700 mb-2">
-                        <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-bold mb-3">
-                          Speaking on
-                        </p>
-                        <p className="text-white text-sm font-heading leading-tight mb-4 tracking-wide">
-                          "{speaker.topic}"
-                        </p>
-                        <p className="text-white/50 text-xs font-light leading-relaxed mb-6">
-                          {speaker.bio}
-                        </p>
-                        <div className="flex gap-3">
-                          <a
-                            href={`https://instagram.com/${speaker.handle}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black text-white transition-all"
-                          >
-                            <Instagram size={14} />
-                          </a>
-                          <a
-                            href={`https://x.com/${speaker.handle}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black text-white transition-all"
-                          >
-                            <Twitter size={14} />
-                          </a>
+                  {/* Bottom Content */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
+                    <div className={`relative z-10 transition-transform duration-700 ${isActive ? "-translate-y-4" : ""}`}>
+                      <span className="text-accent font-bold uppercase tracking-[0.3em] text-[8px] md:text-[9px] mb-2 block">
+                        {speaker.org}
+                      </span>
+                      <h3 className="font-heading text-3xl md:text-4xl text-white mb-1 leading-[0.9] tracking-tight">
+                        {speaker.name}
+                      </h3>
+                      <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-light">
+                        {speaker.title}
+                      </p>
+                    </div>
+
+                    {/* Detail Card */}
+                    <div className="mt-6 overflow-hidden">
+                      <div className={`transition-all duration-500 overflow-hidden ${isActive ? "h-auto opacity-100" : "h-0 opacity-0"}`}>
+                        <div className={`bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 shadow-3xl transition-transform duration-700 mb-2 ${isActive ? "translate-y-0" : "translate-y-4"}`}>
+                          <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-bold mb-3">
+                            Speaking on
+                          </p>
+                          <p className="text-white text-sm font-heading leading-tight mb-4 tracking-wide">
+                            &quot;{speaker.topic}&quot;
+                          </p>
+                          <p className="text-white/50 text-xs font-light leading-relaxed mb-6">
+                            {speaker.bio}
+                          </p>
+                          <div className="flex gap-3">
+                            <a
+                              href={`https://instagram.com/${speaker.handle}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={e => e.stopPropagation()}
+                              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black text-white transition-all"
+                            >
+                              <Instagram size={14} />
+                            </a>
+                            <a
+                              href={`https://x.com/${speaker.handle}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={e => e.stopPropagation()}
+                              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black text-white transition-all"
+                            >
+                              <Twitter size={14} />
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
       </section>

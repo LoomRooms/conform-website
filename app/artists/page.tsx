@@ -207,6 +207,7 @@ const artists = [
 export default function Artists() {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
+    const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
     const filteredArtists = artists.filter(artist => {
         const matchesCategory = selectedCategory === "All" || artist.category === selectedCategory;
@@ -214,6 +215,8 @@ export default function Artists() {
             artist.role.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
     });
+
+    const toggle = (idx: number) => setActiveIdx(prev => prev === idx ? null : idx);
 
     return (
         <>
@@ -302,60 +305,76 @@ export default function Artists() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12"
                 >
                     <AnimatePresence mode="popLayout">
-                        {filteredArtists.map((artist) => (
-                            <motion.div
-                                key={artist.name}
-                                layout
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                                className="group relative"
-                            >
-                                <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-neutral-900 border border-white/5 shadow-2xl transition-all duration-700 hover:border-white/20">
-                                    {/* Image */}
-                                    <img
-                                        src={artist.image}
-                                        alt={artist.name}
-                                        className="object-cover w-full h-full transition-transform duration-[2s] group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0"
-                                    />
+                        {filteredArtists.map((artist, idx) => {
+                            const isActive = activeIdx === idx;
+                            return (
+                                <motion.div
+                                    key={artist.name}
+                                    layout
+                                    initial={{ opacity: 0, y: 40 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                                    className="relative cursor-pointer"
+                                    onClick={() => toggle(idx)}
+                                >
+                                    <div className={`relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-neutral-900 border shadow-2xl transition-all duration-700 ${isActive ? "border-white/20" : "border-white/5"}`}>
+                                        {/* Image */}
+                                        <img
+                                            src={artist.image}
+                                            alt={artist.name}
+                                            className={`object-cover w-full h-full transition-all duration-[2s] ${isActive ? "scale-105 opacity-100 grayscale-0" : "opacity-80 grayscale"}`}
+                                        />
 
-                                    {/* Bottom Content Always Visible */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-10 flex flex-col justify-end">
-                                        <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-4">
-                                            <span className="text-primary font-bold uppercase tracking-[0.3em] text-[8px] md:text-[9px] mb-2 block">
-                                                {artist.category}
-                                            </span>
-                                            <h3 className="font-heading text-4xl md:text-5xl text-white mb-2 leading-[0.9] tracking-tight">
-                                                {artist.name}
-                                            </h3>
-                                            <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-light">
-                                                {artist.role}
-                                            </p>
-                                        </div>
+                                        {/* Bottom Content Always Visible */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-10 flex flex-col justify-end">
+                                            <div className={`relative z-10 transition-transform duration-700 ${isActive ? "-translate-y-4" : ""}`}>
+                                                <span className="text-primary font-bold uppercase tracking-[0.3em] text-[8px] md:text-[9px] mb-2 block">
+                                                    {artist.category}
+                                                </span>
+                                                <h3 className="font-heading text-4xl md:text-5xl text-white mb-2 leading-[0.9] tracking-tight">
+                                                    {artist.name}
+                                                </h3>
+                                                <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-light">
+                                                    {artist.role}
+                                                </p>
+                                            </div>
 
-                                        {/* Premium Blur Hover Details */}
-                                        <div className="mt-8 transition-all duration-700 pointer-events-auto overflow-visible">
-                                            <div className="h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
-                                                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 shadow-3xl translate-y-4 group-hover:translate-y-0 transition-transform duration-700 mb-2">
-                                                    <p className="text-white/70 text-xs font-light leading-relaxed mb-8">
-                                                        "{artist.bio}"
-                                                    </p>
-                                                    <div className="flex gap-4">
-                                                        <a href={`https://www.instagram.com/explore/search/keyword/?q=${encodeURIComponent(artist.name)}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon">
-                                                            <Instagram size={18} className="transition-transform group-hover/icon:scale-110" />
-                                                        </a>
-                                                        <a href={`https://x.com/search?q=${encodeURIComponent(artist.name)}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon">
-                                                            <Twitter size={18} className="transition-transform group-hover/icon:scale-110" />
-                                                        </a>
+                                            {/* Detail Card - shows on active/tap */}
+                                            <div className="mt-8 overflow-hidden">
+                                                <div className={`transition-all duration-500 overflow-hidden ${isActive ? "h-auto opacity-100" : "h-0 opacity-0"}`}>
+                                                    <div className={`bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 shadow-3xl transition-transform duration-700 mb-2 ${isActive ? "translate-y-0" : "translate-y-4"}`}>
+                                                        <p className="text-white/70 text-xs font-light leading-relaxed mb-8">
+                                                            &quot;{artist.bio}&quot;
+                                                        </p>
+                                                        <div className="flex gap-4">
+                                                            <a
+                                                              href={`https://www.instagram.com/explore/search/keyword/?q=${encodeURIComponent(artist.name)}`}
+                                                              target="_blank"
+                                                              rel="noopener noreferrer"
+                                                              onClick={e => e.stopPropagation()}
+                                                              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon"
+                                                            >
+                                                                <Instagram size={18} className="transition-transform group-hover/icon:scale-110" />
+                                                            </a>
+                                                            <a
+                                                              href={`https://x.com/search?q=${encodeURIComponent(artist.name)}`}
+                                                              target="_blank"
+                                                              rel="noopener noreferrer"
+                                                              onClick={e => e.stopPropagation()}
+                                                              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group/icon"
+                                                            >
+                                                                <Twitter size={18} className="transition-transform group-hover/icon:scale-110" />
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            );
+                        })}
                     </AnimatePresence>
                 </motion.div>
 
