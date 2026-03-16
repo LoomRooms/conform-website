@@ -8,7 +8,7 @@ const sponsors = [
   {
     name: "Loom Rooms",
     image: "/Sponsors/Logos/Loom Rooms Logo.png",
-    bg: "dark",   // Logo has light text on dark → dark bg
+    bg: "light",   // Updated to light
   },
   {
     name: "FIDA",
@@ -28,7 +28,7 @@ const sponsors = [
   {
     name: "CiDAR Africa",
     image: "/Sponsors/Logos/cidar logo.png",
-    bg: "dark",   // Logo likely light on dark
+    bg: "light",   // Updated to light
   },
 ];
 
