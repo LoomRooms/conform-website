@@ -47,6 +47,16 @@ const sponsors = [
     image: "/Sponsors/Logos/Lagos Art and Tourism.jpeg",
     bg: "light",
   },
+  {
+    name: "Soundcity",
+    image: "/Sponsors/Logos/Soundcity Logo.jpeg",
+    bg: "light",
+  },
+  {
+    name: "The Ball Cave",
+    image: "/Sponsors/Logos/The Ball cave Logo.JPEG",
+    bg: "light",
+  },
 ];
 
 // Duplicate for infinite scroll effect
