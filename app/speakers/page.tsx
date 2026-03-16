@@ -244,14 +244,14 @@ export default function Speakers() {
 
                 {/* Bottom Content */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
-                    <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-4">
-                    <span className="text-primary font-bold uppercase tracking-[0.3em] text-[8px] md:text-[9px] mb-2 block">
+                  <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-4">
+                    <span className="text-accent font-bold uppercase tracking-[0.3em] text-[8px] md:text-[9px] mb-2 block">
                       {speaker.org}
                     </span>
                     <h3 className="font-heading text-3xl md:text-4xl text-white mb-1 leading-[0.9] tracking-tight">
                       {speaker.name}
                     </h3>
-                    <p className="text-accent text-[10px] uppercase tracking-[0.2em] font-light">
+                    <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-light">
                       {speaker.title}
                     </p>
                   </div>
