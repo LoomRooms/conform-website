@@ -12,154 +12,154 @@ const speakers = [
     title: "Creative Director / CEO",
     org: "CONFORM",
     topic: "Designing Systems That Last",
-    bio: "The Creative Director and CEO behind CON/FORM, Shola is a visionary leader who has shaped the visual identity of the movement. He challenges how creatives think about legacy and infrastructure. Speaking on Panel 1 — The Architects.",
+    bio: "The Creative Director and CEO behind CON/FORM, Shola is a visionary leader who has shaped the visual identity of the movement. He challenges how creatives think about legacy and infrastructure.",
     image: "/The Creatives Shaping Culture/Speakers/Shola Bamidele.jpeg",
     handle: "SholaBamidele",
     day: "March 20",
-    type: "Keynote",
+    type: "Panel 1",
   },
   {
     name: "Abiola Laseinde",
     title: "Governance Strategist",
     org: "FIDA / Edniesal Consulting",
     topic: "Africa’s Digital Economy",
-    bio: "Abiola Laseinde is a distinguished African business leader and governance strategist with over two decades of experience spanning law, enterprise advisory, and technology leadership. As Founder and CEO of Edniesal Consulting and Convener of the CIO & C-Suite Awards Africa, she leads engagements focused on corporate governance and digital transformation. Speaking on Panel 1 — The Architects.",
+    bio: "Abiola Laseinde is a distinguished African business leader and governance strategist with over two decades of experience spanning law, enterprise advisory, and technology leadership. As Founder and CEO of Edniesal Consulting and Convener of the CIO & C-Suite Awards Africa, she leads engagements focused on corporate governance and digital transformation.",
     image: "/The Creatives Shaping Culture/Speakers/Abiola Laseinde .jpg.jpeg",
     handle: "loomrooms",
     day: "March 20",
-    type: "Panel",
+    type: "Systems Interlude",
   },
   {
     name: "Jennifer Mairo",
     title: "CEO, Joy, Inc.",
     org: "Joy, Inc",
     topic: "Storytelling & Organizational Transformation",
-    bio: "Jennifer Mairo is a multi-sector professional and leader with nearly two decades of experience spanning project management, media, and film. As CEO of Joy, Inc., she has collaborated with major global foundations and heads the Fourthmainland Creator Fund, dedicated to supporting young African storytellers. Speaking on Panel 1 — The Architects.",
+    bio: "Jennifer Mairo is a multi-sector professional and leader with nearly two decades of experience spanning project management, media, and film. As CEO of Joy, Inc., she has collaborated with major global foundations and heads the Fourthmainland Creator Fund, dedicated to supporting young African storytellers.",
     image: "/The Creatives Shaping Culture/Speakers/Jennifer-Mairo-Ceo-Joy-Inc.jpg",
     handle: "jennifermairo",
     day: "March 20",
-    type: "Panel",
+    type: "Systems Interlude",
   },
   {
     name: "Iyo Prosper",
     title: "Influencer & Content Creator",
     org: "Panelist",
     topic: "The Creator Economy & Digital Culture",
-    bio: "A renowned influencer and cultural voice, Iyo Prosper joins CON/FORM as a panelist to discuss the evolving dynamics of digital influence and its impact on modern culture. Speaking on Panel 2 — The Executors.",
+    bio: "A renowned influencer and cultural voice, Iyo Prosper joins CON/FORM as a panelist to discuss the evolving dynamics of digital influence and its impact on modern culture.",
     image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
     handle: "iyoprosper",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
   {
     name: "Kingsley Omeokwe",
     title: "Influencer & Cultural Voice",
     org: "Panelist",
     topic: "Community, Content & The New Creative Class",
-    bio: "Kingsley Omeokwe (kingsley_om) is a Nigerian content creator and digital storyteller known for his relatable comedy skits. A first-class graduate, his work transforms ordinary situations into clever storytelling that resonates widely across platforms. Speaking on Panel 2 — The Executors.",
+    bio: "Kingsley Omeokwe (kingsley_om) is a Nigerian content creator and digital storyteller known for his relatable comedy skits. A first-class graduate, his work transforms ordinary situations into clever storytelling that resonates widely across platforms.",
     image: "/The Creatives Shaping Culture/Speakers/Kingsley.jpeg",
     handle: "kingsleyomeokwe",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
   {
     name: "Ademola Jokotoye",
     title: "Software Engineer",
     org: "TixTango",
     topic: "Building Powering Community",
-    bio: "Ademola Jokotoye is a software engineer with over 7 years of experience building mobile applications at global scale. He is the founder of TixTango, an event and ticketing platform focused on powering community-driven experiences and live events. Speaking on Panel 2 — The Executors.",
+    bio: "Ademola Jokotoye is a software engineer with over 7 years of experience building mobile applications at global scale. He is the founder of TixTango, an event and ticketing platform focused on powering community-driven experiences and live events.",
     image: "/The Creatives Shaping Culture/Speakers/Ademola Jokotoye.jpeg",
     handle: "loomrooms",
     day: "March 20",
-    type: "Panel",
+    type: "Systems Interlude",
   },
   {
     name: "Dayo McIntosh",
     title: "Founder & Creative Builder",
     org: "Yateou / Panthreads",
     topic: "Art, Culture & Technology",
-    bio: "Dayo McIntosh is a founder, technologist, and creative builder working at the intersection of art, culture, and technology. She is the founder of Yateou, a robotics and AI company, and Panthreads, a platform for cultural fashion. Speaking on Panel 2 — The Executors.",
+    bio: "Dayo McIntosh is a founder, technologist, and creative builder working at the intersection of art, culture, and technology. She is the founder of Yateou, a robotics and AI company, and Panthreads, a platform for cultural fashion.",
     image: "/The Creatives Shaping Culture/Speakers/Dayo.jpeg",
     handle: "loomrooms",
     day: "March 20",
-    type: "Panel",
+    type: "Systems Interlude",
   },
   {
     name: "Chef Gibbs",
     title: "Chef & Hospitality Consultant",
     org: "Hospitality Consultant",
     topic: "Culinary Innovation & Cultural Impact",
-    bio: "Chef Gbolabo “Chef Gibbs” Adebakin is a visionary culinary director and hospitality expert. He served as Culinary Director for Hilda Baci’s Guinness World Record 100-hour cooking marathon and is the mastermind behind the Bistro at the Theatre. Speaking on Panel 2 — The Executors.",
+    bio: "Chef Gbolabo “Chef Gibbs” Adebakin is a visionary culinary director and hospitality expert. He served as Culinary Director for Hilda Baci’s Guinness World Record 100-hour cooking marathon and is the mastermind behind the Bistro at the Theatre.",
     image: "/The Creatives Shaping Culture/Speakers/Cheff Gibbs.jpeg",
     handle: "chefgibbs",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
   {
     name: "Ugoccie",
     title: "Singer & Artiste",
     org: "Artist",
     topic: "Viral Creativity & Digital Sound",
-    bio: "Favour Ugochi Anabelle Anosike, popularly known as Ugoccie, is a Nigerian singer, songwriter, and rapper known for her hit single 'Do You Really Like Me?'. She was a Rookie of the Year nominee at The Headies 2022. Speaking on Panel 2 — The Executors.",
+    bio: "Favour Ugochi Anabelle Anosike, popularly known as Ugoccie, is a Nigerian singer, songwriter, and rapper known for her hit single 'Do You Really Like Me?'. She was a Rookie of the Year nominee at The Headies 2022.",
     image: "/The Creatives Shaping Culture/Speakers/Ugoccie.jpeg",
     handle: "ugoccie",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
   {
     name: "Gillian Baci",
     title: "Artist & Filmmaker",
     org: "Pop Artist / Author",
     topic: "Digital Storytelling & Philosophical Pop",
-    bio: "Gillian Baci is a multi-talented Nigerian pop artist, author, and filmmaker. A graduate of the MultiChoice Talent Factory, he is known for his 'philosophical pop music' and his novel 'A Decent Man'. Speaking on Panel 2 — The Executors.",
+    bio: "Gillian Baci is a multi-talented Nigerian pop artist, author, and filmmaker. A graduate of the MultiChoice Talent Factory, he is known for his 'philosophical pop music' and his novel 'A Decent Man'.",
     image: "/The Creatives Shaping Culture/Speakers/Gillian Baci.webp",
     handle: "gillianbaci",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
   {
     name: "Judith Audu",
     title: "Film Producer & Director",
     org: "Judith Audu Productions",
     topic: "Social Justice in Film",
-    bio: "Judith Audu is a multi-award winning Nigerian filmmaker and actress known for films like 'Just Not Married' and 'The Sessions'. She is a passionate advocate for social justice and supports the UN Refugee Agency (UNHCR). Speaking on Panel 1 — The Architects.",
-    image: "/The Creatives Shaping Culture/Speakers/Judith_Audu_Headshot.webp",
+    bio: "Judith Audu is a multi-award winning Nigerian filmmaker and actress known for films like 'Just Not Married' and 'The Sessions'. She is a passionate advocate for social justice and supports the UN Refugee Agency (UNHCR).",
+    image: "/The Creatives Shaping Culture/Speakers/Judith Audu.webp",
     handle: "judithaudu",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 1",
   },
   {
     name: "Jide Kene",
     title: "Actor & Model",
     org: "Swanky JKA",
     topic: "Narrative & Screen Excellence",
-    bio: "Jide Kene Achufusi (Swanky JKA) is a prominent Nigerian actor and model. He rose to fame for his role in 'Living in Bondage: Breaking Free', earning the Trailblazer Award at the 2020 AMVCA. Speaking on Panel 2 — The Executors.",
+    bio: "Jide Kene Achufusi (Swanky JKA) is a prominent Nigerian actor and model. He rose to fame for his role in 'Living in Bondage: Breaking Free', earning the Trailblazer Award at the 2020 AMVCA.",
     image: "/The Creatives Shaping Culture/Speakers/Jide Kene.jpg",
     handle: "swankyjka",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
   {
     name: "Kenzy Udosen",
     title: "Content Creator & Host",
     org: "Madam Theresa",
     topic: "Cultural Commentary & Social Reflections",
-    bio: "Kenzy Udosen is a content creator, media personality, and actor best known for the viral character Madam Theresa. He is an AMVCA nominee recognized for his witty cultural commentary and relatable social reflections. Speaking on Panel 2 — The Executors.",
+    bio: "Kenzy Udosen is a content creator, media personality, and actor best known for the viral character Madam Theresa. He is an AMVCA nominee recognized for his witty cultural commentary and relatable social reflections.",
     image: "/The Creatives Shaping Culture/Speakers/Kenzy Udosen.jpeg",
     handle: "kenzyudosen",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
   {
     name: "Tacha",
     title: "Media Personality & Entrepreneur",
     org: "Titan",
     topic: "Record-Breaking & Brand Excellence",
-    bio: "Anita Natacha Akide (Tacha) is a Nigerian media personality, entrepreneur, and reality TV star. She is a multi-title Guinness World Record holder for cosmetic makeovers and a passionate advocate for philanthropy. Speaking on Panel 2 — The Executors.",
+    bio: "Anita Natacha Akide (Tacha) is a Nigerian media personality, entrepreneur, and reality TV star. She is a multi-title Guinness World Record holder for cosmetic makeovers and a passionate advocate for philanthropy.",
     image: "/The Creatives Shaping Culture/Speakers/Tacha.png",
     handle: "symply_tacha",
     day: "March 20",
-    type: "Panel",
+    type: "Panel 2",
   },
 ];
 
@@ -234,7 +234,7 @@ export default function Speakers() {
 
                 {/* Type + Day Badge */}
                 <div className="absolute top-6 left-6 flex gap-2 z-20">
-                  <span className={`text-[8px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full border backdrop-blur-md ${typeBadgeColor[speaker.type] ?? "bg-white/5 text-white/60 border-white/10"}`}>
+                  <span className="text-[8px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full border backdrop-blur-md bg-white/10 text-white border-white/15">
                     {speaker.type}
                   </span>
                   <span className="text-[8px] font-bold uppercase tracking-[0.25em] px-3 py-1 rounded-full border bg-black/30 text-white/40 border-white/10 backdrop-blur-md">
@@ -244,14 +244,14 @@ export default function Speakers() {
 
                 {/* Bottom Content */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
-                  <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-4">
+                    <div className="relative z-10 transition-transform duration-700 group-hover:-translate-y-4">
                     <span className="text-primary font-bold uppercase tracking-[0.3em] text-[8px] md:text-[9px] mb-2 block">
                       {speaker.org}
                     </span>
                     <h3 className="font-heading text-3xl md:text-4xl text-white mb-1 leading-[0.9] tracking-tight">
                       {speaker.name}
                     </h3>
-                    <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-light">
+                    <p className="text-accent text-[10px] uppercase tracking-[0.2em] font-light">
                       {speaker.title}
                     </p>
                   </div>

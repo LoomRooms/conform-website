@@ -12,7 +12,7 @@ const featured = [
     org: "CONFORM",
     topic: "Designing Systems That Last",
     image: "/The Creatives Shaping Culture/Speakers/Shola Bamidele.jpeg",
-    type: "KEYNOTE",
+    type: "PANEL 1",
     panel: "Panel 1 — The Architects",
   },
   {
@@ -21,8 +21,8 @@ const featured = [
     org: "FIDA / Edniesal Consulting",
     topic: "Africa’s Digital Economy",
     image: "/The Creatives Shaping Culture/Speakers/Abiola Laseinde .jpg.jpeg",
-    type: "PANEL",
-    panel: "Panel 1 — The Architects",
+    type: "SYSTEMS INTERLUDE",
+    panel: "Day 1 — The Systems",
   },
   {
     name: "Jennifer Mairo",
@@ -30,8 +30,8 @@ const featured = [
     org: "Joy, Inc",
     topic: "Storytelling & Organizational Transformation",
     image: "/The Creatives Shaping Culture/Speakers/Jennifer-Mairo-Ceo-Joy-Inc.jpg",
-    type: "PANEL",
-    panel: "Panel 1 — The Architects",
+    type: "SYSTEMS INTERLUDE",
+    panel: "Day 1 — The Systems",
   },
   {
     name: "Jide Kene",
@@ -39,7 +39,7 @@ const featured = [
     org: "Swanky JKA",
     topic: "Narrative & Screen Excellence",
     image: "/The Creatives Shaping Culture/Speakers/Jide Kene.jpg",
-    type: "PANEL",
+    type: "PANEL 2",
     panel: "Panel 2 — The Executors",
   },
   {
@@ -48,7 +48,7 @@ const featured = [
     org: "Guinness World Record Holder",
     topic: "Record-Breaking & Brand Excellence",
     image: "/The Creatives Shaping Culture/Speakers/Tacha.png",
-    type: "PANEL",
+    type: "PANEL 2",
     panel: "Panel 2 — The Executors",
   },
   {
@@ -57,7 +57,7 @@ const featured = [
     org: "Panelist",
     topic: "The Creator Economy & Digital Culture",
     image: "/The Creatives Shaping Culture/Speakers/IYO.jpeg",
-    type: "PANEL",
+    type: "PANEL 2",
     panel: "Panel 2 — The Executors",
   },
   {
@@ -66,7 +66,7 @@ const featured = [
     org: "Panelist",
     topic: "Community, Content & The New Creative Class",
     image: "/The Creatives Shaping Culture/Speakers/Kingsley.jpeg",
-    type: "PANEL",
+    type: "PANEL 2",
     panel: "Panel 2 — The Executors",
   },
   {
@@ -75,7 +75,7 @@ const featured = [
     org: "Madam Theresa",
     topic: "Cultural Commentary & Social Reflections",
     image: "/The Creatives Shaping Culture/Speakers/Kenzy Udosen.jpeg",
-    type: "PANEL",
+    type: "PANEL 2",
     panel: "Panel 2 — The Executors",
   },
 ];
