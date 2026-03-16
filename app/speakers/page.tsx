@@ -129,6 +129,17 @@ const speakers = [
     type: "Panel 1",
   },
   {
+    name: "Bimbo CiDAR",
+    title: "Music Executive",
+    org: "CiDAR Africa",
+    topic: "Redefining A&R and Marketing",
+    bio: "Olamide Abimbola (Bimbo) is a leading music executive and co-founder of CiDAR Africa. He is redefining the A&R field and marketing excellence in Nigeria, having worked on major hits for artists like Fido, Kunmie, and Kidd Carder.",
+    image: "/The Creatives Shaping Culture/Speakers/Bimbo headshot.JPG.webp",
+    handle: "bimbocidar",
+    day: "March 20",
+    type: "Panel 1",
+  },
+  {
     name: "Jide Kene",
     title: "Actor & Model",
     org: "Swanky JKA",

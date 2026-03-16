@@ -34,6 +34,15 @@ const featured = [
     panel: "Day 1 — The Systems",
   },
   {
+    name: "Bimbo CiDAR",
+    title: "Music Executive",
+    org: "CiDAR Africa",
+    topic: "Redefining A&R and Marketing",
+    image: "/The Creatives Shaping Culture/Speakers/Bimbo headshot.JPG.webp",
+    type: "PANEL 1",
+    panel: "Panel 1 — The Architects",
+  },
+  {
     name: "Jide Kene",
     title: "Award Winning Actor",
     org: "Swanky JKA",
