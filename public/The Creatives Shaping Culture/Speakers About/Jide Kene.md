@@ -1,0 +1,1 @@
+Jide Kene Achufusi (born October 17, 1991), popularly known as Swanky JKA, is a prominent Nigerian actor and model. He rose to widespread fame for his leading role as Nnamdi Okeke in the 2019 blockbuster Living in Bondage: Breaking Free, a performance that earned him the Trailblazer Award at the 2020 Africa Magic Viewers' Choice Awards (AMVCA)
