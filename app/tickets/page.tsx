@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 
-const TIXTANGO_URL = 'https://www.tixtango.com/spotlight/conform-performance';
+const TIXTANGO_URL = 'https://www.tixtango.com/spotlight/conform-conference';
 
 export default function Tickets() {
     const router = useRouter();

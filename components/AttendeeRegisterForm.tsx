@@ -47,7 +47,7 @@ type AttendeeFormData = {
     consent: boolean;
 };
 
-const TIXTANGO_URL = 'https://www.tixtango.com/spotlight/conform-performance';
+const TIXTANGO_URL = 'https://www.tixtango.com/spotlight/conform-conference';
 
 // Shared input style for sleek rounded look
 const inputClass = 'w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl text-[15px] text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/10 focus:bg-white focus:outline-none transition-all duration-200';
@@ -76,6 +76,11 @@ export default function AttendeeRegisterForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [submitError, setSubmitError] = useState('');
+    const [loadingStage, setLoadingStage] = useState({
+        isActive: false,
+        status: '',
+        progress: 0,
+    });
 
     const totalSteps = 3;
 
@@ -220,9 +225,17 @@ export default function AttendeeRegisterForm() {
             const result = await submitArtistApplication(mappedData, []);
             
             if (result.success) {
-                setSubmitSuccess(true);
-                localStorage.setItem('conformRegistered', 'true');
-                localStorage.removeItem('conformAttendeeReg');
+                // Trigger psychological loading
+                setLoadingStage({ isActive: true, status: 'Processing registration...', progress: 10 });
+                
+                setTimeout(() => setLoadingStage(prev => ({ ...prev, status: 'Securing your spot...', progress: 40 })), 1000);
+                setTimeout(() => setLoadingStage(prev => ({ ...prev, status: 'Finalizing details...', progress: 70 })), 2500);
+                setTimeout(() => {
+                    setLoadingStage(prev => ({ ...prev, status: 'Registration Complete!', progress: 100 }));
+                    setSubmitSuccess(true);
+                    localStorage.setItem('conformRegistered', 'true');
+                    localStorage.removeItem('conformAttendeeReg');
+                }, 4000);
             } else {
                 setSubmitError(result.error || 'Something went wrong. Please try again.');
             }
@@ -345,6 +358,53 @@ export default function AttendeeRegisterForm() {
                     <button onClick={() => setSubmitError('')} className="mt-1 text-red-400 underline text-xs">Dismiss</button>
                 </motion.div>
             )}
+
+            {/* Psychological Loading Overlay */}
+            <AnimatePresence>
+                {loadingStage.isActive && !submitSuccess && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+                        style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)' }}
+                    >
+                        <motion.div 
+                            initial={{ scale: 0.9, y: 20 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.9, y: 20 }}
+                            className="relative w-full max-w-sm rounded-[2rem] p-8 overflow-hidden text-center shadow-2xl"
+                            style={{ 
+                                background: 'linear-gradient(145deg, #020b24 0%, #051336 100%)',
+                                boxShadow: '0 0 40px rgba(0, 150, 255, 0.15), inset 0 0 0 1px rgba(255,255,255,0.05)'
+                            }}
+                        >
+                            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(0,180,255,0.2),transparent_60%)] pointer-events-none" />
+                            <div className="relative z-10 flex flex-col items-center">
+                                <p className="text-[#a4b1cf] text-sm font-medium tracking-wide mb-2">Registration in Progress</p>
+                                <h3 className="text-white text-2xl font-bold mb-8 font-heading tracking-widest min-h-[4rem] flex justify-center items-center leading-snug">
+                                    {loadingStage.status}
+                                </h3>
+                                
+                                <div className="mt-4 mb-8 w-full">
+                                    <div className="w-full h-4 bg-black/50 rounded-full overflow-hidden border border-white/10 p-0.5 shadow-inner">
+                                        <motion.div 
+                                            className="h-full rounded-full bg-gradient-to-r from-[#00d2ff] to-[#3a7bd5]"
+                                            initial={{ width: 0 }}
+                                            animate={{ width: `${loadingStage.progress}%` }}
+                                            transition={{ ease: "easeOut", duration: 0.5 }}
+                                        />
+                                    </div>
+                                    <div className="flex justify-between items-center mt-3 text-xs font-bold text-[#a4b1cf] tracking-widest uppercase">
+                                        <span>Progress</span>
+                                        <span>{loadingStage.progress}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             {/* Form Steps */}
             <AnimatePresence mode="wait">
