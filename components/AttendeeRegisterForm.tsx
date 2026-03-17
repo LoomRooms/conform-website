@@ -467,10 +467,9 @@ function Step1({ formData, updateField, errors }: any) {
 
 // ─── Step 2: About You ──────────────────────────────────
 function Step2({ formData, updateField, errors }: any) {
-    const [selectedCategory, setSelectedCategory] = useState(formData.primaryCategory || '');
+    const selectedCategory = formData.primaryCategory;
 
     const handleCategoryChange = (category: string) => {
-        setSelectedCategory(category);
         updateField('primaryCategory', category);
         updateField('discipline', []);
     };
@@ -498,8 +497,9 @@ function Step2({ formData, updateField, errors }: any) {
                 <label className={labelClass}>Creative Category *</label>
                 <div className="grid grid-cols-1 gap-2">
                     {CATEGORIES.map((cat) => (
-                        <label
+                        <div
                             key={cat.name}
+                            onClick={() => handleCategoryChange(cat.name)}
                             className={`flex items-center gap-3 px-4 py-3 rounded-2xl border cursor-pointer transition-all duration-200 ${
                                 selectedCategory === cat.name
                                     ? 'border-primary bg-primary/5 shadow-sm'
@@ -514,7 +514,7 @@ function Step2({ formData, updateField, errors }: any) {
                             <span className={`text-sm font-medium ${selectedCategory === cat.name ? 'text-primary' : 'text-gray-700'}`}>
                                 {cat.name}
                             </span>
-                        </label>
+                        </div>
                     ))}
                 </div>
                 {errors.primaryCategory && <p className={errorClass}>{errors.primaryCategory}</p>}
