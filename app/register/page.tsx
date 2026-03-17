@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
-import RegisterForm from '@/components/RegisterForm';
+import AttendeeRegisterForm from '@/components/AttendeeRegisterForm';
+import { Suspense } from 'react';
 
 export default function RegisterPage() {
     return (
@@ -13,13 +14,13 @@ export default function RegisterPage() {
                         <div className="cinematic-bottom-blur" />
                         <div className="relative z-10 max-w-4xl mx-auto">
                             <h1 className="font-heading text-5xl md:text-7xl mb-4 text-white">
-                                Artist Application
+                                Register for CON/FORM
                             </h1>
                             <p className="text-xl md:text-2xl text-secondary font-light">
-                                CON/FORM 1.0 • March 20 & April 6, 2026
+                                CON/FORM 1.0 • March 20 &amp; April 6, 2026
                             </p>
                             <p className="mt-4 text-lg text-white/80">
-                                Application Deadline: February 14, 2026
+                                Quick registration — only 3 steps
                             </p>
                         </div>
                     </div>
@@ -28,8 +29,10 @@ export default function RegisterPage() {
                 {/* Form Section */}
                 <section className="py-12 px-4">
                     <div className="max-w-4xl mx-auto">
-                        <div className="bg-white rounded-lg shadow-xl p-8">
-                            <RegisterForm />
+                        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10">
+                            <Suspense fallback={<div className="text-center py-12 text-gray-400">Loading...</div>}>
+                                <AttendeeRegisterForm />
+                            </Suspense>
                         </div>
                     </div>
                 </section>

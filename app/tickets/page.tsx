@@ -4,10 +4,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
 import KeyButton from "@/components/ui/KeyButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
+
+const TIXTANGO_URL = 'https://www.tixtango.com/spotlight/conform-performance';
 
 export default function Tickets() {
+    const router = useRouter();
+    const [isRegistered, setIsRegistered] = useState(false);
+
+    useEffect(() => {
+        setIsRegistered(localStorage.getItem('conformRegistered') === 'true');
+    }, []);
+
     const [loadingState, setLoadingState] = useState({
         isOpen: false,
         targetUrl: '',
@@ -19,6 +29,12 @@ export default function Tickets() {
 
     const handleBuyClick = (e: React.MouseEvent, url: string) => {
         e.preventDefault();
+
+        // If user hasn't registered, redirect to registration first
+        if (!isRegistered) {
+            router.push('/register?from=tickets');
+            return;
+        }
         
         setLoadingState({
             isOpen: true,
@@ -56,6 +72,12 @@ export default function Tickets() {
 
     const handleSoldOutClick = (e: React.MouseEvent) => {
         e.preventDefault();
+
+        // If user hasn't registered, redirect to registration first
+        if (!isRegistered) {
+            router.push('/register?from=tickets');
+            return;
+        }
         
         setLoadingState({
             isOpen: true,
@@ -258,15 +280,33 @@ export default function Tickets() {
                                 
                                 <div className="mt-2 w-full">
                                     {loadingState.progress === 100 && !loadingState.isSoldOut ? (
-                                        <a 
-                                            href={loadingState.targetUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            onClick={() => setTimeout(() => closeOverlay(), 500)}
-                                            className="w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(255,255,255,0.25)] border-2 border-white/90 bg-secondary text-black hover:bg-white flex justify-center items-center"
-                                        >
-                                            Proceed to Checkout
-                                        </a>
+                                        /* Two ticket purchase buttons after loading completes */
+                                        <div className="flex flex-col gap-3 w-full">
+                                            <a 
+                                                href={TIXTANGO_URL}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={() => setTimeout(() => closeOverlay(), 500)}
+                                                className="w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(34,197,94,0.3)] border-2 border-green-400 bg-green-500 text-white hover:bg-green-600 flex justify-center items-center gap-2"
+                                            >
+                                                <span>Buy Student Pass: (Free)</span>
+                                            </a>
+                                            <a 
+                                                href={TIXTANGO_URL}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={() => setTimeout(() => closeOverlay(), 500)}
+                                                className="w-full py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all shadow-[0_4px_20px_rgba(255,255,255,0.25)] border-2 border-white/90 bg-secondary text-black hover:bg-white flex justify-center items-center gap-2"
+                                            >
+                                                <span>Purchase Paid Access ticket (₦3,000)</span>
+                                            </a>
+                                            <button
+                                                onClick={closeOverlay}
+                                                className="mt-1 text-white/40 text-xs underline hover:text-white/70 transition-colors"
+                                            >
+                                                Close
+                                            </button>
+                                        </div>
                                     ) : (
                                         <button 
                                             disabled={loadingState.progress < 100} 
