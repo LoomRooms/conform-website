@@ -83,7 +83,7 @@ export async function submitArtistApplication(
             // Step 1: Personal Information
             full_name: formData.fullName || '',
             artist_name: formData.artistName || formData.fullName || '',
-            date_of_birth: (formData.dateOfBirth && formData.dateOfBirth.trim()) ? formData.dateOfBirth : null,
+            date_of_birth: (typeof formData.dateOfBirth === 'string' && formData.dateOfBirth.trim()) ? formData.dateOfBirth : null,
             primary_phone: formData.primaryPhone || '',
             secondary_phone: formData.secondaryPhone || null,
             email: formData.email || '',

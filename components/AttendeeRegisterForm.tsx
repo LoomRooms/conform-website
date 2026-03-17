@@ -216,15 +216,21 @@ export default function AttendeeRegisterForm() {
             signature: formData.fullName,
         };
 
-        const result = await submitArtistApplication(mappedData, []);
-        setIsSubmitting(false);
-
-        if (result.success) {
-            setSubmitSuccess(true);
-            localStorage.setItem('conformRegistered', 'true');
-            localStorage.removeItem('conformAttendeeReg');
-        } else {
-            setSubmitError(result.error || 'Something went wrong. Please try again.');
+        try {
+            const result = await submitArtistApplication(mappedData, []);
+            
+            if (result.success) {
+                setSubmitSuccess(true);
+                localStorage.setItem('conformRegistered', 'true');
+                localStorage.removeItem('conformAttendeeReg');
+            } else {
+                setSubmitError(result.error || 'Something went wrong. Please try again.');
+            }
+        } catch (err: any) {
+            console.error('Submission error:', err);
+            setSubmitError('Connection failed. Please try again.');
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
