@@ -36,7 +36,7 @@ export interface Database {
                     // Step 1: Personal Information
                     full_name: string;
                     artist_name: string;
-                    date_of_birth: string;
+                    date_of_birth: string | null;
                     primary_phone: string;
                     secondary_phone: string | null;
                     email: string;
@@ -100,7 +100,7 @@ export interface Database {
                     user_id?: string | null;
                     full_name: string;
                     artist_name: string;
-                    date_of_birth: string;
+                    date_of_birth: string | null;
                     primary_phone: string;
                     secondary_phone?: string | null;
                     email: string;
@@ -156,7 +156,7 @@ export interface Database {
                     user_id?: string | null;
                     full_name?: string;
                     artist_name?: string;
-                    date_of_birth?: string;
+                    date_of_birth?: string | null;
                     primary_phone?: string;
                     secondary_phone?: string | null;
                     email?: string;
