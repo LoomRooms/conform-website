@@ -22,13 +22,11 @@ const sponsors = [
     name: "Loom Rooms",
     image: "/Sponsors/Logos/Loom Rooms Logo.png",
     bg: "light",
-    fill: true,
   },
   {
     name: "FIDA",
     image: "/The Creatives Shaping Culture/Brand Logos/FIDA.png",
     bg: "light",
-    fill: true,
   },
   {
     name: "Abiola Time",
@@ -46,13 +44,11 @@ const sponsors = [
     name: "TixTango",
     image: "/The Creatives Shaping Culture/Brand Logos/Tixtango.png",
     bg: "light",
-    fill: true,
   },
   {
     name: "Dayo McIntosh",
     image: "/The Creatives Shaping Culture/Brand Logos/Yateou.jpg.jpeg",
     bg: "light",
-    fill: true,
   },
   {
     name: "kpakpando media",
@@ -64,26 +60,22 @@ const sponsors = [
     name: "CiDAR Africa",
     image: "/Sponsors/Logos/cidar logo.png",
     bg: "light",
-    fill: true,
   },
   {
     name: "Alimosho Local Government",
     image: "/Sponsors/Logos/Alimosho-Local-Government.jpg",
     bg: "light",
     scale: 1.4,
-    fill: true,
   },
   {
     name: "Da Circles",
     image: "/Sponsors/Logos/Da-circles-Logo.jpg",
     bg: "light",
-    fill: true,
   },
   {
     name: "Lagos Art & Tourism",
     image: "/Sponsors/Logos/Lagos Art and Tourism.jpeg",
     bg: "light",
-    fill: true,
   },
 ];
 
