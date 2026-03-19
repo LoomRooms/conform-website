@@ -6,11 +6,67 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import KeyButton from "@/components/ui/KeyButton";
 import { useRef } from "react";
 
+import { useState } from "react";
+
 export default function About() {
     const containerRef = useRef<HTMLElement>(null);
+    const [currentTheme, setCurrentTheme] = useState({ bg: "#000000", text: "#ffffff" });
+
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"]
+    });
+
+    // Theme mapping based on content sections
+    const bgColor = useTransform(
+        scrollYProgress,
+        [0, 0.2, 0.3, 0.4, 0.5, 0.65, 0.8, 0.95, 1],
+        [
+            "#000000", // Hero
+            "#000000", // Big Statement
+            "#03051a", // Narrative (Blue)
+            "#000000", // Diagnosis
+            "#ffffff", // Philosophy (White)
+            "#000000", // Tensions
+            "#ffffff", // Architects (White)
+            "#000000", // Structure
+            "#000000"  // Team
+        ]
+    );
+
+    const textColor = useTransform(
+        scrollYProgress,
+        [0, 0.45, 0.5, 0.6, 0.65, 0.75, 0.8, 0.9, 0.95],
+        [
+            "#ffffff", // Hero to Diagnosis
+            "#ffffff",
+            "#000000", // Philosophy
+            "#000000",
+            "#ffffff", // Tensions
+            "#ffffff",
+            "#000000", // Architects
+            "#000000",
+            "#ffffff"  // Structure to Team
+        ]
+    );
+
+    // Update state for Navbar
+    useScroll().scrollY.on("change", () => {
+        // We use scrollYProgress to determine the theme for the Navbar
+        const p = scrollYProgress.get();
+        let theme = { bg: "#000000", text: "#ffffff" };
+        
+        if (p > 0.45 && p < 0.65) {
+            theme = { bg: "#ffffff", text: "#000000" };
+        } else if (p > 0.75 && p < 0.95) {
+            theme = { bg: "#ffffff", text: "#000000" };
+        } else if (p > 0.2 && p < 0.35) {
+            theme = { bg: "#03051a", text: "#ffffff" };
+        }
+        
+        if (theme.bg !== currentTheme.bg) {
+            setCurrentTheme(theme);
+        }
     });
 
     const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
@@ -18,9 +74,12 @@ export default function About() {
 
     return (
         <>
-            {/* White/Black text handling happens in Navbar automatically based on scroll */}
-            <Navbar />
-            <main ref={containerRef} className="min-h-screen relative bg-black text-white selection:bg-secondary selection:text-black">
+            <Navbar currentTheme={currentTheme} />
+            <motion.main 
+                ref={containerRef} 
+                style={{ backgroundColor: bgColor, color: textColor }}
+                className="min-h-screen relative transition-colors duration-700 selection:bg-secondary selection:text-black"
+            >
 
             {/* 1. Cinematic Hero */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -71,7 +130,7 @@ export default function About() {
             </section>
 
             {/* 2. THE BIG STATEMENT */}
-            <section className="relative py-32 md:py-48 px-6 bg-black z-20 overflow-hidden">
+            <section className="relative py-32 md:py-48 px-6 z-20 overflow-hidden">
                 <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent -z-10" />
                 
                 <div className="max-w-6xl mx-auto text-center relative z-10">
@@ -89,7 +148,7 @@ export default function About() {
             </section>
 
             {/* 3. NARRATIVE SECTION */}
-            <section className="relative py-24 px-6 bg-[#03051a] z-20">
+            <section className="relative py-24 px-6 z-20">
                 <div className="absolute right-0 top-0 w-1/2 h-full bg-primary/5 blur-[100px] pointer-events-none" />
                 
                 <div className="max-w-4xl mx-auto space-y-16 relative z-10">
@@ -143,7 +202,7 @@ export default function About() {
             </section>
 
             {/* NEW SECTION: THE CULTURAL DIAGNOSIS (THE ROAD) */}
-            <section className="relative py-32 px-6 bg-black z-20 overflow-hidden border-y border-white/5">
+            <section className="relative py-32 px-6 z-20 overflow-hidden border-y border-white/5">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.05),transparent_70%)] pointer-events-none" />
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
                     <div className="flex-1">
@@ -176,7 +235,7 @@ export default function About() {
             </section>
 
             {/* NEW SECTION: THE PHILOSOPHY OF THE SLASH */}
-            <section className="relative py-32 md:py-48 px-6 bg-white text-black z-20 overflow-hidden">
+            <section className="relative py-32 md:py-48 px-6 z-20 overflow-hidden">
                 <div className="absolute top-0 right-0 p-24 opacity-[0.03] pointer-events-none select-none">
                     <span className="text-[30rem] font-light leading-none">/</span>
                 </div>
@@ -190,9 +249,9 @@ export default function About() {
                     >
                         <span className="text-primary font-bold tracking-[0.5em] uppercase text-xs mb-10 block">The Philosophy of the integration</span>
                         <div className="flex justify-center items-center gap-8 mb-16">
-                            <span className="font-heading text-4xl md:text-8xl text-black/20">CON</span>
+                            <span className="font-heading text-4xl md:text-8xl opacity-20">CON</span>
                             <span className="font-heading text-6xl md:text-[12rem] text-primary">/</span>
-                            <span className="font-heading text-4xl md:text-8xl text-black/20">FORM</span>
+                            <span className="font-heading text-4xl md:text-8xl opacity-20">FORM</span>
                         </div>
                         <h2 className="font-heading text-3xl md:text-5xl mb-12 leading-tight">
                             The slash is not decoration. <br />
@@ -201,15 +260,15 @@ export default function About() {
                         <div className="grid md:grid-cols-3 gap-12 text-left">
                             <div className="space-y-4">
                                 <h4 className="font-bold uppercase tracking-widest text-sm text-primary">The Moment</h4>
-                                <p className="text-black/60 leading-relaxed font-light">The slash is the pause between receiving and building. The integration of the inner world before it meets the outer world.</p>
+                                <p className="opacity-60 leading-relaxed font-light">The slash is the pause between receiving and building. The integration of the inner world before it meets the outer world.</p>
                             </div>
                             <div className="space-y-4">
                                 <h4 className="font-bold uppercase tracking-widest text-sm text-primary">The Bridge</h4>
-                                <p className="text-black/60 leading-relaxed font-light">It represents the bridge between who you are and what you create. It is where the authentic self is consulted.</p>
+                                <p className="opacity-60 leading-relaxed font-light">It represents the bridge between who you are and what you create. It is where the authentic self is consulted.</p>
                             </div>
                             <div className="space-y-4">
                                 <h4 className="font-bold uppercase tracking-widest text-sm text-primary">The Sequence</h4>
-                                <p className="text-black/60 leading-relaxed font-light">Without the slash: a demand from the system. With the slash: an invitation from within.</p>
+                                <p className="opacity-60 leading-relaxed font-light">Without the slash: a demand from the system. With the slash: an invitation from within.</p>
                             </div>
                         </div>
                     </motion.div>
@@ -217,7 +276,7 @@ export default function About() {
             </section>
 
             {/* 4. THE 4 CULTURAL TENSIONS - bento grid style */}
-            <section className="py-32 px-6 bg-black z-20 relative">
+            <section className="py-32 px-6 z-20 relative">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-20 text-center">
                         <span className="text-white/30 font-bold tracking-[0.5em] uppercase text-xs mb-4 block">The Mandate</span>
@@ -259,7 +318,7 @@ export default function About() {
             </section>
 
             {/* 5. ARCHITECTS & EXECUTORS */}
-            <section className="py-32 px-6 bg-white text-black z-20 relative overflow-hidden">
+            <section className="py-32 px-6 z-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-african-pattern opacity-[0.03] mix-blend-multiply pointer-events-none" />
                 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -273,9 +332,9 @@ export default function About() {
                                 transition={{ duration: 0.8 }}
                                 className="font-heading font-normal text-6xl md:text-[6rem] mb-6 leading-[0.85] tracking-tighter"
                             >
-                                Architects <br/><span className="text-black/20">&amp;</span> Executors
+                                Architects <br/><span className="opacity-20">&amp;</span> Executors
                             </motion.h2>
-                            <p className="text-black/60 text-xl leading-relaxed max-w-lg">
+                            <p className="opacity-60 text-xl leading-relaxed max-w-lg">
                                 CON/FORM introduces a framework that removes hierarchy while honoring experience.
                             </p>
                         </div>
@@ -290,9 +349,9 @@ export default function About() {
                             >
                                 <div className="flex justify-between items-start mb-8">
                                     <h3 className="font-heading text-4xl">Architects</h3>
-                                    <span className="text-black/10 font-heading text-8xl leading-none -mt-4">A</span>
+                                    <span className="opacity-10 font-heading text-8xl leading-none -mt-4">A</span>
                                 </div>
-                                <p className="text-black/70 text-lg leading-relaxed font-medium">
+                                <p className="opacity-70 text-lg leading-relaxed font-medium">
                                     The pioneers and builders of Nigeria&apos;s creative industry. These individuals helped shape the systems that define the industry today, creating platforms, institutions, and opportunities that later generations would inherit.
                                 </p>
                             </motion.div>
@@ -315,7 +374,7 @@ export default function About() {
                             </motion.div>
 
                             <div className="pt-8 text-center md:text-left">
-                                <p className="font-heading text-2xl md:text-3xl text-black/90">
+                                <p className="font-heading text-2xl md:text-3xl opacity-90">
                                     Both groups are equally essential.<br />
                                     <span className="text-primary italic">CON/FORM places them in conversation, not competition.</span>
                                 </p>
@@ -326,7 +385,7 @@ export default function About() {
             </section>
 
             {/* 6. THE STRUCTURE / CTA */}
-            <section className="py-32 px-6 bg-black z-20 relative overflow-hidden">
+            <section className="py-32 px-6 z-20 relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img src="/4.webp" alt="Structure" className="w-full h-full object-cover opacity-20 grayscale" />
                     <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
@@ -389,7 +448,7 @@ export default function About() {
             </section>
 
             {/* 7. THE TEAM */}
-            <section className="py-32 px-6 bg-black z-20 relative overflow-hidden">
+            <section className="py-32 px-6 z-20 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-0 pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] -z-0 pointer-events-none" />
 
@@ -464,7 +523,7 @@ export default function About() {
             </section>
 
             <Footer />
-        </main>
+        </motion.main>
         </>
     );
 }

@@ -9,7 +9,7 @@ const featured = [
   {
     name: "Shola Bamidele",
     title: "Creative Director / CEO",
-    org: "CONFORM",
+    org: "CON/FORM",
     topic: "Designing Systems That Last",
     image: "/The Creatives Shaping Culture/Speakers/Shola Bamidele.jpeg",
     type: "PANEL 1",

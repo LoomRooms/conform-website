@@ -45,7 +45,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-1">Email Us</h3>
-                                    <a href="mailto:hello@conform.com.ng" className="text-gray-600 hover:text-primary transition-colors block">hello@conform.com.ng</a>
+                                    <a href="mailto:infodaloomroom@gmail.com" className="text-white hover:text-secondary transition-colors">infodaloomroom@gmail.com</a>
                                     <p className="text-sm text-gray-400 mt-1">General inquiries &amp; ticket support</p>
                                 </div>
                             </div>

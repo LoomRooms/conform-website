@@ -11,7 +11,7 @@ const speakers = [
   {
     name: "Shola Bamidele",
     title: "Creative Director / CEO",
-    org: "CONFORM",
+    org: "CON/FORM",
     topic: "Designing Systems That Last",
     bio: "The Creative Director and CEO behind CON/FORM, Shola is a visionary leader who has shaped the visual identity of the movement. He challenges how creatives think about legacy and infrastructure.",
     image: "/The Creatives Shaping Culture/Speakers/Shola Bamidele.jpeg",

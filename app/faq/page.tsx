@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: "How can my brand or institution get involved?",
-        answer: "CON/FORM actively partners with brands and institutions that are willing to engage with the creative community authentically — not as spectators, but as participants. Sponsors appear as environments, not ads. To discuss partnerships or sponsorships, call 09035998080 or email hello@conform.com.ng."
+        answer: "CON/FORM actively partners with brands and institutions that are willing to engage with the creative community authentically — not as spectators, but as participants. Sponsors appear as environments, not ads. To discuss partnerships or sponsorships, call 09035998080 or email infodaloomroom@gmail.com."
     },
     {
         question: "Is food provided?",
@@ -44,7 +44,7 @@ const faqs = [
     },
     {
         question: "Can I get a refund?",
-        answer: "Tickets are non-refundable but transferable. Contact us at hello@conform.com.ng to transfer your ticket."
+        answer: "Tickets are non-refundable but transferable. Contact us at infodaloomroom@gmail.com to transfer your ticket."
     },
 ];
 

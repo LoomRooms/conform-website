@@ -215,8 +215,7 @@ export default function Tickets() {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold text-lg mb-4">Group Discounts?</h4>
-                        <a href="mailto:hello@conform.com.ng" className="text-primary font-bold underline">Contact us for group booking</a>
+                        <p className="text-white/40 text-sm mt-8 border-t border-white/10 pt-8">Need support? Email <a href="mailto:infodaloomroom@gmail.com" className="text-white hover:text-secondary underline underline-offset-4">infodaloomroom@gmail.com</a></p>
                     </div>
                 </div>
             </section>

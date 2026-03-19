@@ -40,7 +40,7 @@ export default function Footer() {
                                             fill: "currentColor"
                                         }}
                                     >
-                                        c<tspan x="61.267 131.887 207.66 267.591 338.211 409.403 " y="135.513 135.513 135.513 135.513 135.513 135.513 ">onform</tspan>
+                                        c<tspan x="61.267 131.887 185.0 231.887 291.818 362.438 433.63" y="135.513 135.513 135.513 135.513 135.513 135.513 135.513">on/form</tspan>
                                     </text>
                                 </svg>
                             </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
                             <ul className="space-y-4 text-sm text-white/70 mb-8 font-medium">
                                 <li className="flex items-center space-x-3">
                                     <Mail size={18} className="shrink-0 text-white/50" />
-                                    <a href="mailto:hello@conform.com.ng" className="hover:text-white transition-colors">hello@conform.com.ng</a>
+                                    <a href="mailto:infodaloomroom@gmail.com" className="hover:text-white transition-colors">infodaloomroom@gmail.com</a>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <Phone size={18} className="shrink-0 text-white/50" />

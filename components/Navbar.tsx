@@ -28,7 +28,7 @@ const Logo = ({ isDarkHeader, isMobile, isScrolled }: { isDarkHeader: boolean; i
                         fontWeight: "normal"
                     }}
                 >
-                    c<tspan x="61.267 131.887 207.66 267.591 338.211 409.403 " y="135.513 135.513 135.513 135.513 135.513 135.513 ">onform</tspan>
+                    c<tspan x="61.267 131.887 185.0 231.887 291.818 362.438 433.63" y="135.513 135.513 135.513 135.513 135.513 135.513 135.513">on/form</tspan>
                 </text>
             </svg>
         </div>
