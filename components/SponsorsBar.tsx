@@ -21,43 +21,69 @@ const sponsors = [
   {
     name: "Loom Rooms",
     image: "/Sponsors/Logos/Loom Rooms Logo.png",
-    bg: "light",   // Updated to light
+    bg: "light",
+    fill: true,
   },
   {
     name: "FIDA",
-    image: "/Sponsors/Logos/FIDA.png",
-    bg: "light",  // Logo is dark on white → white bg
+    image: "/The Creatives Shaping Culture/Brand Logos/FIDA.png",
+    bg: "light",
+    fill: true,
+  },
+  {
+    name: "Abiola Time",
+    image: "/The Creatives Shaping Culture/Brand Logos/Abiola Time.jpeg",
+    bg: "light",
+    fill: true,
+  },
+  {
+    name: "Nigeria Food Submit",
+    image: "/The Creatives Shaping Culture/Brand Logos/Nigeria Food Submit.jpeg",
+    bg: "light",
+    fill: true,
   },
   {
     name: "TixTango",
-    image: "/Sponsors/Logos/Tixtango.png",
-    bg: "light",  // Logo likely dark on light
+    image: "/The Creatives Shaping Culture/Brand Logos/Tixtango.png",
+    bg: "light",
+    fill: true,
   },
   {
     name: "Dayo McIntosh",
-    image: "/Sponsors/Logos/Yateou.jpg.jpeg",
+    image: "/The Creatives Shaping Culture/Brand Logos/Yateou.jpg.jpeg",
     bg: "light",
+    fill: true,
+  },
+  {
+    name: "kpakpando media",
+    image: "/The Creatives Shaping Culture/Brand Logos/kpakpando media.jpeg",
+    bg: "light",
+    fill: true,
   },
   {
     name: "CiDAR Africa",
     image: "/Sponsors/Logos/cidar logo.png",
     bg: "light",
+    fill: true,
   },
   {
     name: "Alimosho Local Government",
     image: "/Sponsors/Logos/Alimosho-Local-Government.jpg",
     bg: "light",
     scale: 1.4,
+    fill: true,
   },
   {
     name: "Da Circles",
     image: "/Sponsors/Logos/Da-circles-Logo.jpg",
     bg: "light",
+    fill: true,
   },
   {
     name: "Lagos Art & Tourism",
     image: "/Sponsors/Logos/Lagos Art and Tourism.jpeg",
     bg: "light",
+    fill: true,
   },
 ];
 
