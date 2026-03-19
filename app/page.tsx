@@ -260,10 +260,10 @@ export default function Home() {
 
       <TestimonialsSection />
       
-      {/* CTA Section */}
-      <section className="py-48 md:py-64 relative overflow-hidden px-6">
-        <div className="absolute inset-0 opacity-80 pointer-events-none">
-          <img src="/6.webp" className="w-full h-full object-cover scale-110 animate-slow-zoom" />
+      <section className="py-48 md:py-64 relative overflow-hidden px-6 bg-black">
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="/6.webp" className="w-full h-full object-cover scale-110 animate-slow-zoom opacity-50" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center text-white">
