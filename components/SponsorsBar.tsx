@@ -44,11 +44,13 @@ const sponsors = [
     name: "TixTango",
     image: "/The Creatives Shaping Culture/Brand Logos/Tixtango.png",
     bg: "light",
+    scale: 1.25,
   },
   {
     name: "Dayo McIntosh",
     image: "/The Creatives Shaping Culture/Brand Logos/Yateou.jpg.jpeg",
     bg: "light",
+    scale: 1.25,
   },
   {
     name: "kpakpando media",
@@ -60,6 +62,7 @@ const sponsors = [
     name: "CiDAR Africa",
     image: "/Sponsors/Logos/cidar logo.png",
     bg: "light",
+    scale: 1.25,
   },
   {
     name: "Alimosho Local Government",
