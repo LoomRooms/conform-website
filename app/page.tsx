@@ -192,7 +192,7 @@ export default function Home() {
                 <span className="font-heading tracking-wider text-[3.5rem] md:text-[6rem] leading-none block mt-4">Other Events</span>
               </motion.h2>
               <p className="opacity-90 text-xl md:text-3xl font-normal leading-relaxed max-w-2xl">
-                CON/FORM is a system-building experience. It begins with <span className="font-bold">honest conversation</span> and culminates in live expression.
+                CONFORM is a system-building experience. It begins with <span className="font-bold">honest conversation</span> and culminates in live expression.
               </p>
             </motion.div>
           </div>
@@ -287,7 +287,7 @@ export default function Home() {
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               className="font-heading font-normal text-5xl md:text-[8.5rem] mb-12 leading-[0.85] tracking-tighter"
             >
-              Don't Miss <br /><span>CON/FORM</span> 1.0
+              Don't Miss <br /><span>CONFORM</span> 1.0
             </motion.h2>
             <p className="text-2xl md:text-4xl mb-20 font-light opacity-70 max-w-3xl mx-auto leading-relaxed">
               March 20 & April 6, 2026. Two days designed to change how you see, build, and express creativity.

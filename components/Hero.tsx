@@ -103,7 +103,7 @@ export default function Hero() {
                         className="relative overflow-hidden group w-full"
                     >
                         <h1 className="font-heading text-[clamp(4.5rem,12vw,10rem)] leading-[0.85] tracking-tighter mb-4 text-white relative">
-                            CON/
+                            CON
                             <motion.span
                                 initial={{ y: "100%" }}
                                 animate={{ y: 0 }}

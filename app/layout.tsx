@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "CON/FORM 1.0 - March 20 & April 6, 2026",
+  title: "CONFORM 1.0 - March 20 & April 6, 2026",
   description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
   icons: {
     icon: "/conform-icon.svg",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     apple: "/conform-icon.svg",
   },
   openGraph: {
-    title: "CON/FORM 1.0 - March 20 & April 6, 2026",
+    title: "CONFORM 1.0 - March 20 & April 6, 2026",
     description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
     url: "https://www.conform.com.ng",
     type: "website",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
         url: "/conform-share.webp",
         width: 1200,
         height: 630,
-        alt: "CON/FORM 2024 - The Intersection of Thought & Performance",
+        alt: "CONFORM 2024 - The Intersection of Thought & Performance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CON/FORM 1.0 - March 20 & April 6, 2026",
+    title: "CONFORM 1.0 - March 20 & April 6, 2026",
     description: "A Cultural System for Conversation, Creation & Continuity. Lagos' first system-building experience.",
     images: ["/conform-share.webp"],
   },

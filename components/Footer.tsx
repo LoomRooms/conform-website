@@ -40,7 +40,7 @@ export default function Footer() {
                                             fill: "currentColor"
                                         }}
                                     >
-                                        c<tspan x="61.267 131.887 185.0 231.887 291.818 362.438 433.63" y="135.513 135.513 135.513 135.513 135.513 135.513 135.513">on/form</tspan>
+                                        c<tspan x="61.267 131.887 196.887 256.818 327.438 398.63" y="135.513 135.513 135.513 135.513 135.513 135.513">onform</tspan>
                                     </text>
                                 </svg>
                             </Link>
@@ -54,7 +54,7 @@ export default function Footer() {
                         <div>
                             <h3 className="font-heading font-normal text-xl mb-6 tracking-widest text-white">General Info</h3>
                             <ul className="space-y-4 text-sm font-medium">
-                                <li><Link href="/about" className="text-white/70 hover:text-white transition-colors">About CON/FORM</Link></li>
+                                <li><Link href="/about" className="text-white/70 hover:text-white transition-colors">About CONFORM</Link></li>
                                 <li><Link href="/experience" className="text-white/70 hover:text-white transition-colors">The Experience</Link></li>
                                 <li><Link href="/tickets" className="text-white/70 hover:text-white transition-colors">Get Tickets</Link></li>
                                 <li><Link href="/faq" className="text-white/70 hover:text-white transition-colors">FAQ</Link></li>
@@ -96,7 +96,7 @@ export default function Footer() {
 
                     <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40">
                         <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8">
-                            <p>© 2026 CON/FORM. All rights reserved.</p>
+                            <p>© 2026 CONFORM. All rights reserved.</p>
                             <div className="flex space-x-8">
                                 <Link href="/legal/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                                 <Link href="/legal/terms" className="hover:text-white transition-colors">Ticket Terms</Link>

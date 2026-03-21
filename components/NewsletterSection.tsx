@@ -62,7 +62,7 @@ export default function NewsletterSection() {
             </span>
           </h2>
           <p className="text-white/50 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto mb-16">
-            Get updates on CON/FORM, the next edition, creative opportunities, and dispatches from the Loom Rooms ecosystem.
+            Get updates on CONFORM, the next edition, creative opportunities, and dispatches from the Loom Rooms ecosystem.
           </p>
 
           <AnimatePresence mode="wait">
@@ -77,7 +77,7 @@ export default function NewsletterSection() {
                 <CheckCircle2 className="text-green-400" size={48} strokeWidth={1.5} />
                 <p className="text-white text-xl font-heading tracking-wide">You're in.</p>
                 <p className="text-white/40 text-sm font-light tracking-widest uppercase">
-                  Welcome to the CON/FORM community
+                  Welcome to the CONFORM community
                 </p>
               </motion.div>
             ) : (

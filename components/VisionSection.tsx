@@ -81,7 +81,7 @@ export default function VisionSection() {
                         <span className="text-accent font-heading tracking-wider">Expression</span>
                     </motion.h2>
                     <p className="opacity-70 text-base md:text-xl mb-8 md:mb-12 leading-relaxed font-light">
-                        CON/FORM isn't just an event — it's a two-day transformation. Born
+                        CONFORM isn't just an event — it's a two-day transformation. Born
                         in Egbeda, validated by tradition, and powered by raw creativity.
                     </p>
 
